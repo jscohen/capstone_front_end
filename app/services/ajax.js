@@ -1,5 +1,6 @@
 import Ember from 'ember';
 import AjaxService from 'ember-ajax/services/ajax';
+import storage from '../storages/auth'
 
 import ENV from 'ga-wdi-boston.ember-auth/config/environment';
 
@@ -11,6 +12,7 @@ export default AjaxService.extend({
     get () {
       let headers = {};
       const token = this.get('auth.credentials.token');
+      storage.token = token;
       if (token) {
         headers.Authorization = `Token token=${token}`;
       }
