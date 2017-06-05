@@ -42,8 +42,9 @@ export default Ember.Service.extend({
     })
   },
 
-  destroyDoc(id) {
-    return this.get('ajax').destory('/docs/' + id, {
+  deleteDoc(id) {
+    return this.get('ajax').request('/docs/' + id, {
+      method: 'DELETE'
       }).then(() => {
         console.log('doc destroyed')
       })
