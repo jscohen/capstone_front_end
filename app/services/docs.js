@@ -29,17 +29,17 @@ export default Ember.Service.extend({
     .then(() => {console.log(this.get('docs.thisDocID'))})
   },
 
-  saveDoc (input) {
+  saveDoc (input, title) {
     let id = this.get('credentials.id')
     return this.get('ajax').patch(`/docs/${this.get('docs.thisDocID')}`, {
       data: {
         doc: {
           text: input,
+          title: title,
           _owner: id
         }
       }
     })
-    .then(result => console.log(result))
   },
 
   destroyDoc(id) {

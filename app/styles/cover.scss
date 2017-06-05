@@ -27,6 +27,10 @@ button {
  * Base structure
  */
 
+input, textarea, .jumbotron {
+  color: black;
+}
+
 html,
 body {
   height: 100%;

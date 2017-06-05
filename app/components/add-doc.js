@@ -11,7 +11,8 @@ export default Ember.Component.extend({
     saveDoc() {
       console.log($('textarea').val());
       let input = $('textarea').val()
-      this.get('docs').saveDoc(input)
+      let title = $('.title').val()
+      this.get('docs').saveDoc(input, title)
     },
     mouseUp() {
       console.log('in mouse up')
