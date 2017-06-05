@@ -34,5 +34,12 @@ export default Ember.Route.extend({
 
       return false;
     },
+
+    newDoc() {
+      console.log('inside route')
+      this.get('docs').newDoc()
+      .then(() => this.transitionTo('new-document'))
+      .then(() => this.get('flashMessages').warning('New Document Created'))
+    }
   },
 });
