@@ -8,9 +8,9 @@ export default Ember.Component.extend({
   docs: Ember.inject.service(),
 
   actions: {
-    getDocs() {
-      console.log('in get docs component')
-      this.get('docs').getDocs()
+    deleteDocs() {
+      console.log('in delete docs component')
+      // this.get('docs').getDocs()
     },
   }
 });

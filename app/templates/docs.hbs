@@ -3,5 +3,7 @@
 <ul>
 {{#each model as |doc|}}
   <li>{{doc.text}}</li>
+  <br />
+  {{delete-docs doc=doc}}
 {{/each}}
 </ul>
