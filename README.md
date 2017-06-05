@@ -1,71 +1,37 @@
 [![General Assembly Logo](https://camo.githubusercontent.com/1a91b05b8f4d44b5bbfb83abac2b0996d8e26c92/687474703a2f2f692e696d6775722e636f6d2f6b6538555354712e706e67)](https://generalassemb.ly/education/web-development-immersive)
 
-# Authentication in Ember
+# YourDocs
 
-This training will involve a lot of following code and and exploring the
-Chrome Inspector and utilizing Ember Inspector.  It is recommended that you
-comment code or take notes.
+YourDocs is a functioning word processor.
 
-## Prerequisites
+## Wireframes
+(http://i.imgur.com/WjeDppb.jpg)
+(http://i.imgur.com/Lw5Orr9.jpg)
 
--   [Ember Resources](https://github.com/ga-wdi-boston/ember-resources)
+## Technologies
 
-## Objectives
+YourDocs is a word processor that uses Ember.js and Express.js to run.  In ember, the client-side functionality is handled via routes, services and components.  ExpressJS provides RESTFUL routes for the API.
 
-By the end of this, developers should be able to:
+## General Approach
+I am still working through things, but the approach is to have one document resource and have some word processing features on the client side.  A user should be able to create, read, update and delete their documents typed in the browser.  My stretch goal is to allow formatting in the client side and translation.
 
--   Implement token authentication in an Ember application.
--   Enforce authentication in protected routes.
+## Installation Instructions
 
-## Preparation
+Client Side:
 
-1.  [Fork and clone](https://github.com/ga-wdi-boston/meta/wiki/ForkAndClone)
-    this repository.
-1.  Install dependencies with `npm install` and `bower install`.
-1.  Start any API based on a recent version of the [Rails API
-    Template](https://github.com/ga-wdi-boston/rails-api-template) or the
-    [Express API
-    Template](https://github.com/ga-wdi-boston/express-api-template).
-1.  Start the front-end server with `ember server`.
+On the command line, type in ember install followed by npm install.  You can type in ember serve to run the client side of the app.
 
-## From end to end
+## User Stories
 
-Watch as I sign up for a new account on our demo app.
+1. I, as a user, want to be able to create documents to type my writing into.
 
-*Other than the flash messages on the page, did anything change?  What about in
-the Chrome Developer Tools?*
+2. I, as a user, want to be able to retrieve my past writing.
 
-Take some time and sign in on your own, and check to see if anything in the
-Chrome Dev Tools has changed.
+3. I as a user wish to delete writing that I don't like anymore by deleting documents.
 
-Now that we have added a key tool to our personal developer toolkit lets look
-at how it's implemented.
+4. (Stretch) I as a user want to be able to export my documents
 
-## Follow Along
-
-Let's walk through file by file to see what's happening.  I will ask
-developers to guide me through the files while correcting any misunderstandings.
-
-First let's start down the template and component trail, then we'll work our way
-up with actions.
-
-*Remember: Data down, actions up.*
-
-While going up the Ember hierarchy we may need to stop a some point to discuss
-services.
-
-## Additional Resources
-
--   [Implementing Authentication with Ember Services - Ember
-    Igniter](http://emberigniter.com/implementing-authentication-with-ember-services/)
--   [jpadilla/ember-simple-auth-token: Ember Simple Auth extension that is
-    compatible with token-based authentication like
-    JWT.](https://github.com/jpadilla/ember-simple-auth-token)
--   [simplabs/ember-simple-auth: A library for implementing
-    authentication/authorization in Ember.js
-    applications.](https://github.com/simplabs/ember-simple-auth)
--   [Create your first Ember 2.0 app: From authentication to calling an
-    API](https://auth0.com/blog/2015/08/11/create-your-first-ember-2-dot-0-app-from-authentication-to-calling-an-api/)
+5. (Stretch) I as a user want to be able to format and style my documents.
 
 ## [License](LICENSE)
 

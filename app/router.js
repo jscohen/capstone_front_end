@@ -13,6 +13,9 @@ Router.map(function () {
   this.route('testResource');
   this.route('new-document');
   this.route('my-documents');
+  this.route('test-docs');
+  this.route('documents');
+  this.route('docs');
 });
 
 export default Router;

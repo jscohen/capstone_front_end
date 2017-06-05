@@ -1,6 +1,7 @@
-{{yield}}
+<h2>Users</h2>
+
 <ul>
-{{#each document.doc as |doc|}}
+{{#each model as |doc|}}
   <li>{{doc.text}}</li>
 {{/each}}
 </ul>

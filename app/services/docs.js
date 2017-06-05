@@ -60,12 +60,5 @@ export default Ember.Service.extend({
     .then(() => {
       console.log(this.get('docs.myDocs'))
     })
-    .then(() => {
-      const docs = this.get('docs.myDocs')
-      for (let i = 0; i < docs.docs.length; i++) {
-        console.log(docs.docs[i].text)
-        $('.getDocs').append('<br /><p id=>' + docs.docs[i].text + '</p> <button class=deleteDoc id=' + docs.docs[i]._id + '>Delete this Document</button>')
-      }
-      })
-    }
+  }
 });
