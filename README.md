@@ -5,8 +5,8 @@
 YourDocs is a functioning word processor.
 
 ## Wireframes
-(http://i.imgur.com/WjeDppb.jpg)
-(http://i.imgur.com/Lw5Orr9.jpg)
+[Wireframe for Front Page](http://i.imgur.com/WjeDppb.jpg)
+[Wireframe for Get Docs](http://i.imgur.com/Lw5Orr9.jpg)
 
 ## Technologies
 
