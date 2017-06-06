@@ -10,9 +10,9 @@ export default Ember.Component.extend({
   actions: {
     deleteDocs(id) {
       console.log(id)
-      console.log('in delete component')
+      console.log('in new delete component')
       // this.get('docs').deleteDoc(id)
-      return this.sendAction('deleteItem')
+      return this.sendAction('deleteDocs')
     }
   }
 });

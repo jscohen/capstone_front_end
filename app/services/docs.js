@@ -30,6 +30,7 @@ export default Ember.Service.extend({
   },
 
   saveDoc (input, title) {
+    console.log('inside service')
     let id = this.get('credentials.id')
     return this.get('ajax').patch(`/docs/${this.get('docs.thisDocID')}`, {
       data: {
@@ -47,6 +48,8 @@ export default Ember.Service.extend({
       method: 'DELETE'
       }).then(() => {
         console.log('doc destroyed')
+      }).then(() => {
+        docsRoute.model()
       })
   },
 
