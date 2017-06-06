@@ -8,12 +8,8 @@ export default Ember.Component.extend({
   actions: {
     edit(doc) {
       console.log('inside edit component')
-      console.log(this.get('doc.title'))
-      console.log(this.get('doc.text'))
-      const title = this.get('doc.title')
-      console.log(title)
       this.get('docs').set('currentDoc', doc)
-      console.log(this.get('docs.currentDoc'))
+      console.log(this.get('docs.currentDoc.title'))
     }
   }
 });

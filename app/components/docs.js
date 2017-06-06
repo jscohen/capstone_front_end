@@ -13,6 +13,16 @@ export default Ember.Component.extend({
       console.log('in new delete component')
       // this.get('docs').deleteDoc(id)
       return this.sendAction('deleteDocs')
+    },
+    edit(doc) {
+      console.log('inside edit component')
+      console.log(this.get('doc.title'))
+      console.log(this.get('doc.text'))
+      const title = this.get('doc.title')
+      console.log(title)
+      this.get('docs').set('currentDoc', doc)
+      console.log(this.get('docs.currentDoc'))
+      return this.sendAction('edit', doc)
     }
   }
 });
