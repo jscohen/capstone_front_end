@@ -10,5 +10,9 @@ export default Ember.Component.extend({
     signOut () {
       this.sendAction('signOut');
     },
+    show() {
+      console.log('inside show')
+      $('#popover').popover('toggle')
+    }
   },
 });

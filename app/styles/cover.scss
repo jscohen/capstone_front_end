@@ -68,6 +68,9 @@ body {
   background-image: url('http://i.imgur.com/7eb1mm4l.jpg')
 }
 
+.body-footer {
+  background-color: black;
+}
 
 /* Extra markup and styles for table-esque vertical and horizontal centering */
 .site-wrapper {
@@ -188,8 +191,8 @@ textarea {
 .mastfoot {
   color: #999; /* IE8 proofing */
   color: rgba(255,255,255,.5);
+  background-color: black;
 }
-
 
 /*
  * Affix and center

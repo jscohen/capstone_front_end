@@ -18,6 +18,12 @@
 {{#each flashMessages.queue as |flash|}}
   {{flash-message flash=flash}}
 {{/each}}
+<div class="popover-container">
+<button type="button" {{action 'show'}} id="popover" class="btn btn-default" aria-label="Left Align" style="color:black;" data-toggle="popover" data-trigger="focus" title="Dismissible popover" title="Welcome to Writr!" data-content="This app, Writr, was created by Jonathan Cohen as a capstonen project for the General Assembly WDI program.  Let's start writing!">
+<span class="NewDoc" style="font-size:3em;"><span class="glyphicon glyphicon-off" aria-hidden="true">
+</span>    <span class="textButton">About this Site</span></span>
+</button>
+</div>
 
 <div class="col-md-8 col-md-offset-2">
   <div id="saveSuccess" class="modal fade">
