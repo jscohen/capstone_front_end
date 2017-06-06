@@ -2,20 +2,17 @@
 
 module.exports = function (environment) {
   'use strict';
-  const ENV = {
-    modulePrefix: 'ga-wdi-boston.ember-auth',
+  var ENV = {
+    modulePrefix: '<% jscohen.github.io/capstone_front_end %>',
     environment: environment,
     rootURL: '/',
     locationType: 'auto',
+    apiHost: 'http://localhost:3000/',
     EmberENV: {
       FEATURES: {
         // Here you can enable experimental features on an ember canary build
         // e.g. 'with-controller': true
-      },
-      EXTEND_PROTOTYPES: {
-        // Prevent Ember Data from overriding Date.parse.
-        Date: false,
-      },
+      }
     },
 
     APP: {
@@ -50,7 +47,7 @@ module.exports = function (environment) {
 
   if (environment === 'production') {
     ENV.locationType = 'hash';
-    ENV.baseURL = '/'
+    ENV.rootURL = '/capstone_front_end';
   }
 
   return ENV;
