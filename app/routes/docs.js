@@ -9,6 +9,7 @@ export default Ember.Route.extend({
       console.log('inside delete route')
       console.log(item)
       item.destroyRecord();
+      this.get('flashMessages').success('Document Deleted')
     }
   }
 });

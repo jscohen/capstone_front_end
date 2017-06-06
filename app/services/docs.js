@@ -27,6 +27,7 @@ export default Ember.Service.extend({
       this.get('docs').set('thisDocID', result.doc._id)
     })
     .then(() => {console.log(this.get('docs.thisDocID'))})
+    .then(() => this.get('flashMessages').success('New Document Created'))
   },
 
   saveDoc (input, title) {
@@ -41,6 +42,7 @@ export default Ember.Service.extend({
         }
       }
     })
+    .then(() => this.get('flashMessages').success('Document Saved'))
   },
 
   deleteDoc(id) {
