@@ -1,11 +1,9 @@
 <h2 class="titleHeader">Documents</h2>
 
-<ul>
 {{#each model as |doc|}}
-  {{edit-doc doc=doc}}
+  {{#link-to "edit-doc" (query-params doc=doc)}}<h3 {{action 'edit' doc}}>Edit this Doc</h3>{{/link-to}}
   <h4 class="titleHeader">{{doc.title}}</h4>
   <p class="titleHeader">{{doc.text}}</p>
   <br />
   <button {{action 'deleteDocs' doc}}>Delete this document</button>
 {{/each}}
-</ul>

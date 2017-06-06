@@ -5,11 +5,10 @@ import Docs from '../storages/docs'
 
 export default Ember.Component.extend({
   docs: storageFor('docs'),
+
   actions: {
     edit(doc) {
-      console.log('inside edit component')
-      this.get('docs').set('currentDoc', doc)
-      console.log(this.get('docs.currentDoc.title'))
+      console.log(doc.title)
     }
   }
 });
