@@ -13,14 +13,22 @@ a:hover {
 .btn-default,
 .btn-default:hover,
 .btn-default:focus {
-  color: #fff;
   text-shadow: none; /* Prevent inheritance from `body` */
   background-color: #fff;
   border: 1px solid #fff;
 }
 
-button {
+button .btn .btn-default{
   color: black;
+}
+
+.NewDoc {
+  color: black;
+}
+
+.textButton {
+  font-family: 'Indie Flower', sans-serif;
+  text-decoration: underline;
 }
 
 /*
