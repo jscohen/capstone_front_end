@@ -27,12 +27,15 @@ export default Ember.Service.extend({
       this.get('docs').set('thisDocID', result.doc._id)
     })
     .then(() => {console.log(this.get('docs.thisDocID'))})
-    .then(() => this.get('flashMessages').success('New Document Created'))
+    .then(() => {
+      $('#createSuccess').modal('show')
+    })
   },
 
   saveDoc (input, title) {
     console.log('inside service')
     let id = this.get('credentials.id')
+    $('#saveSuccess').modal('show')
     return this.get('ajax').patch(`/docs/${this.get('docs.thisDocID')}`, {
       data: {
         doc: {
@@ -42,7 +45,6 @@ export default Ember.Service.extend({
         }
       }
     })
-    .then(() => this.get('flashMessages').success('Document Saved'))
   },
 
   deleteDoc(id) {
