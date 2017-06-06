@@ -1,9 +1,10 @@
-<h2>Documents</h2>
+<h2 class="titleHeader">Documents</h2>
 
 <ul>
 {{#each model as |doc|}}
-  <h4>{{doc.title}}</h4>
-  <p>{{doc.text}}</p>
+  {{edit-doc doc=doc}}
+  <h4 class="titleHeader">{{doc.title}}</h4>
+  <p class="titleHeader">{{doc.text}}</p>
   <br />
   <button {{action 'deleteDocs' doc}}>Delete this document</button>
 {{/each}}

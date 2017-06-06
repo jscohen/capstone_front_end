@@ -31,6 +31,12 @@ button .btn .btn-default{
   text-decoration: underline;
 }
 
+.titleHeader {
+  color: white;
+  font-family: 'Indie Flower', sans-serif;
+  text-decoration: underline;
+}
+
 /*
  * Base structure
  */
@@ -42,7 +48,6 @@ input, textarea, .jumbotron {
 html,
 body {
   height: 100%;
-  background-color: #333;
   background-image: url('pen_to_write.jpeg');
 }
 body {
@@ -120,7 +125,7 @@ textarea {
   padding-left: 0;
   font-size: 16px;
   font-weight: bold;
-  color: #fff; /* IE8 proofing */
+  color: black; /* IE8 proofing */
   color: rgba(255,255,255,.75);
   border-bottom: 2px solid transparent;
 }

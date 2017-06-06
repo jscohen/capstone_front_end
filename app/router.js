@@ -16,6 +16,8 @@ Router.map(function () {
   this.route('test-docs');
   this.route('documents');
   this.route('docs');
+  this.route('doc', { path: '/docs/:doc_id'});
+  this.route('edit-doc');
 });
 
 export default Router;
