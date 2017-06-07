@@ -23,6 +23,9 @@ export default Ember.Component.extend({
       this.get('docs').set('currentDoc', doc)
       console.log(this.get('docs.currentDoc'))
       return this.sendAction('edit', doc)
+    },
+    toggle() {
+      console.log('inside docs component')
     }
   }
 });

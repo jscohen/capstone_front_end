@@ -4,6 +4,10 @@ export default Ember.Route.extend({
   model () {
     return this.get('store').findAll('doc');
   },
+  activate: function() {
+    console.log('activated')
+  },
+
   actions: {
     deleteDocs (item) {
       console.log('inside delete route')
@@ -16,6 +20,11 @@ export default Ember.Route.extend({
       console.log(title)
       console.log(text)
       console.log('still in docs route')
+    },
+    toggle(id) {
+      console.log('inside docs route')
+      console.log(id)
+      $('#' + id).show()
     }
   }
 });

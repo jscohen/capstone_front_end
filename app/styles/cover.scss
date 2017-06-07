@@ -47,7 +47,6 @@ input, textarea, .jumbotron {
 
 html,
 body {
-  height: 100%;
   background-image: url('http://i.imgur.com/PqIVUllh.jpg');
   background-repeat: no-repeat;
   background-size: 100%;
@@ -112,6 +111,10 @@ textarea {
   color: #fff; /* IE8 proofing */
   color: rgba(255,255,255,.75);
   border-bottom: 2px solid transparent;
+}
+
+.toggle {
+  display: none;
 }
 
 .masthead {
