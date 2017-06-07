@@ -3,10 +3,11 @@
 module.exports = function (environment) {
   'use strict';
   const ENV = {
-    modulePrefix: 'ga-wdi-boston.ember-auth',
+    modulePrefix: 'capstone_front_end',
     environment: environment,
     rootURL: '/',
     locationType: 'auto',
+    apiHost: 'https://young-savannah-37906.herokuapp.com/',
     EmberENV: {
       FEATURES: {
         // Here you can enable experimental features on an ember canary build
@@ -49,7 +50,9 @@ module.exports = function (environment) {
   }
 
   if (environment === 'production') {
+    ENV.rootURL='/capstone_front_end'
     ENV.locationType = 'hash';
+    ENV.apiHost = 'https://young-savannah-37906.herokuapp.com/'
   }
 
   return ENV;

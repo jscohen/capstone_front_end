@@ -1,7 +1,7 @@
 {
 	"version": 3,
 	"sourceRoot": "/Users/jonathancohen/wdi/projects/capstone_front_end/app/styles",
-	"file": "ga-wdi-boston.ember-auth.css",
+	"file": "capstone_front_end.css",
 	"sources": [
 		"../../sass_compiler-input_base_path-HtXVVcfC.tmp/0/app/styles/app.scss",
 		"../../sass_compiler-input_base_path-HtXVVcfC.tmp/1/_bootstrap.scss",

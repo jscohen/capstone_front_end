@@ -2,7 +2,7 @@
 
 
 
-define('ga-wdi-boston.ember-auth/adapters/application', ['exports', 'ga-wdi-boston.ember-auth/config/environment', 'active-model-adapter', 'ember'], function (exports, _gaWdiBostonEmberAuthConfigEnvironment, _activeModelAdapter, _ember) {
+define('capstone_front_end/adapters/application', ['exports', 'capstone_front_end/config/environment', 'active-model-adapter', 'ember'], function (exports, _gaWdiBostonEmberAuthConfigEnvironment, _activeModelAdapter, _ember) {
   exports['default'] = _activeModelAdapter['default'].extend({
     host: _gaWdiBostonEmberAuthConfigEnvironment['default'].apiHost,
 
@@ -21,7 +21,7 @@ define('ga-wdi-boston.ember-auth/adapters/application', ['exports', 'ga-wdi-bost
     })
   });
 });
-define('ga-wdi-boston.ember-auth/app', ['exports', 'ember', 'ga-wdi-boston.ember-auth/resolver', 'ember-load-initializers', 'ga-wdi-boston.ember-auth/config/environment'], function (exports, _ember, _gaWdiBostonEmberAuthResolver, _emberLoadInitializers, _gaWdiBostonEmberAuthConfigEnvironment) {
+define('capstone_front_end/app', ['exports', 'ember', 'capstone_front_end/resolver', 'ember-load-initializers', 'capstone_front_end/config/environment'], function (exports, _ember, _gaWdiBostonEmberAuthResolver, _emberLoadInitializers, _gaWdiBostonEmberAuthConfigEnvironment) {
 
   var App = undefined;
 
@@ -37,7 +37,7 @@ define('ga-wdi-boston.ember-auth/app', ['exports', 'ember', 'ga-wdi-boston.ember
 
   exports['default'] = App;
 });
-define('ga-wdi-boston.ember-auth/components/add-doc', ['exports', 'ember'], function (exports, _ember) {
+define('capstone_front_end/components/add-doc', ['exports', 'ember'], function (exports, _ember) {
   exports['default'] = _ember['default'].Component.extend({
     auth: _ember['default'].inject.service(),
 
@@ -60,7 +60,7 @@ define('ga-wdi-boston.ember-auth/components/add-doc', ['exports', 'ember'], func
     }
   });
 });
-define('ga-wdi-boston.ember-auth/components/change-password-form', ['exports', 'ember'], function (exports, _ember) {
+define('capstone_front_end/components/change-password-form', ['exports', 'ember'], function (exports, _ember) {
   exports['default'] = _ember['default'].Component.extend({
     tagName: 'form',
     classNames: ['form-horizontal'],
@@ -78,7 +78,7 @@ define('ga-wdi-boston.ember-auth/components/change-password-form', ['exports', '
     }
   });
 });
-define('ga-wdi-boston.ember-auth/components/custom-textarea', ['exports', 'ember'], function (exports, _ember) {
+define('capstone_front_end/components/custom-textarea', ['exports', 'ember'], function (exports, _ember) {
   exports['default'] = _ember['default'].TextArea.extend({
     didRender: function didRender() {
       $('textarea').mouseup(function () {
@@ -89,7 +89,7 @@ define('ga-wdi-boston.ember-auth/components/custom-textarea', ['exports', 'ember
     }
   });
 });
-define('ga-wdi-boston.ember-auth/components/delete-docs', ['exports', 'ember'], function (exports, _ember) {
+define('capstone_front_end/components/delete-docs', ['exports', 'ember'], function (exports, _ember) {
   exports['default'] = _ember['default'].Component.extend({
     auth: _ember['default'].inject.service(),
 
@@ -107,7 +107,7 @@ define('ga-wdi-boston.ember-auth/components/delete-docs', ['exports', 'ember'], 
     }
   });
 });
-define('ga-wdi-boston.ember-auth/components/docs', ['exports', 'ember'], function (exports, _ember) {
+define('capstone_front_end/components/docs', ['exports', 'ember'], function (exports, _ember) {
   exports['default'] = _ember['default'].Component.extend({
     auth: _ember['default'].inject.service(),
 
@@ -143,7 +143,7 @@ define('ga-wdi-boston.ember-auth/components/docs', ['exports', 'ember'], functio
     }
   });
 });
-define('ga-wdi-boston.ember-auth/components/edit-doc', ['exports', 'ember', 'ember-local-storage', 'ga-wdi-boston.ember-auth/storages/auth', 'ga-wdi-boston.ember-auth/storages/docs'], function (exports, _ember, _emberLocalStorage, _gaWdiBostonEmberAuthStoragesAuth, _gaWdiBostonEmberAuthStoragesDocs) {
+define('capstone_front_end/components/edit-doc', ['exports', 'ember', 'ember-local-storage', 'capstone_front_end/storages/auth', 'capstone_front_end/storages/docs'], function (exports, _ember, _emberLocalStorage, _gaWdiBostonEmberAuthStoragesAuth, _gaWdiBostonEmberAuthStoragesDocs) {
   exports['default'] = _ember['default'].Component.extend({
     auth: _ember['default'].inject.service(),
 
@@ -169,13 +169,13 @@ define('ga-wdi-boston.ember-auth/components/edit-doc', ['exports', 'ember', 'emb
     }
   });
 });
-define('ga-wdi-boston.ember-auth/components/email-input', ['exports', 'ember'], function (exports, _ember) {
+define('capstone_front_end/components/email-input', ['exports', 'ember'], function (exports, _ember) {
   exports['default'] = _ember['default'].Component.extend({
     tagName: 'div',
     classNames: ['form-group']
   });
 });
-define('ga-wdi-boston.ember-auth/components/flash-message', ['exports', 'ember-cli-flash/components/flash-message'], function (exports, _emberCliFlashComponentsFlashMessage) {
+define('capstone_front_end/components/flash-message', ['exports', 'ember-cli-flash/components/flash-message'], function (exports, _emberCliFlashComponentsFlashMessage) {
   Object.defineProperty(exports, 'default', {
     enumerable: true,
     get: function get() {
@@ -183,7 +183,7 @@ define('ga-wdi-boston.ember-auth/components/flash-message', ['exports', 'ember-c
     }
   });
 });
-define('ga-wdi-boston.ember-auth/components/hamburger-menu', ['exports', 'ember'], function (exports, _ember) {
+define('capstone_front_end/components/hamburger-menu', ['exports', 'ember'], function (exports, _ember) {
   exports['default'] = _ember['default'].Component.extend({
     tagName: 'button',
     classNames: ['navbar-toggle', 'collapsed'],
@@ -193,7 +193,7 @@ define('ga-wdi-boston.ember-auth/components/hamburger-menu', ['exports', 'ember'
     expanded: false
   });
 });
-define('ga-wdi-boston.ember-auth/components/my-application', ['exports', 'ember'], function (exports, _ember) {
+define('capstone_front_end/components/my-application', ['exports', 'ember'], function (exports, _ember) {
   exports['default'] = _ember['default'].Component.extend({
     auth: _ember['default'].inject.service(),
 
@@ -211,7 +211,7 @@ define('ga-wdi-boston.ember-auth/components/my-application', ['exports', 'ember'
     }
   });
 });
-define('ga-wdi-boston.ember-auth/components/my-docs', ['exports', 'ember'], function (exports, _ember) {
+define('capstone_front_end/components/my-docs', ['exports', 'ember'], function (exports, _ember) {
   exports['default'] = _ember['default'].Component.extend({
     auth: _ember['default'].inject.service(),
 
@@ -227,19 +227,19 @@ define('ga-wdi-boston.ember-auth/components/my-docs', ['exports', 'ember'], func
     }
   });
 });
-define('ga-wdi-boston.ember-auth/components/my-documents/docs', ['exports', 'ember'], function (exports, _ember) {
+define('capstone_front_end/components/my-documents/docs', ['exports', 'ember'], function (exports, _ember) {
   exports['default'] = _ember['default'].Component.extend({});
 });
-define('ga-wdi-boston.ember-auth/components/my-map', ['exports', 'ember'], function (exports, _ember) {
+define('capstone_front_end/components/my-map', ['exports', 'ember'], function (exports, _ember) {
   exports['default'] = _ember['default'].Component.extend({});
 });
-define('ga-wdi-boston.ember-auth/components/navbar-header', ['exports', 'ember'], function (exports, _ember) {
+define('capstone_front_end/components/navbar-header', ['exports', 'ember'], function (exports, _ember) {
   exports['default'] = _ember['default'].Component.extend({
     tagName: 'div',
     classNames: ['navbar-header']
   });
 });
-define('ga-wdi-boston.ember-auth/components/new-document', ['exports', 'ember'], function (exports, _ember) {
+define('capstone_front_end/components/new-document', ['exports', 'ember'], function (exports, _ember) {
   exports['default'] = _ember['default'].Component.extend({
     auth: _ember['default'].inject.service(),
 
@@ -256,19 +256,19 @@ define('ga-wdi-boston.ember-auth/components/new-document', ['exports', 'ember'],
     }
   });
 });
-define('ga-wdi-boston.ember-auth/components/password-confirmation-input', ['exports', 'ember'], function (exports, _ember) {
+define('capstone_front_end/components/password-confirmation-input', ['exports', 'ember'], function (exports, _ember) {
   exports['default'] = _ember['default'].Component.extend({
     tagName: 'div',
     classNames: ['form-group']
   });
 });
-define('ga-wdi-boston.ember-auth/components/password-input', ['exports', 'ember'], function (exports, _ember) {
+define('capstone_front_end/components/password-input', ['exports', 'ember'], function (exports, _ember) {
   exports['default'] = _ember['default'].Component.extend({
     tagName: 'div',
     classNames: ['form-group']
   });
 });
-define('ga-wdi-boston.ember-auth/components/sign-in-form', ['exports', 'ember'], function (exports, _ember) {
+define('capstone_front_end/components/sign-in-form', ['exports', 'ember'], function (exports, _ember) {
   exports['default'] = _ember['default'].Component.extend({
     tagName: 'form',
     classNames: ['form-horizontal'],
@@ -284,7 +284,7 @@ define('ga-wdi-boston.ember-auth/components/sign-in-form', ['exports', 'ember'],
     }
   });
 });
-define('ga-wdi-boston.ember-auth/components/sign-up-form', ['exports', 'ember'], function (exports, _ember) {
+define('capstone_front_end/components/sign-up-form', ['exports', 'ember'], function (exports, _ember) {
   exports['default'] = _ember['default'].Component.extend({
     tagName: 'form',
     classNames: ['form-horizontal'],
@@ -301,7 +301,7 @@ define('ga-wdi-boston.ember-auth/components/sign-up-form', ['exports', 'ember'],
     }
   });
 });
-define('ga-wdi-boston.ember-auth/components/text-editor', ['exports', 'ember'], function (exports, _ember) {
+define('capstone_front_end/components/text-editor', ['exports', 'ember'], function (exports, _ember) {
   exports['default'] = _ember['default'].Component.extend({
     classNames: ['text-editor'],
 
@@ -335,7 +335,7 @@ define('ga-wdi-boston.ember-auth/components/text-editor', ['exports', 'ember'], 
   });
 });
 // app/components/text-editor.js
-define('ga-wdi-boston.ember-auth/components/tinymce-editor', ['exports', 'ember-cli-tinymce/components/tinymce-editor'], function (exports, _emberCliTinymceComponentsTinymceEditor) {
+define('capstone_front_end/components/tinymce-editor', ['exports', 'ember-cli-tinymce/components/tinymce-editor'], function (exports, _emberCliTinymceComponentsTinymceEditor) {
   Object.defineProperty(exports, 'default', {
     enumerable: true,
     get: function get() {
@@ -343,10 +343,10 @@ define('ga-wdi-boston.ember-auth/components/tinymce-editor', ['exports', 'ember-
     }
   });
 });
-define('ga-wdi-boston.ember-auth/controllers/array', ['exports', 'ember'], function (exports, _ember) {
+define('capstone_front_end/controllers/array', ['exports', 'ember'], function (exports, _ember) {
   exports['default'] = _ember['default'].Controller;
 });
-define('ga-wdi-boston.ember-auth/controllers/docs', ['exports', 'ember'], function (exports, _ember) {
+define('capstone_front_end/controllers/docs', ['exports', 'ember'], function (exports, _ember) {
   exports['default'] = _ember['default'].Controller.extend({
     actions: {
       toggle: function toggle(id) {
@@ -357,10 +357,10 @@ define('ga-wdi-boston.ember-auth/controllers/docs', ['exports', 'ember'], functi
     }
   });
 });
-define('ga-wdi-boston.ember-auth/controllers/object', ['exports', 'ember'], function (exports, _ember) {
+define('capstone_front_end/controllers/object', ['exports', 'ember'], function (exports, _ember) {
   exports['default'] = _ember['default'].Controller;
 });
-define('ga-wdi-boston.ember-auth/flash/object', ['exports', 'ember-cli-flash/flash/object'], function (exports, _emberCliFlashFlashObject) {
+define('capstone_front_end/flash/object', ['exports', 'ember-cli-flash/flash/object'], function (exports, _emberCliFlashFlashObject) {
   Object.defineProperty(exports, 'default', {
     enumerable: true,
     get: function get() {
@@ -368,7 +368,7 @@ define('ga-wdi-boston.ember-auth/flash/object', ['exports', 'ember-cli-flash/fla
     }
   });
 });
-define('ga-wdi-boston.ember-auth/helpers/app-version', ['exports', 'ember', 'ga-wdi-boston.ember-auth/config/environment', 'ember-cli-app-version/utils/regexp'], function (exports, _ember, _gaWdiBostonEmberAuthConfigEnvironment, _emberCliAppVersionUtilsRegexp) {
+define('capstone_front_end/helpers/app-version', ['exports', 'ember', 'capstone_front_end/config/environment', 'ember-cli-app-version/utils/regexp'], function (exports, _ember, _gaWdiBostonEmberAuthConfigEnvironment, _emberCliAppVersionUtilsRegexp) {
   exports.appVersion = appVersion;
   var version = _gaWdiBostonEmberAuthConfigEnvironment['default'].APP.version;
 
@@ -388,13 +388,13 @@ define('ga-wdi-boston.ember-auth/helpers/app-version', ['exports', 'ember', 'ga-
 
   exports['default'] = _ember['default'].Helper.helper(appVersion);
 });
-define('ga-wdi-boston.ember-auth/helpers/pluralize', ['exports', 'ember-inflector/lib/helpers/pluralize'], function (exports, _emberInflectorLibHelpersPluralize) {
+define('capstone_front_end/helpers/pluralize', ['exports', 'ember-inflector/lib/helpers/pluralize'], function (exports, _emberInflectorLibHelpersPluralize) {
   exports['default'] = _emberInflectorLibHelpersPluralize['default'];
 });
-define('ga-wdi-boston.ember-auth/helpers/singularize', ['exports', 'ember-inflector/lib/helpers/singularize'], function (exports, _emberInflectorLibHelpersSingularize) {
+define('capstone_front_end/helpers/singularize', ['exports', 'ember-inflector/lib/helpers/singularize'], function (exports, _emberInflectorLibHelpersSingularize) {
   exports['default'] = _emberInflectorLibHelpersSingularize['default'];
 });
-define("ga-wdi-boston.ember-auth/initializers/active-model-adapter", ["exports", "active-model-adapter", "active-model-adapter/active-model-serializer"], function (exports, _activeModelAdapter, _activeModelAdapterActiveModelSerializer) {
+define("capstone_front_end/initializers/active-model-adapter", ["exports", "active-model-adapter", "active-model-adapter/active-model-serializer"], function (exports, _activeModelAdapter, _activeModelAdapterActiveModelSerializer) {
   exports["default"] = {
     name: 'active-model-adapter',
     initialize: function initialize() {
@@ -404,7 +404,7 @@ define("ga-wdi-boston.ember-auth/initializers/active-model-adapter", ["exports",
     }
   };
 });
-define('ga-wdi-boston.ember-auth/initializers/app-version', ['exports', 'ember-cli-app-version/initializer-factory', 'ga-wdi-boston.ember-auth/config/environment'], function (exports, _emberCliAppVersionInitializerFactory, _gaWdiBostonEmberAuthConfigEnvironment) {
+define('capstone_front_end/initializers/app-version', ['exports', 'ember-cli-app-version/initializer-factory', 'capstone_front_end/config/environment'], function (exports, _emberCliAppVersionInitializerFactory, _gaWdiBostonEmberAuthConfigEnvironment) {
   var _config$APP = _gaWdiBostonEmberAuthConfigEnvironment['default'].APP;
   var name = _config$APP.name;
   var version = _config$APP.version;
@@ -413,7 +413,7 @@ define('ga-wdi-boston.ember-auth/initializers/app-version', ['exports', 'ember-c
     initialize: (0, _emberCliAppVersionInitializerFactory['default'])(name, version)
   };
 });
-define('ga-wdi-boston.ember-auth/initializers/container-debug-adapter', ['exports', 'ember-resolver/container-debug-adapter'], function (exports, _emberResolverContainerDebugAdapter) {
+define('capstone_front_end/initializers/container-debug-adapter', ['exports', 'ember-resolver/container-debug-adapter'], function (exports, _emberResolverContainerDebugAdapter) {
   exports['default'] = {
     name: 'container-debug-adapter',
 
@@ -425,7 +425,7 @@ define('ga-wdi-boston.ember-auth/initializers/container-debug-adapter', ['export
     }
   };
 });
-define('ga-wdi-boston.ember-auth/initializers/data-adapter', ['exports', 'ember'], function (exports, _ember) {
+define('capstone_front_end/initializers/data-adapter', ['exports', 'ember'], function (exports, _ember) {
 
   /*
     This initializer is here to keep backwards compatibility with code depending
@@ -440,7 +440,7 @@ define('ga-wdi-boston.ember-auth/initializers/data-adapter', ['exports', 'ember'
     initialize: function initialize() {}
   };
 });
-define('ga-wdi-boston.ember-auth/initializers/ember-data', ['exports', 'ember-data/setup-container', 'ember-data/index'], function (exports, _emberDataSetupContainer, _emberDataIndex) {
+define('capstone_front_end/initializers/ember-data', ['exports', 'ember-data/setup-container', 'ember-data/index'], function (exports, _emberDataSetupContainer, _emberDataIndex) {
 
   /*
   
@@ -479,7 +479,7 @@ define('ga-wdi-boston.ember-auth/initializers/ember-data', ['exports', 'ember-da
     initialize: _emberDataSetupContainer['default']
   };
 });
-define('ga-wdi-boston.ember-auth/initializers/ember-simple-auth', ['exports', 'ga-wdi-boston.ember-auth/config/environment', 'ember-simple-auth/configuration', 'ember-simple-auth/initializers/setup-session', 'ember-simple-auth/initializers/setup-session-service'], function (exports, _gaWdiBostonEmberAuthConfigEnvironment, _emberSimpleAuthConfiguration, _emberSimpleAuthInitializersSetupSession, _emberSimpleAuthInitializersSetupSessionService) {
+define('capstone_front_end/initializers/ember-simple-auth', ['exports', 'capstone_front_end/config/environment', 'ember-simple-auth/configuration', 'ember-simple-auth/initializers/setup-session', 'ember-simple-auth/initializers/setup-session-service'], function (exports, _gaWdiBostonEmberAuthConfigEnvironment, _emberSimpleAuthConfiguration, _emberSimpleAuthInitializersSetupSession, _emberSimpleAuthInitializersSetupSessionService) {
   exports['default'] = {
     name: 'ember-simple-auth',
 
@@ -493,7 +493,7 @@ define('ga-wdi-boston.ember-auth/initializers/ember-simple-auth', ['exports', 'g
     }
   };
 });
-define('ga-wdi-boston.ember-auth/initializers/export-application-global', ['exports', 'ember', 'ga-wdi-boston.ember-auth/config/environment'], function (exports, _ember, _gaWdiBostonEmberAuthConfigEnvironment) {
+define('capstone_front_end/initializers/export-application-global', ['exports', 'ember', 'capstone_front_end/config/environment'], function (exports, _ember, _gaWdiBostonEmberAuthConfigEnvironment) {
   exports.initialize = initialize;
 
   function initialize() {
@@ -539,7 +539,7 @@ define('ga-wdi-boston.ember-auth/initializers/export-application-global', ['expo
     initialize: initialize
   };
 });
-define('ga-wdi-boston.ember-auth/initializers/flash-messages', ['exports', 'ember', 'ga-wdi-boston.ember-auth/config/environment'], function (exports, _ember, _gaWdiBostonEmberAuthConfigEnvironment) {
+define('capstone_front_end/initializers/flash-messages', ['exports', 'ember', 'capstone_front_end/config/environment'], function (exports, _ember, _gaWdiBostonEmberAuthConfigEnvironment) {
   exports.initialize = initialize;
   var deprecate = _ember['default'].deprecate;
 
@@ -589,7 +589,7 @@ define('ga-wdi-boston.ember-auth/initializers/flash-messages', ['exports', 'embe
     initialize: initialize
   };
 });
-define('ga-wdi-boston.ember-auth/initializers/injectStore', ['exports', 'ember'], function (exports, _ember) {
+define('capstone_front_end/initializers/injectStore', ['exports', 'ember'], function (exports, _ember) {
 
   /*
     This initializer is here to keep backwards compatibility with code depending
@@ -604,7 +604,7 @@ define('ga-wdi-boston.ember-auth/initializers/injectStore', ['exports', 'ember']
     initialize: function initialize() {}
   };
 });
-define('ga-wdi-boston.ember-auth/initializers/local-storage-adapter', ['exports', 'ember-local-storage/initializers/local-storage-adapter'], function (exports, _emberLocalStorageInitializersLocalStorageAdapter) {
+define('capstone_front_end/initializers/local-storage-adapter', ['exports', 'ember-local-storage/initializers/local-storage-adapter'], function (exports, _emberLocalStorageInitializersLocalStorageAdapter) {
   Object.defineProperty(exports, 'default', {
     enumerable: true,
     get: function get() {
@@ -618,7 +618,7 @@ define('ga-wdi-boston.ember-auth/initializers/local-storage-adapter', ['exports'
     }
   });
 });
-define('ga-wdi-boston.ember-auth/initializers/simple-auth-token', ['exports', 'ember-simple-auth-token/authenticators/token', 'ember-simple-auth-token/authenticators/jwt', 'ember-simple-auth-token/authorizers/token', 'ember-simple-auth-token/configuration', 'ga-wdi-boston.ember-auth/config/environment'], function (exports, _emberSimpleAuthTokenAuthenticatorsToken, _emberSimpleAuthTokenAuthenticatorsJwt, _emberSimpleAuthTokenAuthorizersToken, _emberSimpleAuthTokenConfiguration, _gaWdiBostonEmberAuthConfigEnvironment) {
+define('capstone_front_end/initializers/simple-auth-token', ['exports', 'ember-simple-auth-token/authenticators/token', 'ember-simple-auth-token/authenticators/jwt', 'ember-simple-auth-token/authorizers/token', 'ember-simple-auth-token/configuration', 'capstone_front_end/config/environment'], function (exports, _emberSimpleAuthTokenAuthenticatorsToken, _emberSimpleAuthTokenAuthenticatorsJwt, _emberSimpleAuthTokenAuthorizersToken, _emberSimpleAuthTokenConfiguration, _gaWdiBostonEmberAuthConfigEnvironment) {
 
   /**
     Ember Simple Auth Token's Initializer.
@@ -635,7 +635,7 @@ define('ga-wdi-boston.ember-auth/initializers/simple-auth-token', ['exports', 'e
     }
   };
 });
-define('ga-wdi-boston.ember-auth/initializers/store', ['exports', 'ember'], function (exports, _ember) {
+define('capstone_front_end/initializers/store', ['exports', 'ember'], function (exports, _ember) {
 
   /*
     This initializer is here to keep backwards compatibility with code depending
@@ -650,7 +650,7 @@ define('ga-wdi-boston.ember-auth/initializers/store', ['exports', 'ember'], func
     initialize: function initialize() {}
   };
 });
-define('ga-wdi-boston.ember-auth/initializers/text-field', ['exports', 'ember'], function (exports, _ember) {
+define('capstone_front_end/initializers/text-field', ['exports', 'ember'], function (exports, _ember) {
   exports.initialize = initialize;
 
   function initialize() {
@@ -664,7 +664,7 @@ define('ga-wdi-boston.ember-auth/initializers/text-field', ['exports', 'ember'],
     initialize: initialize
   };
 });
-define('ga-wdi-boston.ember-auth/initializers/transforms', ['exports', 'ember'], function (exports, _ember) {
+define('capstone_front_end/initializers/transforms', ['exports', 'ember'], function (exports, _ember) {
 
   /*
     This initializer is here to keep backwards compatibility with code depending
@@ -679,13 +679,13 @@ define('ga-wdi-boston.ember-auth/initializers/transforms', ['exports', 'ember'],
     initialize: function initialize() {}
   };
 });
-define("ga-wdi-boston.ember-auth/instance-initializers/ember-data", ["exports", "ember-data/-private/instance-initializers/initialize-store-service"], function (exports, _emberDataPrivateInstanceInitializersInitializeStoreService) {
+define("capstone_front_end/instance-initializers/ember-data", ["exports", "ember-data/-private/instance-initializers/initialize-store-service"], function (exports, _emberDataPrivateInstanceInitializersInitializeStoreService) {
   exports["default"] = {
     name: "ember-data",
     initialize: _emberDataPrivateInstanceInitializersInitializeStoreService["default"]
   };
 });
-define('ga-wdi-boston.ember-auth/instance-initializers/ember-simple-auth', ['exports', 'ember-simple-auth/instance-initializers/setup-session-restoration'], function (exports, _emberSimpleAuthInstanceInitializersSetupSessionRestoration) {
+define('capstone_front_end/instance-initializers/ember-simple-auth', ['exports', 'ember-simple-auth/instance-initializers/setup-session-restoration'], function (exports, _emberSimpleAuthInstanceInitializersSetupSessionRestoration) {
   exports['default'] = {
     name: 'ember-simple-auth',
 
@@ -694,27 +694,27 @@ define('ga-wdi-boston.ember-auth/instance-initializers/ember-simple-auth', ['exp
     }
   };
 });
-define('ga-wdi-boston.ember-auth/models/doc', ['exports', 'ember-data'], function (exports, _emberData) {
+define('capstone_front_end/models/doc', ['exports', 'ember-data'], function (exports, _emberData) {
   exports['default'] = _emberData['default'].Model.extend({
     text: _emberData['default'].attr('string'),
     title: _emberData['default'].attr('string'),
     _id: _emberData['default'].attr('string')
   });
 });
-define('ga-wdi-boston.ember-auth/models/document', ['exports', 'ember-data'], function (exports, _emberData) {
+define('capstone_front_end/models/document', ['exports', 'ember-data'], function (exports, _emberData) {
   exports['default'] = _emberData['default'].Model.extend({
     text: _emberData['default'].attr('string')
   });
 });
-define('ga-wdi-boston.ember-auth/models/user', ['exports', 'ember-data'], function (exports, _emberData) {
+define('capstone_front_end/models/user', ['exports', 'ember-data'], function (exports, _emberData) {
   exports['default'] = _emberData['default'].Model.extend({
     email: _emberData['default'].attr('string')
   });
 });
-define('ga-wdi-boston.ember-auth/resolver', ['exports', 'ember-resolver'], function (exports, _emberResolver) {
+define('capstone_front_end/resolver', ['exports', 'ember-resolver'], function (exports, _emberResolver) {
   exports['default'] = _emberResolver['default'];
 });
-define('ga-wdi-boston.ember-auth/router', ['exports', 'ember', 'ga-wdi-boston.ember-auth/config/environment'], function (exports, _ember, _gaWdiBostonEmberAuthConfigEnvironment) {
+define('capstone_front_end/router', ['exports', 'ember', 'capstone_front_end/config/environment'], function (exports, _ember, _gaWdiBostonEmberAuthConfigEnvironment) {
 
   var Router = _ember['default'].Router.extend({
     location: _gaWdiBostonEmberAuthConfigEnvironment['default'].locationType
@@ -737,7 +737,7 @@ define('ga-wdi-boston.ember-auth/router', ['exports', 'ember', 'ga-wdi-boston.em
 
   exports['default'] = Router;
 });
-define('ga-wdi-boston.ember-auth/routes/application', ['exports', 'ember'], function (exports, _ember) {
+define('capstone_front_end/routes/application', ['exports', 'ember'], function (exports, _ember) {
   exports['default'] = _ember['default'].Route.extend({
     auth: _ember['default'].inject.service(),
     flashMessages: _ember['default'].inject.service(),
@@ -785,7 +785,7 @@ define('ga-wdi-boston.ember-auth/routes/application', ['exports', 'ember'], func
     }
   });
 });
-define('ga-wdi-boston.ember-auth/routes/change-password', ['exports', 'ember'], function (exports, _ember) {
+define('capstone_front_end/routes/change-password', ['exports', 'ember'], function (exports, _ember) {
   exports['default'] = _ember['default'].Route.extend({
     auth: _ember['default'].inject.service(),
     flashMessages: _ember['default'].inject.service(),
@@ -809,10 +809,10 @@ define('ga-wdi-boston.ember-auth/routes/change-password', ['exports', 'ember'], 
     }
   });
 });
-define('ga-wdi-boston.ember-auth/routes/doc', ['exports', 'ember'], function (exports, _ember) {
+define('capstone_front_end/routes/doc', ['exports', 'ember'], function (exports, _ember) {
   exports['default'] = _ember['default'].Route.extend({});
 });
-define('ga-wdi-boston.ember-auth/routes/docs', ['exports', 'ember'], function (exports, _ember) {
+define('capstone_front_end/routes/docs', ['exports', 'ember'], function (exports, _ember) {
   exports['default'] = _ember['default'].Route.extend({
     model: function model() {
       return this.get('store').findAll('doc');
@@ -842,14 +842,14 @@ define('ga-wdi-boston.ember-auth/routes/docs', ['exports', 'ember'], function (e
     }
   });
 });
-define('ga-wdi-boston.ember-auth/routes/documents', ['exports', 'ember'], function (exports, _ember) {
+define('capstone_front_end/routes/documents', ['exports', 'ember'], function (exports, _ember) {
   exports['default'] = _ember['default'].Route.extend({
     model: function model() {
       return this.get('store').findAll('document');
     }
   });
 });
-define('ga-wdi-boston.ember-auth/routes/edit-doc', ['exports', 'ember', 'ember-local-storage', 'ga-wdi-boston.ember-auth/storages/auth', 'ga-wdi-boston.ember-auth/storages/docs'], function (exports, _ember, _emberLocalStorage, _gaWdiBostonEmberAuthStoragesAuth, _gaWdiBostonEmberAuthStoragesDocs) {
+define('capstone_front_end/routes/edit-doc', ['exports', 'ember', 'ember-local-storage', 'capstone_front_end/storages/auth', 'capstone_front_end/storages/docs'], function (exports, _ember, _emberLocalStorage, _gaWdiBostonEmberAuthStoragesAuth, _gaWdiBostonEmberAuthStoragesDocs) {
   exports['default'] = _ember['default'].Route.extend({
     docs: (0, _emberLocalStorage.storageFor)('docs'),
 
@@ -862,7 +862,7 @@ define('ga-wdi-boston.ember-auth/routes/edit-doc', ['exports', 'ember', 'ember-l
     }
   });
 });
-define('ga-wdi-boston.ember-auth/routes/login', ['exports', 'ember'], function (exports, _ember) {
+define('capstone_front_end/routes/login', ['exports', 'ember'], function (exports, _ember) {
   exports['default'] = _ember['default'].Route.extend({
     session: _ember['default'].inject.service(),
 
@@ -876,14 +876,14 @@ define('ga-wdi-boston.ember-auth/routes/login', ['exports', 'ember'], function (
     }
   });
 });
-define('ga-wdi-boston.ember-auth/routes/my-documents', ['exports', 'ember'], function (exports, _ember) {
+define('capstone_front_end/routes/my-documents', ['exports', 'ember'], function (exports, _ember) {
   exports['default'] = _ember['default'].Route.extend({
     model: function model() {
       return this.get('docs').findAll('myDocs');
     }
   });
 });
-define('ga-wdi-boston.ember-auth/routes/new-document', ['exports', 'ember'], function (exports, _ember) {
+define('capstone_front_end/routes/new-document', ['exports', 'ember'], function (exports, _ember) {
   exports['default'] = _ember['default'].Route.extend({
     actions: {
       newDoc: function newDoc() {
@@ -892,7 +892,7 @@ define('ga-wdi-boston.ember-auth/routes/new-document', ['exports', 'ember'], fun
     }
   });
 });
-define('ga-wdi-boston.ember-auth/routes/sign-in', ['exports', 'ember', 'rsvp'], function (exports, _ember, _rsvp) {
+define('capstone_front_end/routes/sign-in', ['exports', 'ember', 'rsvp'], function (exports, _ember, _rsvp) {
   exports['default'] = _ember['default'].Route.extend({
     auth: _ember['default'].inject.service(),
     flashMessages: _ember['default'].inject.service(),
@@ -916,7 +916,7 @@ define('ga-wdi-boston.ember-auth/routes/sign-in', ['exports', 'ember', 'rsvp'], 
     }
   });
 });
-define('ga-wdi-boston.ember-auth/routes/sign-up', ['exports', 'ember'], function (exports, _ember) {
+define('capstone_front_end/routes/sign-up', ['exports', 'ember'], function (exports, _ember) {
   exports['default'] = _ember['default'].Route.extend({
     auth: _ember['default'].inject.service(),
     flashMessages: _ember['default'].inject.service(),
@@ -938,14 +938,14 @@ define('ga-wdi-boston.ember-auth/routes/sign-up', ['exports', 'ember'], function
     }
   });
 });
-define('ga-wdi-boston.ember-auth/routes/test-docs', ['exports', 'ember'], function (exports, _ember) {
+define('capstone_front_end/routes/test-docs', ['exports', 'ember'], function (exports, _ember) {
   exports['default'] = _ember['default'].Route.extend({
     model: function model() {
       return this.get('docs').findAll('myDocs');
     }
   });
 });
-define('ga-wdi-boston.ember-auth/routes/test-resource', ['exports', 'ember'], function (exports, _ember) {
+define('capstone_front_end/routes/test-resource', ['exports', 'ember'], function (exports, _ember) {
   exports['default'] = _ember['default'].Route.extend({
     auth: _ember['default'].inject.service(),
     tester: _ember['default'].inject.service(),
@@ -960,22 +960,22 @@ define('ga-wdi-boston.ember-auth/routes/test-resource', ['exports', 'ember'], fu
     }
   });
 });
-define('ga-wdi-boston.ember-auth/routes/users', ['exports', 'ember'], function (exports, _ember) {
+define('capstone_front_end/routes/users', ['exports', 'ember'], function (exports, _ember) {
   exports['default'] = _ember['default'].Route.extend({
     model: function model() {
       return this.get('store').findAll('user');
     }
   });
 });
-define('ga-wdi-boston.ember-auth/serializers/application', ['exports', 'active-model-adapter'], function (exports, _activeModelAdapter) {
+define('capstone_front_end/serializers/application', ['exports', 'active-model-adapter'], function (exports, _activeModelAdapter) {
   exports['default'] = _activeModelAdapter.ActiveModelSerializer.extend({});
 });
-define('ga-wdi-boston.ember-auth/serializers/doc', ['exports', 'ga-wdi-boston.ember-auth/serializers/application'], function (exports, _gaWdiBostonEmberAuthSerializersApplication) {
+define('capstone_front_end/serializers/doc', ['exports', 'capstone_front_end/serializers/application'], function (exports, _gaWdiBostonEmberAuthSerializersApplication) {
   exports['default'] = _gaWdiBostonEmberAuthSerializersApplication['default'].extend({
     primaryKey: '_id'
   });
 });
-define('ga-wdi-boston.ember-auth/services/ajax', ['exports', 'ember', 'ember-ajax/services/ajax', 'ga-wdi-boston.ember-auth/storages/auth', 'ga-wdi-boston.ember-auth/config/environment'], function (exports, _ember, _emberAjaxServicesAjax, _gaWdiBostonEmberAuthStoragesAuth, _gaWdiBostonEmberAuthConfigEnvironment) {
+define('capstone_front_end/services/ajax', ['exports', 'ember', 'ember-ajax/services/ajax', 'capstone_front_end/storages/auth', 'capstone_front_end/config/environment'], function (exports, _ember, _emberAjaxServicesAjax, _gaWdiBostonEmberAuthStoragesAuth, _gaWdiBostonEmberAuthConfigEnvironment) {
   exports['default'] = _emberAjaxServicesAjax['default'].extend({
     host: _gaWdiBostonEmberAuthConfigEnvironment['default'].apiHost,
 
@@ -994,7 +994,7 @@ define('ga-wdi-boston.ember-auth/services/ajax', ['exports', 'ember', 'ember-aja
     })
   });
 });
-define('ga-wdi-boston.ember-auth/services/auth', ['exports', 'ember', 'ember-local-storage'], function (exports, _ember, _emberLocalStorage) {
+define('capstone_front_end/services/auth', ['exports', 'ember', 'ember-local-storage'], function (exports, _ember, _emberLocalStorage) {
   exports['default'] = _ember['default'].Service.extend({
     ajax: _ember['default'].inject.service(),
     credentials: (0, _emberLocalStorage.storageFor)('auth'),
@@ -1049,10 +1049,10 @@ define('ga-wdi-boston.ember-auth/services/auth', ['exports', 'ember', 'ember-loc
     }
   });
 });
-define('ga-wdi-boston.ember-auth/services/cookies', ['exports', 'ember-cookies/services/cookies'], function (exports, _emberCookiesServicesCookies) {
+define('capstone_front_end/services/cookies', ['exports', 'ember-cookies/services/cookies'], function (exports, _emberCookiesServicesCookies) {
   exports['default'] = _emberCookiesServicesCookies['default'];
 });
-define('ga-wdi-boston.ember-auth/services/docs', ['exports', 'ember', 'ember-local-storage', 'ga-wdi-boston.ember-auth/storages/auth', 'ga-wdi-boston.ember-auth/storages/docs'], function (exports, _ember, _emberLocalStorage, _gaWdiBostonEmberAuthStoragesAuth, _gaWdiBostonEmberAuthStoragesDocs) {
+define('capstone_front_end/services/docs', ['exports', 'ember', 'ember-local-storage', 'capstone_front_end/storages/auth', 'capstone_front_end/storages/docs'], function (exports, _ember, _emberLocalStorage, _gaWdiBostonEmberAuthStoragesAuth, _gaWdiBostonEmberAuthStoragesDocs) {
   exports['default'] = _ember['default'].Service.extend({
     ajax: _ember['default'].inject.service(),
     credentials: (0, _emberLocalStorage.storageFor)('auth'),
@@ -1122,7 +1122,7 @@ define('ga-wdi-boston.ember-auth/services/docs', ['exports', 'ember', 'ember-loc
     }
   });
 });
-define('ga-wdi-boston.ember-auth/services/flash-messages', ['exports', 'ember-cli-flash/services/flash-messages'], function (exports, _emberCliFlashServicesFlashMessages) {
+define('capstone_front_end/services/flash-messages', ['exports', 'ember-cli-flash/services/flash-messages'], function (exports, _emberCliFlashServicesFlashMessages) {
   Object.defineProperty(exports, 'default', {
     enumerable: true,
     get: function get() {
@@ -1130,10 +1130,10 @@ define('ga-wdi-boston.ember-auth/services/flash-messages', ['exports', 'ember-cl
     }
   });
 });
-define('ga-wdi-boston.ember-auth/services/session', ['exports', 'ember-simple-auth/services/session'], function (exports, _emberSimpleAuthServicesSession) {
+define('capstone_front_end/services/session', ['exports', 'ember-simple-auth/services/session'], function (exports, _emberSimpleAuthServicesSession) {
   exports['default'] = _emberSimpleAuthServicesSession['default'];
 });
-define('ga-wdi-boston.ember-auth/services/tester', ['exports', 'ember', 'ember-local-storage'], function (exports, _ember, _emberLocalStorage) {
+define('capstone_front_end/services/tester', ['exports', 'ember', 'ember-local-storage'], function (exports, _ember, _emberLocalStorage) {
   exports['default'] = _ember['default'].Service.extend({
     ajax: _ember['default'].inject.service(),
     credentials: (0, _emberLocalStorage.storageFor)('auth'),
@@ -1146,13 +1146,13 @@ define('ga-wdi-boston.ember-auth/services/tester', ['exports', 'ember', 'ember-l
     }
   });
 });
-define('ga-wdi-boston.ember-auth/session-stores/application', ['exports', 'ember-simple-auth/session-stores/adaptive'], function (exports, _emberSimpleAuthSessionStoresAdaptive) {
+define('capstone_front_end/session-stores/application', ['exports', 'ember-simple-auth/session-stores/adaptive'], function (exports, _emberSimpleAuthSessionStoresAdaptive) {
   exports['default'] = _emberSimpleAuthSessionStoresAdaptive['default'].extend();
 });
-define('ga-wdi-boston.ember-auth/storages/auth', ['exports', 'ember-local-storage/local/object'], function (exports, _emberLocalStorageLocalObject) {
+define('capstone_front_end/storages/auth', ['exports', 'ember-local-storage/local/object'], function (exports, _emberLocalStorageLocalObject) {
   exports['default'] = _emberLocalStorageLocalObject['default'].extend({});
 });
-define('ga-wdi-boston.ember-auth/storages/docs', ['exports', 'ember-local-storage/local/object'], function (exports, _emberLocalStorageLocalObject) {
+define('capstone_front_end/storages/docs', ['exports', 'ember-local-storage/local/object'], function (exports, _emberLocalStorageLocalObject) {
 
   var Docs = _emberLocalStorageLocalObject['default'].extend();
 
@@ -1165,106 +1165,106 @@ define('ga-wdi-boston.ember-auth/storages/docs', ['exports', 'ember-local-storag
 
   exports['default'] = Docs;
 });
-define("ga-wdi-boston.ember-auth/templates/application", ["exports"], function (exports) {
-  exports["default"] = Ember.HTMLBars.template({ "id": "QWmDmcpa", "block": "{\"statements\":[[\"append\",[\"helper\",[\"my-application\"],null,[[\"signOut\"],[\"signOut\"]]],false],[\"text\",\"\\n\"]],\"locals\":[],\"named\":[],\"yields\":[],\"blocks\":[],\"hasPartials\":false}", "meta": { "moduleName": "ga-wdi-boston.ember-auth/templates/application.hbs" } });
+define("capstone_front_end/templates/application", ["exports"], function (exports) {
+  exports["default"] = Ember.HTMLBars.template({ "id": "QWmDmcpa", "block": "{\"statements\":[[\"append\",[\"helper\",[\"my-application\"],null,[[\"signOut\"],[\"signOut\"]]],false],[\"text\",\"\\n\"]],\"locals\":[],\"named\":[],\"yields\":[],\"blocks\":[],\"hasPartials\":false}", "meta": { "moduleName": "capstone_front_end/templates/application.hbs" } });
 });
-define("ga-wdi-boston.ember-auth/templates/change-password", ["exports"], function (exports) {
-  exports["default"] = Ember.HTMLBars.template({ "id": "FRHGvIjX", "block": "{\"statements\":[[\"open-element\",\"h2\",[]],[\"flush-element\"],[\"text\",\"Change Password\"],[\"close-element\"],[\"text\",\"\\n\\n\"],[\"append\",[\"helper\",[\"change-password-form\"],null,[[\"submit\"],[\"changePassword\"]]],false],[\"text\",\"\\n\"]],\"locals\":[],\"named\":[],\"yields\":[],\"blocks\":[],\"hasPartials\":false}", "meta": { "moduleName": "ga-wdi-boston.ember-auth/templates/change-password.hbs" } });
+define("capstone_front_end/templates/change-password", ["exports"], function (exports) {
+  exports["default"] = Ember.HTMLBars.template({ "id": "FRHGvIjX", "block": "{\"statements\":[[\"open-element\",\"h2\",[]],[\"flush-element\"],[\"text\",\"Change Password\"],[\"close-element\"],[\"text\",\"\\n\\n\"],[\"append\",[\"helper\",[\"change-password-form\"],null,[[\"submit\"],[\"changePassword\"]]],false],[\"text\",\"\\n\"]],\"locals\":[],\"named\":[],\"yields\":[],\"blocks\":[],\"hasPartials\":false}", "meta": { "moduleName": "capstone_front_end/templates/change-password.hbs" } });
 });
-define("ga-wdi-boston.ember-auth/templates/components/add-doc", ["exports"], function (exports) {
-  exports["default"] = Ember.HTMLBars.template({ "id": "sL+zLPmH", "block": "{\"statements\":[[\"open-element\",\"div\",[]],[\"static-attr\",\"class\",\"textAreaBoundary\"],[\"flush-element\"],[\"text\",\"\\n\"],[\"append\",[\"helper\",[\"textarea\"],[[\"get\",[\"action\"]],\"mouseUp\"],[[\"id\",\"rows\",\"cols\",\"class\"],[\"doc\",\"15\",\"80\",\"jumbotron\"]]],false],[\"text\",\"\\n\"],[\"open-element\",\"br\",[]],[\"flush-element\"],[\"close-element\"],[\"text\",\"\\n\"],[\"close-element\"],[\"text\",\"\\n\"],[\"open-element\",\"br\",[]],[\"flush-element\"],[\"close-element\"],[\"text\",\"\\n\"],[\"open-element\",\"button\",[]],[\"static-attr\",\"type\",\"button\"],[\"static-attr\",\"data-dismiss\",\"alert\"],[\"static-attr\",\"aria-label\",\"Close\"],[\"static-attr\",\"class\",\"textButton\"],[\"static-attr\",\"style\",\"color: black;\"],[\"modifier\",[\"action\"],[[\"get\",[null]],\"saveDoc\"]],[\"flush-element\"],[\"text\",\"\\n  \"],[\"open-element\",\"span\",[]],[\"static-attr\",\"style\",\"font-size: 3em;\"],[\"flush-element\"],[\"open-element\",\"span\",[]],[\"static-attr\",\"class\",\"glyphicon glyphicon-pencil\"],[\"static-attr\",\"aria-hidden\",\"true\"],[\"flush-element\"],[\"close-element\"],[\"text\",\"\\n  Save Document\"],[\"close-element\"],[\"text\",\"\\n\"],[\"close-element\"],[\"text\",\"\\n\\n\"],[\"yield\",\"default\"],[\"text\",\"\\n\"]],\"locals\":[],\"named\":[],\"yields\":[\"default\"],\"blocks\":[],\"hasPartials\":false}", "meta": { "moduleName": "ga-wdi-boston.ember-auth/templates/components/add-doc.hbs" } });
+define("capstone_front_end/templates/components/add-doc", ["exports"], function (exports) {
+  exports["default"] = Ember.HTMLBars.template({ "id": "sL+zLPmH", "block": "{\"statements\":[[\"open-element\",\"div\",[]],[\"static-attr\",\"class\",\"textAreaBoundary\"],[\"flush-element\"],[\"text\",\"\\n\"],[\"append\",[\"helper\",[\"textarea\"],[[\"get\",[\"action\"]],\"mouseUp\"],[[\"id\",\"rows\",\"cols\",\"class\"],[\"doc\",\"15\",\"80\",\"jumbotron\"]]],false],[\"text\",\"\\n\"],[\"open-element\",\"br\",[]],[\"flush-element\"],[\"close-element\"],[\"text\",\"\\n\"],[\"close-element\"],[\"text\",\"\\n\"],[\"open-element\",\"br\",[]],[\"flush-element\"],[\"close-element\"],[\"text\",\"\\n\"],[\"open-element\",\"button\",[]],[\"static-attr\",\"type\",\"button\"],[\"static-attr\",\"data-dismiss\",\"alert\"],[\"static-attr\",\"aria-label\",\"Close\"],[\"static-attr\",\"class\",\"textButton\"],[\"static-attr\",\"style\",\"color: black;\"],[\"modifier\",[\"action\"],[[\"get\",[null]],\"saveDoc\"]],[\"flush-element\"],[\"text\",\"\\n  \"],[\"open-element\",\"span\",[]],[\"static-attr\",\"style\",\"font-size: 3em;\"],[\"flush-element\"],[\"open-element\",\"span\",[]],[\"static-attr\",\"class\",\"glyphicon glyphicon-pencil\"],[\"static-attr\",\"aria-hidden\",\"true\"],[\"flush-element\"],[\"close-element\"],[\"text\",\"\\n  Save Document\"],[\"close-element\"],[\"text\",\"\\n\"],[\"close-element\"],[\"text\",\"\\n\\n\"],[\"yield\",\"default\"],[\"text\",\"\\n\"]],\"locals\":[],\"named\":[],\"yields\":[\"default\"],\"blocks\":[],\"hasPartials\":false}", "meta": { "moduleName": "capstone_front_end/templates/components/add-doc.hbs" } });
 });
-define("ga-wdi-boston.ember-auth/templates/components/change-password-form", ["exports"], function (exports) {
-  exports["default"] = Ember.HTMLBars.template({ "id": "xVeMErK/", "block": "{\"statements\":[[\"open-element\",\"div\",[]],[\"static-attr\",\"class\",\"form-group\"],[\"flush-element\"],[\"text\",\"\\n  \"],[\"open-element\",\"label\",[]],[\"static-attr\",\"for\",\"previous\"],[\"flush-element\"],[\"text\",\"Old Password\"],[\"close-element\"],[\"text\",\"\\n  \"],[\"append\",[\"helper\",[\"input\"],null,[[\"type\",\"class\",\"id\",\"placeholder\",\"value\"],[\"password\",\"form-control\",\"previous\",\"Old password\",[\"get\",[\"passwords\",\"previous\"]]]]],false],[\"text\",\"\\n\"],[\"close-element\"],[\"text\",\"\\n\\n\"],[\"open-element\",\"div\",[]],[\"static-attr\",\"class\",\"form-group\"],[\"flush-element\"],[\"text\",\"\\n  \"],[\"open-element\",\"label\",[]],[\"static-attr\",\"for\",\"next\"],[\"flush-element\"],[\"text\",\"New Password\"],[\"close-element\"],[\"text\",\"\\n  \"],[\"append\",[\"helper\",[\"input\"],null,[[\"type\",\"class\",\"id\",\"placeholder\",\"value\"],[\"password\",\"form-control\",\"next\",\"New password\",[\"get\",[\"passwords\",\"next\"]]]]],false],[\"text\",\"\\n\"],[\"close-element\"],[\"text\",\"\\n\\n\"],[\"open-element\",\"button\",[]],[\"static-attr\",\"type\",\"submit\"],[\"static-attr\",\"class\",\"btn btn-primary\"],[\"modifier\",[\"action\"],[[\"get\",[null]],\"submit\"]],[\"flush-element\"],[\"text\",\"\\n  Change Password\\n\"],[\"close-element\"],[\"text\",\"\\n\\n\"],[\"open-element\",\"button\",[]],[\"static-attr\",\"class\",\"btn btn-default\"],[\"modifier\",[\"action\"],[[\"get\",[null]],\"reset\"]],[\"flush-element\"],[\"text\",\"\\n  Cancel\\n\"],[\"close-element\"],[\"text\",\"\\n\"]],\"locals\":[],\"named\":[],\"yields\":[],\"blocks\":[],\"hasPartials\":false}", "meta": { "moduleName": "ga-wdi-boston.ember-auth/templates/components/change-password-form.hbs" } });
+define("capstone_front_end/templates/components/change-password-form", ["exports"], function (exports) {
+  exports["default"] = Ember.HTMLBars.template({ "id": "xVeMErK/", "block": "{\"statements\":[[\"open-element\",\"div\",[]],[\"static-attr\",\"class\",\"form-group\"],[\"flush-element\"],[\"text\",\"\\n  \"],[\"open-element\",\"label\",[]],[\"static-attr\",\"for\",\"previous\"],[\"flush-element\"],[\"text\",\"Old Password\"],[\"close-element\"],[\"text\",\"\\n  \"],[\"append\",[\"helper\",[\"input\"],null,[[\"type\",\"class\",\"id\",\"placeholder\",\"value\"],[\"password\",\"form-control\",\"previous\",\"Old password\",[\"get\",[\"passwords\",\"previous\"]]]]],false],[\"text\",\"\\n\"],[\"close-element\"],[\"text\",\"\\n\\n\"],[\"open-element\",\"div\",[]],[\"static-attr\",\"class\",\"form-group\"],[\"flush-element\"],[\"text\",\"\\n  \"],[\"open-element\",\"label\",[]],[\"static-attr\",\"for\",\"next\"],[\"flush-element\"],[\"text\",\"New Password\"],[\"close-element\"],[\"text\",\"\\n  \"],[\"append\",[\"helper\",[\"input\"],null,[[\"type\",\"class\",\"id\",\"placeholder\",\"value\"],[\"password\",\"form-control\",\"next\",\"New password\",[\"get\",[\"passwords\",\"next\"]]]]],false],[\"text\",\"\\n\"],[\"close-element\"],[\"text\",\"\\n\\n\"],[\"open-element\",\"button\",[]],[\"static-attr\",\"type\",\"submit\"],[\"static-attr\",\"class\",\"btn btn-primary\"],[\"modifier\",[\"action\"],[[\"get\",[null]],\"submit\"]],[\"flush-element\"],[\"text\",\"\\n  Change Password\\n\"],[\"close-element\"],[\"text\",\"\\n\\n\"],[\"open-element\",\"button\",[]],[\"static-attr\",\"class\",\"btn btn-default\"],[\"modifier\",[\"action\"],[[\"get\",[null]],\"reset\"]],[\"flush-element\"],[\"text\",\"\\n  Cancel\\n\"],[\"close-element\"],[\"text\",\"\\n\"]],\"locals\":[],\"named\":[],\"yields\":[],\"blocks\":[],\"hasPartials\":false}", "meta": { "moduleName": "capstone_front_end/templates/components/change-password-form.hbs" } });
 });
-define("ga-wdi-boston.ember-auth/templates/components/custom-textarea", ["exports"], function (exports) {
-  exports["default"] = Ember.HTMLBars.template({ "id": "52m3ZAVM", "block": "{\"statements\":[[\"yield\",\"default\"],[\"text\",\"\\n\"]],\"locals\":[],\"named\":[],\"yields\":[\"default\"],\"blocks\":[],\"hasPartials\":false}", "meta": { "moduleName": "ga-wdi-boston.ember-auth/templates/components/custom-textarea.hbs" } });
+define("capstone_front_end/templates/components/custom-textarea", ["exports"], function (exports) {
+  exports["default"] = Ember.HTMLBars.template({ "id": "52m3ZAVM", "block": "{\"statements\":[[\"yield\",\"default\"],[\"text\",\"\\n\"]],\"locals\":[],\"named\":[],\"yields\":[\"default\"],\"blocks\":[],\"hasPartials\":false}", "meta": { "moduleName": "capstone_front_end/templates/components/custom-textarea.hbs" } });
 });
-define("ga-wdi-boston.ember-auth/templates/components/delete-docs", ["exports"], function (exports) {
-  exports["default"] = Ember.HTMLBars.template({ "id": "aX73z6k9", "block": "{\"statements\":[],\"locals\":[],\"named\":[],\"yields\":[],\"blocks\":[],\"hasPartials\":false}", "meta": { "moduleName": "ga-wdi-boston.ember-auth/templates/components/delete-docs.hbs" } });
+define("capstone_front_end/templates/components/delete-docs", ["exports"], function (exports) {
+  exports["default"] = Ember.HTMLBars.template({ "id": "aX73z6k9", "block": "{\"statements\":[],\"locals\":[],\"named\":[],\"yields\":[],\"blocks\":[],\"hasPartials\":false}", "meta": { "moduleName": "capstone_front_end/templates/components/delete-docs.hbs" } });
 });
-define("ga-wdi-boston.ember-auth/templates/components/edit-doc", ["exports"], function (exports) {
-  exports["default"] = Ember.HTMLBars.template({ "id": "X6M1D5/5", "block": "{\"statements\":[[\"append\",[\"unknown\",[\"outlet\"]],false],[\"text\",\"\\n\"],[\"open-element\",\"div\",[]],[\"static-attr\",\"class\",\"edit-doc-wrap\"],[\"flush-element\"],[\"text\",\"\\n  \"],[\"open-element\",\"h1\",[]],[\"static-attr\",\"class\",\"titleHeader\"],[\"flush-element\"],[\"text\",\"Edit title here\"],[\"close-element\"],[\"text\",\"\\n  \"],[\"append\",[\"helper\",[\"input\"],null,[[\"class\",\"type\",\"value\"],[\"editedTitle\",\"text\",[\"get\",[\"newDoc\",\"title\"]]]]],false],[\"text\",\"\\n  \"],[\"open-element\",\"br\",[]],[\"flush-element\"],[\"close-element\"],[\"text\",\"\\n  \"],[\"open-element\",\"div\",[]],[\"static-attr\",\"class\",\"textAreaBoundary\"],[\"flush-element\"],[\"text\",\"\\n  \"],[\"append\",[\"helper\",[\"textarea\"],[[\"get\",[\"action\"]],\"mouseUp\"],[[\"cols\",\"rows\",\"class\",\"id\",\"value\"],[\"80\",\"15\",\"jumbotron testTextArea\",[\"get\",[\"newDoc\",\"_id\"]],[\"get\",[\"newDoc\",\"text\"]]]]],false],[\"text\",\"\\n\"],[\"text\",\"  \"],[\"open-element\",\"br\",[]],[\"flush-element\"],[\"close-element\"],[\"text\",\"\\n\"],[\"close-element\"],[\"text\",\"\\n  \"],[\"open-element\",\"br\",[]],[\"flush-element\"],[\"close-element\"],[\"text\",\"\\n  \"],[\"open-element\",\"button\",[]],[\"static-attr\",\"type\",\"button\"],[\"static-attr\",\"data-dismiss\",\"alert\"],[\"static-attr\",\"aria-label\",\"Close\"],[\"static-attr\",\"class\",\"textButton\"],[\"static-attr\",\"style\",\"color: black;\"],[\"modifier\",[\"action\"],[[\"get\",[null]],\"saveDoc\"]],[\"flush-element\"],[\"text\",\"\\n    \"],[\"open-element\",\"span\",[]],[\"static-attr\",\"style\",\"font-size: 3em;\"],[\"flush-element\"],[\"open-element\",\"span\",[]],[\"static-attr\",\"class\",\"glyphicon glyphicon-pencil\"],[\"static-attr\",\"aria-hidden\",\"true\"],[\"flush-element\"],[\"close-element\"],[\"text\",\"\\n    Save Document\"],[\"close-element\"],[\"text\",\"\\n  \"],[\"close-element\"],[\"text\",\"\\n\\n  \"],[\"yield\",\"default\"],[\"text\",\"\\n\"],[\"close-element\"],[\"text\",\"\\n\"]],\"locals\":[],\"named\":[],\"yields\":[\"default\"],\"blocks\":[],\"hasPartials\":false}", "meta": { "moduleName": "ga-wdi-boston.ember-auth/templates/components/edit-doc.hbs" } });
+define("capstone_front_end/templates/components/edit-doc", ["exports"], function (exports) {
+  exports["default"] = Ember.HTMLBars.template({ "id": "X6M1D5/5", "block": "{\"statements\":[[\"append\",[\"unknown\",[\"outlet\"]],false],[\"text\",\"\\n\"],[\"open-element\",\"div\",[]],[\"static-attr\",\"class\",\"edit-doc-wrap\"],[\"flush-element\"],[\"text\",\"\\n  \"],[\"open-element\",\"h1\",[]],[\"static-attr\",\"class\",\"titleHeader\"],[\"flush-element\"],[\"text\",\"Edit title here\"],[\"close-element\"],[\"text\",\"\\n  \"],[\"append\",[\"helper\",[\"input\"],null,[[\"class\",\"type\",\"value\"],[\"editedTitle\",\"text\",[\"get\",[\"newDoc\",\"title\"]]]]],false],[\"text\",\"\\n  \"],[\"open-element\",\"br\",[]],[\"flush-element\"],[\"close-element\"],[\"text\",\"\\n  \"],[\"open-element\",\"div\",[]],[\"static-attr\",\"class\",\"textAreaBoundary\"],[\"flush-element\"],[\"text\",\"\\n  \"],[\"append\",[\"helper\",[\"textarea\"],[[\"get\",[\"action\"]],\"mouseUp\"],[[\"cols\",\"rows\",\"class\",\"id\",\"value\"],[\"80\",\"15\",\"jumbotron testTextArea\",[\"get\",[\"newDoc\",\"_id\"]],[\"get\",[\"newDoc\",\"text\"]]]]],false],[\"text\",\"\\n\"],[\"text\",\"  \"],[\"open-element\",\"br\",[]],[\"flush-element\"],[\"close-element\"],[\"text\",\"\\n\"],[\"close-element\"],[\"text\",\"\\n  \"],[\"open-element\",\"br\",[]],[\"flush-element\"],[\"close-element\"],[\"text\",\"\\n  \"],[\"open-element\",\"button\",[]],[\"static-attr\",\"type\",\"button\"],[\"static-attr\",\"data-dismiss\",\"alert\"],[\"static-attr\",\"aria-label\",\"Close\"],[\"static-attr\",\"class\",\"textButton\"],[\"static-attr\",\"style\",\"color: black;\"],[\"modifier\",[\"action\"],[[\"get\",[null]],\"saveDoc\"]],[\"flush-element\"],[\"text\",\"\\n    \"],[\"open-element\",\"span\",[]],[\"static-attr\",\"style\",\"font-size: 3em;\"],[\"flush-element\"],[\"open-element\",\"span\",[]],[\"static-attr\",\"class\",\"glyphicon glyphicon-pencil\"],[\"static-attr\",\"aria-hidden\",\"true\"],[\"flush-element\"],[\"close-element\"],[\"text\",\"\\n    Save Document\"],[\"close-element\"],[\"text\",\"\\n  \"],[\"close-element\"],[\"text\",\"\\n\\n  \"],[\"yield\",\"default\"],[\"text\",\"\\n\"],[\"close-element\"],[\"text\",\"\\n\"]],\"locals\":[],\"named\":[],\"yields\":[\"default\"],\"blocks\":[],\"hasPartials\":false}", "meta": { "moduleName": "capstone_front_end/templates/components/edit-doc.hbs" } });
 });
-define("ga-wdi-boston.ember-auth/templates/components/email-input", ["exports"], function (exports) {
-  exports["default"] = Ember.HTMLBars.template({ "id": "a27oZkNL", "block": "{\"statements\":[[\"open-element\",\"label\",[]],[\"static-attr\",\"for\",\"identification\"],[\"flush-element\"],[\"text\",\"Email\"],[\"close-element\"],[\"text\",\"\\n\"],[\"append\",[\"helper\",[\"input\"],null,[[\"type\",\"id\",\"placeholder\",\"value\"],[\"email\",\"identification\",\"Email\",[\"get\",[\"email\"]]]]],false],[\"text\",\"\\n\"]],\"locals\":[],\"named\":[],\"yields\":[],\"blocks\":[],\"hasPartials\":false}", "meta": { "moduleName": "ga-wdi-boston.ember-auth/templates/components/email-input.hbs" } });
+define("capstone_front_end/templates/components/email-input", ["exports"], function (exports) {
+  exports["default"] = Ember.HTMLBars.template({ "id": "a27oZkNL", "block": "{\"statements\":[[\"open-element\",\"label\",[]],[\"static-attr\",\"for\",\"identification\"],[\"flush-element\"],[\"text\",\"Email\"],[\"close-element\"],[\"text\",\"\\n\"],[\"append\",[\"helper\",[\"input\"],null,[[\"type\",\"id\",\"placeholder\",\"value\"],[\"email\",\"identification\",\"Email\",[\"get\",[\"email\"]]]]],false],[\"text\",\"\\n\"]],\"locals\":[],\"named\":[],\"yields\":[],\"blocks\":[],\"hasPartials\":false}", "meta": { "moduleName": "capstone_front_end/templates/components/email-input.hbs" } });
 });
-define("ga-wdi-boston.ember-auth/templates/components/hamburger-menu", ["exports"], function (exports) {
-  exports["default"] = Ember.HTMLBars.template({ "id": "vgTWHjxO", "block": "{\"statements\":[[\"text\",\"  \"],[\"open-element\",\"span\",[]],[\"static-attr\",\"class\",\"sr-only\"],[\"flush-element\"],[\"text\",\"Toggle navigation\"],[\"close-element\"],[\"text\",\"\\n  \"],[\"open-element\",\"span\",[]],[\"static-attr\",\"class\",\"icon-bar\"],[\"flush-element\"],[\"close-element\"],[\"text\",\"\\n  \"],[\"open-element\",\"span\",[]],[\"static-attr\",\"class\",\"icon-bar\"],[\"flush-element\"],[\"close-element\"],[\"text\",\"\\n  \"],[\"open-element\",\"span\",[]],[\"static-attr\",\"class\",\"icon-bar\"],[\"flush-element\"],[\"close-element\"],[\"text\",\"\\n\"]],\"locals\":[],\"named\":[],\"yields\":[],\"blocks\":[],\"hasPartials\":false}", "meta": { "moduleName": "ga-wdi-boston.ember-auth/templates/components/hamburger-menu.hbs" } });
+define("capstone_front_end/templates/components/hamburger-menu", ["exports"], function (exports) {
+  exports["default"] = Ember.HTMLBars.template({ "id": "vgTWHjxO", "block": "{\"statements\":[[\"text\",\"  \"],[\"open-element\",\"span\",[]],[\"static-attr\",\"class\",\"sr-only\"],[\"flush-element\"],[\"text\",\"Toggle navigation\"],[\"close-element\"],[\"text\",\"\\n  \"],[\"open-element\",\"span\",[]],[\"static-attr\",\"class\",\"icon-bar\"],[\"flush-element\"],[\"close-element\"],[\"text\",\"\\n  \"],[\"open-element\",\"span\",[]],[\"static-attr\",\"class\",\"icon-bar\"],[\"flush-element\"],[\"close-element\"],[\"text\",\"\\n  \"],[\"open-element\",\"span\",[]],[\"static-attr\",\"class\",\"icon-bar\"],[\"flush-element\"],[\"close-element\"],[\"text\",\"\\n\"]],\"locals\":[],\"named\":[],\"yields\":[],\"blocks\":[],\"hasPartials\":false}", "meta": { "moduleName": "capstone_front_end/templates/components/hamburger-menu.hbs" } });
 });
-define("ga-wdi-boston.ember-auth/templates/components/my-application", ["exports"], function (exports) {
-  exports["default"] = Ember.HTMLBars.template({ "id": "Y5Y3ZGoa", "block": "{\"statements\":[[\"open-element\",\"nav\",[]],[\"static-attr\",\"class\",\"navbar navbar-default\"],[\"flush-element\"],[\"text\",\"\\n  \"],[\"open-element\",\"div\",[]],[\"static-attr\",\"class\",\"container-fluid\"],[\"flush-element\"],[\"text\",\"\\n    \"],[\"append\",[\"unknown\",[\"navbar-header\"]],false],[\"text\",\"\\n\\n    \"],[\"open-element\",\"div\",[]],[\"static-attr\",\"class\",\"collapse navbar-collapse\"],[\"static-attr\",\"id\",\"navigation\"],[\"flush-element\"],[\"text\",\"\\n      \"],[\"open-element\",\"ul\",[]],[\"static-attr\",\"class\",\"nav navbar-nav navbar-right\"],[\"flush-element\"],[\"text\",\"\\n\"],[\"block\",[\"if\"],[[\"get\",[\"isAuthenticated\"]]],null,5,3],[\"text\",\"      \"],[\"close-element\"],[\"text\",\"\\n    \"],[\"close-element\"],[\"text\",\"\\n  \"],[\"close-element\"],[\"text\",\"\\n\"],[\"close-element\"],[\"text\",\"\\n\"],[\"block\",[\"each\"],[[\"get\",[\"flashMessages\",\"queue\"]]],null,0],[\"open-element\",\"div\",[]],[\"static-attr\",\"class\",\"popover-container\"],[\"flush-element\"],[\"text\",\"\\n\"],[\"open-element\",\"button\",[]],[\"static-attr\",\"type\",\"button\"],[\"static-attr\",\"id\",\"popover\"],[\"static-attr\",\"class\",\"btn btn-default\"],[\"static-attr\",\"aria-label\",\"Left Align\"],[\"static-attr\",\"style\",\"color:black;\"],[\"static-attr\",\"data-toggle\",\"popover\"],[\"static-attr\",\"data-trigger\",\"focus\"],[\"static-attr\",\"title\",\"Dismissible popover\"],[\"static-attr\",\"title\",\"Welcome to Writr!\"],[\"static-attr\",\"data-content\",\"This app, Writr, was created by Jonathan Cohen as a capstonen project for the General Assembly WDI program.  Let's start writing!\"],[\"modifier\",[\"action\"],[[\"get\",[null]],\"show\"]],[\"flush-element\"],[\"text\",\"\\n\"],[\"open-element\",\"span\",[]],[\"static-attr\",\"class\",\"NewDoc\"],[\"static-attr\",\"style\",\"font-size:3em;\"],[\"flush-element\"],[\"open-element\",\"span\",[]],[\"static-attr\",\"class\",\"glyphicon glyphicon-off\"],[\"static-attr\",\"aria-hidden\",\"true\"],[\"flush-element\"],[\"text\",\"\\n\"],[\"close-element\"],[\"text\",\"    \"],[\"open-element\",\"span\",[]],[\"static-attr\",\"class\",\"textButton\"],[\"flush-element\"],[\"text\",\"About this Site\"],[\"close-element\"],[\"close-element\"],[\"text\",\"\\n\"],[\"close-element\"],[\"text\",\"\\n\"],[\"close-element\"],[\"text\",\"\\n\\n\"],[\"open-element\",\"div\",[]],[\"static-attr\",\"class\",\"col-md-8 col-md-offset-2\"],[\"flush-element\"],[\"text\",\"\\n  \"],[\"open-element\",\"div\",[]],[\"static-attr\",\"id\",\"saveSuccess\"],[\"static-attr\",\"class\",\"modal fade\"],[\"flush-element\"],[\"text\",\"\\n  \"],[\"open-element\",\"div\",[]],[\"static-attr\",\"class\",\"modal-dialog\"],[\"flush-element\"],[\"text\",\"\\n    \"],[\"open-element\",\"div\",[]],[\"static-attr\",\"class\",\"modal-content\"],[\"flush-element\"],[\"text\",\"\\n      \"],[\"open-element\",\"div\",[]],[\"static-attr\",\"class\",\"alert alert-success\"],[\"flush-element\"],[\"text\",\"\\n        \"],[\"open-element\",\"h4\",[]],[\"flush-element\"],[\"text\",\"Your document has been saved!\"],[\"close-element\"],[\"text\",\"\\n          \"],[\"open-element\",\"p\",[]],[\"flush-element\"],[\"text\",\"Click here to return\"],[\"close-element\"],[\"text\",\"\\n      \"],[\"close-element\"],[\"text\",\"\\n    \"],[\"close-element\"],[\"text\",\"\\n  \"],[\"close-element\"],[\"text\",\"\\n\"],[\"close-element\"],[\"text\",\"\\n\\n\"],[\"open-element\",\"div\",[]],[\"static-attr\",\"class\",\"col-md-8 col-md-offset-2\"],[\"flush-element\"],[\"text\",\"\\n  \"],[\"open-element\",\"div\",[]],[\"static-attr\",\"id\",\"createSuccess\"],[\"static-attr\",\"class\",\"modal fade\"],[\"flush-element\"],[\"text\",\"\\n  \"],[\"open-element\",\"div\",[]],[\"static-attr\",\"class\",\"modal-dialog\"],[\"flush-element\"],[\"text\",\"\\n    \"],[\"open-element\",\"div\",[]],[\"static-attr\",\"class\",\"modal-content\"],[\"flush-element\"],[\"text\",\"\\n      \"],[\"open-element\",\"div\",[]],[\"static-attr\",\"class\",\"alert alert-success\"],[\"flush-element\"],[\"text\",\"\\n        \"],[\"open-element\",\"h4\",[]],[\"flush-element\"],[\"text\",\"New Document Created\"],[\"close-element\"],[\"text\",\"\\n          \"],[\"open-element\",\"p\",[]],[\"flush-element\"],[\"text\",\"Click here to return\"],[\"close-element\"],[\"text\",\"\\n      \"],[\"close-element\"],[\"text\",\"\\n    \"],[\"close-element\"],[\"text\",\"\\n  \"],[\"close-element\"],[\"text\",\"\\n\"],[\"close-element\"],[\"text\",\"\\n\"],[\"close-element\"],[\"text\",\"\\n\\n\\n  \"],[\"append\",[\"unknown\",[\"new-document\"]],false],[\"text\",\"\\n  \"],[\"append\",[\"unknown\",[\"my-docs\"]],false],[\"text\",\"\\n  \"],[\"append\",[\"unknown\",[\"outlet\"]],false],[\"text\",\"\\n\"],[\"close-element\"],[\"text\",\"\\n\"]],\"locals\":[],\"named\":[],\"yields\":[],\"blocks\":[{\"statements\":[[\"text\",\"  \"],[\"append\",[\"helper\",[\"flash-message\"],null,[[\"flash\"],[[\"get\",[\"flash\"]]]]],false],[\"text\",\"\\n\"]],\"locals\":[\"flash\"]},{\"statements\":[[\"text\",\"Sign In\"]],\"locals\":[]},{\"statements\":[[\"text\",\"Sign Up\"]],\"locals\":[]},{\"statements\":[[\"text\",\"        \"],[\"open-element\",\"li\",[]],[\"flush-element\"],[\"block\",[\"link-to\"],[\"sign-up\"],null,2],[\"close-element\"],[\"text\",\"\\n        \"],[\"open-element\",\"li\",[]],[\"flush-element\"],[\"block\",[\"link-to\"],[\"sign-in\"],null,1],[\"close-element\"],[\"text\",\"\\n\"]],\"locals\":[]},{\"statements\":[[\"text\",\"Change Password\"]],\"locals\":[]},{\"statements\":[[\"text\",\"        \"],[\"open-element\",\"li\",[]],[\"flush-element\"],[\"block\",[\"link-to\"],[\"change-password\"],null,4],[\"close-element\"],[\"text\",\"\\n        \"],[\"open-element\",\"li\",[]],[\"flush-element\"],[\"open-element\",\"a\",[]],[\"static-attr\",\"href\",\"#\"],[\"modifier\",[\"action\"],[[\"get\",[null]],\"signOut\"]],[\"flush-element\"],[\"text\",\"Sign Out\"],[\"close-element\"],[\"close-element\"],[\"text\",\"\\n\"]],\"locals\":[]}],\"hasPartials\":false}", "meta": { "moduleName": "ga-wdi-boston.ember-auth/templates/components/my-application.hbs" } });
+define("capstone_front_end/templates/components/my-application", ["exports"], function (exports) {
+  exports["default"] = Ember.HTMLBars.template({ "id": "Y5Y3ZGoa", "block": "{\"statements\":[[\"open-element\",\"nav\",[]],[\"static-attr\",\"class\",\"navbar navbar-default\"],[\"flush-element\"],[\"text\",\"\\n  \"],[\"open-element\",\"div\",[]],[\"static-attr\",\"class\",\"container-fluid\"],[\"flush-element\"],[\"text\",\"\\n    \"],[\"append\",[\"unknown\",[\"navbar-header\"]],false],[\"text\",\"\\n\\n    \"],[\"open-element\",\"div\",[]],[\"static-attr\",\"class\",\"collapse navbar-collapse\"],[\"static-attr\",\"id\",\"navigation\"],[\"flush-element\"],[\"text\",\"\\n      \"],[\"open-element\",\"ul\",[]],[\"static-attr\",\"class\",\"nav navbar-nav navbar-right\"],[\"flush-element\"],[\"text\",\"\\n\"],[\"block\",[\"if\"],[[\"get\",[\"isAuthenticated\"]]],null,5,3],[\"text\",\"      \"],[\"close-element\"],[\"text\",\"\\n    \"],[\"close-element\"],[\"text\",\"\\n  \"],[\"close-element\"],[\"text\",\"\\n\"],[\"close-element\"],[\"text\",\"\\n\"],[\"block\",[\"each\"],[[\"get\",[\"flashMessages\",\"queue\"]]],null,0],[\"open-element\",\"div\",[]],[\"static-attr\",\"class\",\"popover-container\"],[\"flush-element\"],[\"text\",\"\\n\"],[\"open-element\",\"button\",[]],[\"static-attr\",\"type\",\"button\"],[\"static-attr\",\"id\",\"popover\"],[\"static-attr\",\"class\",\"btn btn-default\"],[\"static-attr\",\"aria-label\",\"Left Align\"],[\"static-attr\",\"style\",\"color:black;\"],[\"static-attr\",\"data-toggle\",\"popover\"],[\"static-attr\",\"data-trigger\",\"focus\"],[\"static-attr\",\"title\",\"Dismissible popover\"],[\"static-attr\",\"title\",\"Welcome to Writr!\"],[\"static-attr\",\"data-content\",\"This app, Writr, was created by Jonathan Cohen as a capstonen project for the General Assembly WDI program.  Let's start writing!\"],[\"modifier\",[\"action\"],[[\"get\",[null]],\"show\"]],[\"flush-element\"],[\"text\",\"\\n\"],[\"open-element\",\"span\",[]],[\"static-attr\",\"class\",\"NewDoc\"],[\"static-attr\",\"style\",\"font-size:3em;\"],[\"flush-element\"],[\"open-element\",\"span\",[]],[\"static-attr\",\"class\",\"glyphicon glyphicon-off\"],[\"static-attr\",\"aria-hidden\",\"true\"],[\"flush-element\"],[\"text\",\"\\n\"],[\"close-element\"],[\"text\",\"    \"],[\"open-element\",\"span\",[]],[\"static-attr\",\"class\",\"textButton\"],[\"flush-element\"],[\"text\",\"About this Site\"],[\"close-element\"],[\"close-element\"],[\"text\",\"\\n\"],[\"close-element\"],[\"text\",\"\\n\"],[\"close-element\"],[\"text\",\"\\n\\n\"],[\"open-element\",\"div\",[]],[\"static-attr\",\"class\",\"col-md-8 col-md-offset-2\"],[\"flush-element\"],[\"text\",\"\\n  \"],[\"open-element\",\"div\",[]],[\"static-attr\",\"id\",\"saveSuccess\"],[\"static-attr\",\"class\",\"modal fade\"],[\"flush-element\"],[\"text\",\"\\n  \"],[\"open-element\",\"div\",[]],[\"static-attr\",\"class\",\"modal-dialog\"],[\"flush-element\"],[\"text\",\"\\n    \"],[\"open-element\",\"div\",[]],[\"static-attr\",\"class\",\"modal-content\"],[\"flush-element\"],[\"text\",\"\\n      \"],[\"open-element\",\"div\",[]],[\"static-attr\",\"class\",\"alert alert-success\"],[\"flush-element\"],[\"text\",\"\\n        \"],[\"open-element\",\"h4\",[]],[\"flush-element\"],[\"text\",\"Your document has been saved!\"],[\"close-element\"],[\"text\",\"\\n          \"],[\"open-element\",\"p\",[]],[\"flush-element\"],[\"text\",\"Click here to return\"],[\"close-element\"],[\"text\",\"\\n      \"],[\"close-element\"],[\"text\",\"\\n    \"],[\"close-element\"],[\"text\",\"\\n  \"],[\"close-element\"],[\"text\",\"\\n\"],[\"close-element\"],[\"text\",\"\\n\\n\"],[\"open-element\",\"div\",[]],[\"static-attr\",\"class\",\"col-md-8 col-md-offset-2\"],[\"flush-element\"],[\"text\",\"\\n  \"],[\"open-element\",\"div\",[]],[\"static-attr\",\"id\",\"createSuccess\"],[\"static-attr\",\"class\",\"modal fade\"],[\"flush-element\"],[\"text\",\"\\n  \"],[\"open-element\",\"div\",[]],[\"static-attr\",\"class\",\"modal-dialog\"],[\"flush-element\"],[\"text\",\"\\n    \"],[\"open-element\",\"div\",[]],[\"static-attr\",\"class\",\"modal-content\"],[\"flush-element\"],[\"text\",\"\\n      \"],[\"open-element\",\"div\",[]],[\"static-attr\",\"class\",\"alert alert-success\"],[\"flush-element\"],[\"text\",\"\\n        \"],[\"open-element\",\"h4\",[]],[\"flush-element\"],[\"text\",\"New Document Created\"],[\"close-element\"],[\"text\",\"\\n          \"],[\"open-element\",\"p\",[]],[\"flush-element\"],[\"text\",\"Click here to return\"],[\"close-element\"],[\"text\",\"\\n      \"],[\"close-element\"],[\"text\",\"\\n    \"],[\"close-element\"],[\"text\",\"\\n  \"],[\"close-element\"],[\"text\",\"\\n\"],[\"close-element\"],[\"text\",\"\\n\"],[\"close-element\"],[\"text\",\"\\n\\n\\n  \"],[\"append\",[\"unknown\",[\"new-document\"]],false],[\"text\",\"\\n  \"],[\"append\",[\"unknown\",[\"my-docs\"]],false],[\"text\",\"\\n  \"],[\"append\",[\"unknown\",[\"outlet\"]],false],[\"text\",\"\\n\"],[\"close-element\"],[\"text\",\"\\n\"]],\"locals\":[],\"named\":[],\"yields\":[],\"blocks\":[{\"statements\":[[\"text\",\"  \"],[\"append\",[\"helper\",[\"flash-message\"],null,[[\"flash\"],[[\"get\",[\"flash\"]]]]],false],[\"text\",\"\\n\"]],\"locals\":[\"flash\"]},{\"statements\":[[\"text\",\"Sign In\"]],\"locals\":[]},{\"statements\":[[\"text\",\"Sign Up\"]],\"locals\":[]},{\"statements\":[[\"text\",\"        \"],[\"open-element\",\"li\",[]],[\"flush-element\"],[\"block\",[\"link-to\"],[\"sign-up\"],null,2],[\"close-element\"],[\"text\",\"\\n        \"],[\"open-element\",\"li\",[]],[\"flush-element\"],[\"block\",[\"link-to\"],[\"sign-in\"],null,1],[\"close-element\"],[\"text\",\"\\n\"]],\"locals\":[]},{\"statements\":[[\"text\",\"Change Password\"]],\"locals\":[]},{\"statements\":[[\"text\",\"        \"],[\"open-element\",\"li\",[]],[\"flush-element\"],[\"block\",[\"link-to\"],[\"change-password\"],null,4],[\"close-element\"],[\"text\",\"\\n        \"],[\"open-element\",\"li\",[]],[\"flush-element\"],[\"open-element\",\"a\",[]],[\"static-attr\",\"href\",\"#\"],[\"modifier\",[\"action\"],[[\"get\",[null]],\"signOut\"]],[\"flush-element\"],[\"text\",\"Sign Out\"],[\"close-element\"],[\"close-element\"],[\"text\",\"\\n\"]],\"locals\":[]}],\"hasPartials\":false}", "meta": { "moduleName": "capstone_front_end/templates/components/my-application.hbs" } });
 });
-define("ga-wdi-boston.ember-auth/templates/components/my-docs", ["exports"], function (exports) {
-  exports["default"] = Ember.HTMLBars.template({ "id": "InKJZgTB", "block": "{\"statements\":[[\"open-element\",\"br\",[]],[\"flush-element\"],[\"close-element\"],[\"text\",\"\\n\"],[\"open-element\",\"button\",[]],[\"static-attr\",\"type\",\"button\"],[\"static-attr\",\"class\",\"btn btn-default\"],[\"static-attr\",\"aria-label\",\"Left Align\"],[\"static-attr\",\"style\",\"color:black;\"],[\"flush-element\"],[\"text\",\"\\n  \"],[\"block\",[\"link-to\"],[\"docs\"],null,0],[\"text\",\"\\n\"],[\"close-element\"],[\"text\",\"\\n\"]],\"locals\":[],\"named\":[],\"yields\":[],\"blocks\":[{\"statements\":[[\"open-element\",\"span\",[]],[\"static-attr\",\"class\",\"NewDoc\"],[\"static-attr\",\"style\",\"font-size:3em;\"],[\"flush-element\"],[\"open-element\",\"span\",[]],[\"static-attr\",\"class\",\"glyphicon glyphicon-folder-open\"],[\"static-attr\",\"aria-hidden\",\"true\"],[\"flush-element\"],[\"text\",\"\\n\"],[\"close-element\"],[\"text\",\"    \"],[\"open-element\",\"span\",[]],[\"static-attr\",\"class\",\"textButton\"],[\"flush-element\"],[\"text\",\"Get Your Documents\"],[\"close-element\"],[\"close-element\"]],\"locals\":[]}],\"hasPartials\":false}", "meta": { "moduleName": "ga-wdi-boston.ember-auth/templates/components/my-docs.hbs" } });
+define("capstone_front_end/templates/components/my-docs", ["exports"], function (exports) {
+  exports["default"] = Ember.HTMLBars.template({ "id": "InKJZgTB", "block": "{\"statements\":[[\"open-element\",\"br\",[]],[\"flush-element\"],[\"close-element\"],[\"text\",\"\\n\"],[\"open-element\",\"button\",[]],[\"static-attr\",\"type\",\"button\"],[\"static-attr\",\"class\",\"btn btn-default\"],[\"static-attr\",\"aria-label\",\"Left Align\"],[\"static-attr\",\"style\",\"color:black;\"],[\"flush-element\"],[\"text\",\"\\n  \"],[\"block\",[\"link-to\"],[\"docs\"],null,0],[\"text\",\"\\n\"],[\"close-element\"],[\"text\",\"\\n\"]],\"locals\":[],\"named\":[],\"yields\":[],\"blocks\":[{\"statements\":[[\"open-element\",\"span\",[]],[\"static-attr\",\"class\",\"NewDoc\"],[\"static-attr\",\"style\",\"font-size:3em;\"],[\"flush-element\"],[\"open-element\",\"span\",[]],[\"static-attr\",\"class\",\"glyphicon glyphicon-folder-open\"],[\"static-attr\",\"aria-hidden\",\"true\"],[\"flush-element\"],[\"text\",\"\\n\"],[\"close-element\"],[\"text\",\"    \"],[\"open-element\",\"span\",[]],[\"static-attr\",\"class\",\"textButton\"],[\"flush-element\"],[\"text\",\"Get Your Documents\"],[\"close-element\"],[\"close-element\"]],\"locals\":[]}],\"hasPartials\":false}", "meta": { "moduleName": "capstone_front_end/templates/components/my-docs.hbs" } });
 });
-define("ga-wdi-boston.ember-auth/templates/components/my-documents/docs", ["exports"], function (exports) {
-  exports["default"] = Ember.HTMLBars.template({ "id": "TO4nzWmW", "block": "{\"statements\":[[\"yield\",\"default\"],[\"text\",\"\\n\"],[\"open-element\",\"ul\",[]],[\"flush-element\"],[\"text\",\"\\n\"],[\"block\",[\"each\"],[[\"get\",[\"document\",\"doc\"]]],null,0],[\"close-element\"],[\"text\",\"\\n\"]],\"locals\":[],\"named\":[],\"yields\":[\"default\"],\"blocks\":[{\"statements\":[[\"text\",\"  \"],[\"open-element\",\"li\",[]],[\"flush-element\"],[\"append\",[\"unknown\",[\"doc\",\"text\"]],false],[\"close-element\"],[\"text\",\"\\n\"]],\"locals\":[\"doc\"]}],\"hasPartials\":false}", "meta": { "moduleName": "ga-wdi-boston.ember-auth/templates/components/my-documents/docs.hbs" } });
+define("capstone_front_end/templates/components/my-documents/docs", ["exports"], function (exports) {
+  exports["default"] = Ember.HTMLBars.template({ "id": "TO4nzWmW", "block": "{\"statements\":[[\"yield\",\"default\"],[\"text\",\"\\n\"],[\"open-element\",\"ul\",[]],[\"flush-element\"],[\"text\",\"\\n\"],[\"block\",[\"each\"],[[\"get\",[\"document\",\"doc\"]]],null,0],[\"close-element\"],[\"text\",\"\\n\"]],\"locals\":[],\"named\":[],\"yields\":[\"default\"],\"blocks\":[{\"statements\":[[\"text\",\"  \"],[\"open-element\",\"li\",[]],[\"flush-element\"],[\"append\",[\"unknown\",[\"doc\",\"text\"]],false],[\"close-element\"],[\"text\",\"\\n\"]],\"locals\":[\"doc\"]}],\"hasPartials\":false}", "meta": { "moduleName": "capstone_front_end/templates/components/my-documents/docs.hbs" } });
 });
-define("ga-wdi-boston.ember-auth/templates/components/my-map", ["exports"], function (exports) {
-  exports["default"] = Ember.HTMLBars.template({ "id": "mQLxOITa", "block": "{\"statements\":[[\"yield\",\"default\"],[\"text\",\"\\n\"]],\"locals\":[],\"named\":[],\"yields\":[\"default\"],\"blocks\":[],\"hasPartials\":false}", "meta": { "moduleName": "ga-wdi-boston.ember-auth/templates/components/my-map.hbs" } });
+define("capstone_front_end/templates/components/my-map", ["exports"], function (exports) {
+  exports["default"] = Ember.HTMLBars.template({ "id": "mQLxOITa", "block": "{\"statements\":[[\"yield\",\"default\"],[\"text\",\"\\n\"]],\"locals\":[],\"named\":[],\"yields\":[\"default\"],\"blocks\":[],\"hasPartials\":false}", "meta": { "moduleName": "capstone_front_end/templates/components/my-map.hbs" } });
 });
-define("ga-wdi-boston.ember-auth/templates/components/navbar-header", ["exports"], function (exports) {
-  exports["default"] = Ember.HTMLBars.template({ "id": "3lT8w3eY", "block": "{\"statements\":[[\"append\",[\"unknown\",[\"hamburger-menu\"]],false],[\"text\",\"\\n\"],[\"block\",[\"link-to\"],[\"application\"],[[\"class\"],[\"navbar-brand\"]],0],[\"text\",\"\\n\"]],\"locals\":[],\"named\":[],\"yields\":[],\"blocks\":[{\"statements\":[[\"open-element\",\"span\",[]],[\"static-attr\",\"class\",\"glyphicon glyphicon-book\"],[\"static-attr\",\"aria-hidden\",\"true\"],[\"static-attr\",\"style\",\"font-size: 1.5em;\"],[\"flush-element\"],[\"close-element\"],[\"text\",\"Home\"]],\"locals\":[]}],\"hasPartials\":false}", "meta": { "moduleName": "ga-wdi-boston.ember-auth/templates/components/navbar-header.hbs" } });
+define("capstone_front_end/templates/components/navbar-header", ["exports"], function (exports) {
+  exports["default"] = Ember.HTMLBars.template({ "id": "3lT8w3eY", "block": "{\"statements\":[[\"append\",[\"unknown\",[\"hamburger-menu\"]],false],[\"text\",\"\\n\"],[\"block\",[\"link-to\"],[\"application\"],[[\"class\"],[\"navbar-brand\"]],0],[\"text\",\"\\n\"]],\"locals\":[],\"named\":[],\"yields\":[],\"blocks\":[{\"statements\":[[\"open-element\",\"span\",[]],[\"static-attr\",\"class\",\"glyphicon glyphicon-book\"],[\"static-attr\",\"aria-hidden\",\"true\"],[\"static-attr\",\"style\",\"font-size: 1.5em;\"],[\"flush-element\"],[\"close-element\"],[\"text\",\"Home\"]],\"locals\":[]}],\"hasPartials\":false}", "meta": { "moduleName": "capstone_front_end/templates/components/navbar-header.hbs" } });
 });
-define("ga-wdi-boston.ember-auth/templates/components/new-document", ["exports"], function (exports) {
-  exports["default"] = Ember.HTMLBars.template({ "id": "oKwzmNWS", "block": "{\"statements\":[[\"yield\",\"default\"],[\"text\",\"\\n\"],[\"open-element\",\"p\",[]],[\"static-attr\",\"class\",\"NewDoc\"],[\"flush-element\"],[\"close-element\"],[\"text\",\"\\n\"],[\"open-element\",\"button\",[]],[\"static-attr\",\"type\",\"button\"],[\"static-attr\",\"class\",\"btn btn-default\"],[\"static-attr\",\"aria-label\",\"Left Align\"],[\"static-attr\",\"style\",\"color:black;\"],[\"modifier\",[\"action\"],[[\"get\",[null]],\"newDoc\"]],[\"flush-element\"],[\"text\",\"\\n  \"],[\"block\",[\"link-to\"],[\"new-document\"],null,0],[\"text\",\"\\n\"],[\"close-element\"],[\"text\",\"\\n\"]],\"locals\":[],\"named\":[],\"yields\":[\"default\"],\"blocks\":[{\"statements\":[[\"open-element\",\"span\",[]],[\"static-attr\",\"class\",\"NewDoc\"],[\"static-attr\",\"style\",\"font-size:3em;\"],[\"flush-element\"],[\"open-element\",\"span\",[]],[\"static-attr\",\"class\",\"glyphicon glyphicon-plus\"],[\"static-attr\",\"aria-hidden\",\"true\"],[\"flush-element\"],[\"text\",\"\\n\"],[\"close-element\"],[\"text\",\"    \"],[\"open-element\",\"span\",[]],[\"static-attr\",\"class\",\"textButton\"],[\"flush-element\"],[\"text\",\"New Document\"],[\"close-element\"],[\"close-element\"]],\"locals\":[]}],\"hasPartials\":false}", "meta": { "moduleName": "ga-wdi-boston.ember-auth/templates/components/new-document.hbs" } });
+define("capstone_front_end/templates/components/new-document", ["exports"], function (exports) {
+  exports["default"] = Ember.HTMLBars.template({ "id": "oKwzmNWS", "block": "{\"statements\":[[\"yield\",\"default\"],[\"text\",\"\\n\"],[\"open-element\",\"p\",[]],[\"static-attr\",\"class\",\"NewDoc\"],[\"flush-element\"],[\"close-element\"],[\"text\",\"\\n\"],[\"open-element\",\"button\",[]],[\"static-attr\",\"type\",\"button\"],[\"static-attr\",\"class\",\"btn btn-default\"],[\"static-attr\",\"aria-label\",\"Left Align\"],[\"static-attr\",\"style\",\"color:black;\"],[\"modifier\",[\"action\"],[[\"get\",[null]],\"newDoc\"]],[\"flush-element\"],[\"text\",\"\\n  \"],[\"block\",[\"link-to\"],[\"new-document\"],null,0],[\"text\",\"\\n\"],[\"close-element\"],[\"text\",\"\\n\"]],\"locals\":[],\"named\":[],\"yields\":[\"default\"],\"blocks\":[{\"statements\":[[\"open-element\",\"span\",[]],[\"static-attr\",\"class\",\"NewDoc\"],[\"static-attr\",\"style\",\"font-size:3em;\"],[\"flush-element\"],[\"open-element\",\"span\",[]],[\"static-attr\",\"class\",\"glyphicon glyphicon-plus\"],[\"static-attr\",\"aria-hidden\",\"true\"],[\"flush-element\"],[\"text\",\"\\n\"],[\"close-element\"],[\"text\",\"    \"],[\"open-element\",\"span\",[]],[\"static-attr\",\"class\",\"textButton\"],[\"flush-element\"],[\"text\",\"New Document\"],[\"close-element\"],[\"close-element\"]],\"locals\":[]}],\"hasPartials\":false}", "meta": { "moduleName": "capstone_front_end/templates/components/new-document.hbs" } });
 });
-define("ga-wdi-boston.ember-auth/templates/components/password-confirmation-input", ["exports"], function (exports) {
-  exports["default"] = Ember.HTMLBars.template({ "id": "YRjiikE7", "block": "{\"statements\":[[\"open-element\",\"label\",[]],[\"static-attr\",\"for\",\"password-confirmation\"],[\"flush-element\"],[\"text\",\"Password Confirmation\"],[\"close-element\"],[\"text\",\"\\n\"],[\"append\",[\"helper\",[\"input\"],null,[[\"type\",\"id\",\"placeholder\",\"value\"],[\"password\",\"password-confirmation\",\"Password Confirmation\",[\"get\",[\"password\"]]]]],false],[\"text\",\"\\n\"]],\"locals\":[],\"named\":[],\"yields\":[],\"blocks\":[],\"hasPartials\":false}", "meta": { "moduleName": "ga-wdi-boston.ember-auth/templates/components/password-confirmation-input.hbs" } });
+define("capstone_front_end/templates/components/password-confirmation-input", ["exports"], function (exports) {
+  exports["default"] = Ember.HTMLBars.template({ "id": "YRjiikE7", "block": "{\"statements\":[[\"open-element\",\"label\",[]],[\"static-attr\",\"for\",\"password-confirmation\"],[\"flush-element\"],[\"text\",\"Password Confirmation\"],[\"close-element\"],[\"text\",\"\\n\"],[\"append\",[\"helper\",[\"input\"],null,[[\"type\",\"id\",\"placeholder\",\"value\"],[\"password\",\"password-confirmation\",\"Password Confirmation\",[\"get\",[\"password\"]]]]],false],[\"text\",\"\\n\"]],\"locals\":[],\"named\":[],\"yields\":[],\"blocks\":[],\"hasPartials\":false}", "meta": { "moduleName": "capstone_front_end/templates/components/password-confirmation-input.hbs" } });
 });
-define("ga-wdi-boston.ember-auth/templates/components/password-input", ["exports"], function (exports) {
-  exports["default"] = Ember.HTMLBars.template({ "id": "ETaJA6BP", "block": "{\"statements\":[[\"open-element\",\"label\",[]],[\"static-attr\",\"for\",\"password\"],[\"flush-element\"],[\"text\",\"Password\"],[\"close-element\"],[\"text\",\"\\n\"],[\"append\",[\"helper\",[\"input\"],null,[[\"type\",\"id\",\"placeholder\",\"value\"],[\"password\",\"password\",\"Password\",[\"get\",[\"password\"]]]]],false],[\"text\",\"\\n\"]],\"locals\":[],\"named\":[],\"yields\":[],\"blocks\":[],\"hasPartials\":false}", "meta": { "moduleName": "ga-wdi-boston.ember-auth/templates/components/password-input.hbs" } });
+define("capstone_front_end/templates/components/password-input", ["exports"], function (exports) {
+  exports["default"] = Ember.HTMLBars.template({ "id": "ETaJA6BP", "block": "{\"statements\":[[\"open-element\",\"label\",[]],[\"static-attr\",\"for\",\"password\"],[\"flush-element\"],[\"text\",\"Password\"],[\"close-element\"],[\"text\",\"\\n\"],[\"append\",[\"helper\",[\"input\"],null,[[\"type\",\"id\",\"placeholder\",\"value\"],[\"password\",\"password\",\"Password\",[\"get\",[\"password\"]]]]],false],[\"text\",\"\\n\"]],\"locals\":[],\"named\":[],\"yields\":[],\"blocks\":[],\"hasPartials\":false}", "meta": { "moduleName": "capstone_front_end/templates/components/password-input.hbs" } });
 });
-define("ga-wdi-boston.ember-auth/templates/components/sign-in-form", ["exports"], function (exports) {
-  exports["default"] = Ember.HTMLBars.template({ "id": "ArvlMFpl", "block": "{\"statements\":[[\"append\",[\"helper\",[\"email-input\"],null,[[\"email\"],[[\"get\",[\"credentials\",\"email\"]]]]],false],[\"text\",\"\\n\"],[\"append\",[\"helper\",[\"password-input\"],null,[[\"password\"],[[\"get\",[\"credentials\",\"password\"]]]]],false],[\"text\",\"\\n\\n\"],[\"open-element\",\"button\",[]],[\"static-attr\",\"type\",\"submit\"],[\"static-attr\",\"class\",\"btn btn-primary\"],[\"modifier\",[\"action\"],[[\"get\",[null]],\"submit\"]],[\"flush-element\"],[\"text\",\"\\n  Sign In\\n\"],[\"close-element\"],[\"text\",\"\\n\\n\"],[\"open-element\",\"button\",[]],[\"static-attr\",\"class\",\"btn btn-default\"],[\"modifier\",[\"action\"],[[\"get\",[null]],\"reset\"]],[\"flush-element\"],[\"text\",\"\\n  Cancel\\n\"],[\"close-element\"],[\"text\",\"\\n\"]],\"locals\":[],\"named\":[],\"yields\":[],\"blocks\":[],\"hasPartials\":false}", "meta": { "moduleName": "ga-wdi-boston.ember-auth/templates/components/sign-in-form.hbs" } });
+define("capstone_front_end/templates/components/sign-in-form", ["exports"], function (exports) {
+  exports["default"] = Ember.HTMLBars.template({ "id": "ArvlMFpl", "block": "{\"statements\":[[\"append\",[\"helper\",[\"email-input\"],null,[[\"email\"],[[\"get\",[\"credentials\",\"email\"]]]]],false],[\"text\",\"\\n\"],[\"append\",[\"helper\",[\"password-input\"],null,[[\"password\"],[[\"get\",[\"credentials\",\"password\"]]]]],false],[\"text\",\"\\n\\n\"],[\"open-element\",\"button\",[]],[\"static-attr\",\"type\",\"submit\"],[\"static-attr\",\"class\",\"btn btn-primary\"],[\"modifier\",[\"action\"],[[\"get\",[null]],\"submit\"]],[\"flush-element\"],[\"text\",\"\\n  Sign In\\n\"],[\"close-element\"],[\"text\",\"\\n\\n\"],[\"open-element\",\"button\",[]],[\"static-attr\",\"class\",\"btn btn-default\"],[\"modifier\",[\"action\"],[[\"get\",[null]],\"reset\"]],[\"flush-element\"],[\"text\",\"\\n  Cancel\\n\"],[\"close-element\"],[\"text\",\"\\n\"]],\"locals\":[],\"named\":[],\"yields\":[],\"blocks\":[],\"hasPartials\":false}", "meta": { "moduleName": "capstone_front_end/templates/components/sign-in-form.hbs" } });
 });
-define("ga-wdi-boston.ember-auth/templates/components/sign-up-form", ["exports"], function (exports) {
-  exports["default"] = Ember.HTMLBars.template({ "id": "TOiBbqgp", "block": "{\"statements\":[[\"append\",[\"helper\",[\"email-input\"],null,[[\"email\"],[[\"get\",[\"credentials\",\"email\"]]]]],false],[\"text\",\"\\n\"],[\"append\",[\"helper\",[\"password-input\"],null,[[\"password\"],[[\"get\",[\"credentials\",\"password\"]]]]],false],[\"text\",\"\\n\"],[\"append\",[\"helper\",[\"password-confirmation-input\"],null,[[\"password\"],[[\"get\",[\"credentials\",\"passwordConfirmation\"]]]]],false],[\"text\",\"\\n\\n\"],[\"open-element\",\"button\",[]],[\"static-attr\",\"type\",\"submit\"],[\"static-attr\",\"class\",\"btn btn-primary\"],[\"modifier\",[\"action\"],[[\"get\",[null]],\"submit\"]],[\"flush-element\"],[\"text\",\"\\n  Sign Up\\n\"],[\"close-element\"],[\"text\",\"\\n\\n\"],[\"open-element\",\"button\",[]],[\"static-attr\",\"class\",\"btn btn-default\"],[\"modifier\",[\"action\"],[[\"get\",[null]],\"reset\"]],[\"flush-element\"],[\"text\",\"\\n  Cancel\\n\"],[\"close-element\"],[\"text\",\"\\n\"]],\"locals\":[],\"named\":[],\"yields\":[],\"blocks\":[],\"hasPartials\":false}", "meta": { "moduleName": "ga-wdi-boston.ember-auth/templates/components/sign-up-form.hbs" } });
+define("capstone_front_end/templates/components/sign-up-form", ["exports"], function (exports) {
+  exports["default"] = Ember.HTMLBars.template({ "id": "TOiBbqgp", "block": "{\"statements\":[[\"append\",[\"helper\",[\"email-input\"],null,[[\"email\"],[[\"get\",[\"credentials\",\"email\"]]]]],false],[\"text\",\"\\n\"],[\"append\",[\"helper\",[\"password-input\"],null,[[\"password\"],[[\"get\",[\"credentials\",\"password\"]]]]],false],[\"text\",\"\\n\"],[\"append\",[\"helper\",[\"password-confirmation-input\"],null,[[\"password\"],[[\"get\",[\"credentials\",\"passwordConfirmation\"]]]]],false],[\"text\",\"\\n\\n\"],[\"open-element\",\"button\",[]],[\"static-attr\",\"type\",\"submit\"],[\"static-attr\",\"class\",\"btn btn-primary\"],[\"modifier\",[\"action\"],[[\"get\",[null]],\"submit\"]],[\"flush-element\"],[\"text\",\"\\n  Sign Up\\n\"],[\"close-element\"],[\"text\",\"\\n\\n\"],[\"open-element\",\"button\",[]],[\"static-attr\",\"class\",\"btn btn-default\"],[\"modifier\",[\"action\"],[[\"get\",[null]],\"reset\"]],[\"flush-element\"],[\"text\",\"\\n  Cancel\\n\"],[\"close-element\"],[\"text\",\"\\n\"]],\"locals\":[],\"named\":[],\"yields\":[],\"blocks\":[],\"hasPartials\":false}", "meta": { "moduleName": "capstone_front_end/templates/components/sign-up-form.hbs" } });
 });
-define("ga-wdi-boston.ember-auth/templates/components/text-editor", ["exports"], function (exports) {
-  exports["default"] = Ember.HTMLBars.template({ "id": "d18KiGNz", "block": "{\"statements\":[[\"yield\",\"default\"],[\"text\",\"\\n\\n\"],[\"append\",[\"helper\",[\"textarea\"],null,[[\"value\"],[\"test\"]]],false],[\"text\",\"\\n\"]],\"locals\":[],\"named\":[],\"yields\":[\"default\"],\"blocks\":[],\"hasPartials\":false}", "meta": { "moduleName": "ga-wdi-boston.ember-auth/templates/components/text-editor.hbs" } });
+define("capstone_front_end/templates/components/text-editor", ["exports"], function (exports) {
+  exports["default"] = Ember.HTMLBars.template({ "id": "d18KiGNz", "block": "{\"statements\":[[\"yield\",\"default\"],[\"text\",\"\\n\\n\"],[\"append\",[\"helper\",[\"textarea\"],null,[[\"value\"],[\"test\"]]],false],[\"text\",\"\\n\"]],\"locals\":[],\"named\":[],\"yields\":[\"default\"],\"blocks\":[],\"hasPartials\":false}", "meta": { "moduleName": "capstone_front_end/templates/components/text-editor.hbs" } });
 });
-define("ga-wdi-boston.ember-auth/templates/doc", ["exports"], function (exports) {
-  exports["default"] = Ember.HTMLBars.template({ "id": "MVsFAdLS", "block": "{\"statements\":[[\"append\",[\"unknown\",[\"outlet\"]],false],[\"text\",\"\\n\"]],\"locals\":[],\"named\":[],\"yields\":[],\"blocks\":[],\"hasPartials\":false}", "meta": { "moduleName": "ga-wdi-boston.ember-auth/templates/doc.hbs" } });
+define("capstone_front_end/templates/doc", ["exports"], function (exports) {
+  exports["default"] = Ember.HTMLBars.template({ "id": "MVsFAdLS", "block": "{\"statements\":[[\"append\",[\"unknown\",[\"outlet\"]],false],[\"text\",\"\\n\"]],\"locals\":[],\"named\":[],\"yields\":[],\"blocks\":[],\"hasPartials\":false}", "meta": { "moduleName": "capstone_front_end/templates/doc.hbs" } });
 });
-define("ga-wdi-boston.ember-auth/templates/docs", ["exports"], function (exports) {
-  exports["default"] = Ember.HTMLBars.template({ "id": "vPRLs+ET", "block": "{\"statements\":[[\"open-element\",\"h2\",[]],[\"static-attr\",\"class\",\"titleHeader\"],[\"flush-element\"],[\"text\",\"Your Documents\"],[\"close-element\"],[\"text\",\"\\n\\n\"],[\"block\",[\"each\"],[[\"get\",[\"model\"]]],null,0]],\"locals\":[],\"named\":[],\"yields\":[],\"blocks\":[{\"statements\":[[\"open-element\",\"h1\",[]],[\"static-attr\",\"class\",\"titleHeader\"],[\"flush-element\"],[\"append\",[\"unknown\",[\"doc\",\"title\"]],false],[\"close-element\"],[\"text\",\"\\n\"],[\"open-element\",\"br\",[]],[\"flush-element\"],[\"close-element\"],[\"text\",\"\\n\\n\"],[\"open-element\",\"button\",[]],[\"static-attr\",\"type\",\"button\"],[\"static-attr\",\"class\",\"btn btn-default\"],[\"static-attr\",\"aria-label\",\"Left Align\"],[\"static-attr\",\"style\",\"color:black;\"],[\"modifier\",[\"action\"],[[\"get\",[null]],\"toggle\",[\"get\",[\"doc\",\"_id\"]]]],[\"flush-element\"],[\"text\",\"\\n  \"],[\"open-element\",\"span\",[]],[\"static-attr\",\"class\",\"NewDoc\"],[\"static-attr\",\"style\",\"font-size:2em;\"],[\"flush-element\"],[\"text\",\"\\n    \"],[\"open-element\",\"span\",[]],[\"static-attr\",\"class\",\"glyphicon glyphicon-pencil\"],[\"static-attr\",\"aria-hidden\",\"true\"],[\"flush-element\"],[\"text\",\"\\n\"],[\"close-element\"],[\"text\",\"\\n\"],[\"open-element\",\"span\",[]],[\"static-attr\",\"class\",\"textButton\"],[\"flush-element\"],[\"text\",\"Edit this doc\\n\"],[\"close-element\"],[\"text\",\"\\n\"],[\"close-element\"],[\"text\",\"\\n\"],[\"close-element\"],[\"text\",\"\\n\\n\"],[\"open-element\",\"div\",[]],[\"dynamic-attr\",\"id\",[\"unknown\",[\"doc\",\"_id\"]],null],[\"static-attr\",\"class\",\"toggle\"],[\"flush-element\"],[\"text\",\"\\n\"],[\"append\",[\"helper\",[\"edit-doc\"],null,[[\"newDoc\"],[[\"get\",[\"doc\"]]]]],false],[\"text\",\"\\n\"],[\"close-element\"],[\"text\",\"\\n\\n  \"],[\"open-element\",\"button\",[]],[\"static-attr\",\"type\",\"button\"],[\"static-attr\",\"class\",\"btn btn-default\"],[\"static-attr\",\"aria-label\",\"Left Align\"],[\"static-attr\",\"style\",\"color:black;\"],[\"modifier\",[\"action\"],[[\"get\",[null]],\"deleteDocs\",[\"get\",[\"doc\"]]]],[\"flush-element\"],[\"text\",\"\\n    \"],[\"open-element\",\"span\",[]],[\"static-attr\",\"class\",\"NewDoc\"],[\"static-attr\",\"style\",\"font-size:2em;\"],[\"flush-element\"],[\"text\",\"\\n      \"],[\"open-element\",\"span\",[]],[\"static-attr\",\"class\",\"glyphicon glyphicon-remove\"],[\"static-attr\",\"aria-hidden\",\"true\"],[\"flush-element\"],[\"text\",\"\\n  \"],[\"close-element\"],[\"text\",\"\\n\\n    \"],[\"open-element\",\"span\",[]],[\"static-attr\",\"class\",\"textButton\"],[\"flush-element\"],[\"text\",\"Delete this document\\n  \"],[\"close-element\"],[\"text\",\"\\n  \"],[\"close-element\"],[\"text\",\"\\n\"],[\"close-element\"],[\"text\",\"\\n\"]],\"locals\":[\"doc\"]}],\"hasPartials\":false}", "meta": { "moduleName": "ga-wdi-boston.ember-auth/templates/docs.hbs" } });
+define("capstone_front_end/templates/docs", ["exports"], function (exports) {
+  exports["default"] = Ember.HTMLBars.template({ "id": "vPRLs+ET", "block": "{\"statements\":[[\"open-element\",\"h2\",[]],[\"static-attr\",\"class\",\"titleHeader\"],[\"flush-element\"],[\"text\",\"Your Documents\"],[\"close-element\"],[\"text\",\"\\n\\n\"],[\"block\",[\"each\"],[[\"get\",[\"model\"]]],null,0]],\"locals\":[],\"named\":[],\"yields\":[],\"blocks\":[{\"statements\":[[\"open-element\",\"h1\",[]],[\"static-attr\",\"class\",\"titleHeader\"],[\"flush-element\"],[\"append\",[\"unknown\",[\"doc\",\"title\"]],false],[\"close-element\"],[\"text\",\"\\n\"],[\"open-element\",\"br\",[]],[\"flush-element\"],[\"close-element\"],[\"text\",\"\\n\\n\"],[\"open-element\",\"button\",[]],[\"static-attr\",\"type\",\"button\"],[\"static-attr\",\"class\",\"btn btn-default\"],[\"static-attr\",\"aria-label\",\"Left Align\"],[\"static-attr\",\"style\",\"color:black;\"],[\"modifier\",[\"action\"],[[\"get\",[null]],\"toggle\",[\"get\",[\"doc\",\"_id\"]]]],[\"flush-element\"],[\"text\",\"\\n  \"],[\"open-element\",\"span\",[]],[\"static-attr\",\"class\",\"NewDoc\"],[\"static-attr\",\"style\",\"font-size:2em;\"],[\"flush-element\"],[\"text\",\"\\n    \"],[\"open-element\",\"span\",[]],[\"static-attr\",\"class\",\"glyphicon glyphicon-pencil\"],[\"static-attr\",\"aria-hidden\",\"true\"],[\"flush-element\"],[\"text\",\"\\n\"],[\"close-element\"],[\"text\",\"\\n\"],[\"open-element\",\"span\",[]],[\"static-attr\",\"class\",\"textButton\"],[\"flush-element\"],[\"text\",\"Edit this doc\\n\"],[\"close-element\"],[\"text\",\"\\n\"],[\"close-element\"],[\"text\",\"\\n\"],[\"close-element\"],[\"text\",\"\\n\\n\"],[\"open-element\",\"div\",[]],[\"dynamic-attr\",\"id\",[\"unknown\",[\"doc\",\"_id\"]],null],[\"static-attr\",\"class\",\"toggle\"],[\"flush-element\"],[\"text\",\"\\n\"],[\"append\",[\"helper\",[\"edit-doc\"],null,[[\"newDoc\"],[[\"get\",[\"doc\"]]]]],false],[\"text\",\"\\n\"],[\"close-element\"],[\"text\",\"\\n\\n  \"],[\"open-element\",\"button\",[]],[\"static-attr\",\"type\",\"button\"],[\"static-attr\",\"class\",\"btn btn-default\"],[\"static-attr\",\"aria-label\",\"Left Align\"],[\"static-attr\",\"style\",\"color:black;\"],[\"modifier\",[\"action\"],[[\"get\",[null]],\"deleteDocs\",[\"get\",[\"doc\"]]]],[\"flush-element\"],[\"text\",\"\\n    \"],[\"open-element\",\"span\",[]],[\"static-attr\",\"class\",\"NewDoc\"],[\"static-attr\",\"style\",\"font-size:2em;\"],[\"flush-element\"],[\"text\",\"\\n      \"],[\"open-element\",\"span\",[]],[\"static-attr\",\"class\",\"glyphicon glyphicon-remove\"],[\"static-attr\",\"aria-hidden\",\"true\"],[\"flush-element\"],[\"text\",\"\\n  \"],[\"close-element\"],[\"text\",\"\\n\\n    \"],[\"open-element\",\"span\",[]],[\"static-attr\",\"class\",\"textButton\"],[\"flush-element\"],[\"text\",\"Delete this document\\n  \"],[\"close-element\"],[\"text\",\"\\n  \"],[\"close-element\"],[\"text\",\"\\n\"],[\"close-element\"],[\"text\",\"\\n\"]],\"locals\":[\"doc\"]}],\"hasPartials\":false}", "meta": { "moduleName": "capstone_front_end/templates/docs.hbs" } });
 });
-define("ga-wdi-boston.ember-auth/templates/documents", ["exports"], function (exports) {
-  exports["default"] = Ember.HTMLBars.template({ "id": "fUFVzklH", "block": "{\"statements\":[[\"append\",[\"unknown\",[\"outlet\"]],false],[\"text\",\"\\n\"],[\"open-element\",\"h2\",[]],[\"flush-element\"],[\"text\",\"Documents\"],[\"close-element\"],[\"text\",\"\\n\\n\"],[\"open-element\",\"ul\",[]],[\"flush-element\"],[\"text\",\"\\n\"],[\"block\",[\"each\"],[[\"get\",[\"model\"]]],null,0],[\"close-element\"],[\"text\",\"\\n\"]],\"locals\":[],\"named\":[],\"yields\":[],\"blocks\":[{\"statements\":[[\"text\",\"  \"],[\"open-element\",\"li\",[]],[\"flush-element\"],[\"append\",[\"unknown\",[\"document\",\"title\"]],false],[\"close-element\"],[\"text\",\"\\n  \"],[\"open-element\",\"li\",[]],[\"flush-element\"],[\"append\",[\"unknown\",[\"document\",\"text\"]],false],[\"close-element\"],[\"text\",\"\\n\"]],\"locals\":[\"document\"]}],\"hasPartials\":false}", "meta": { "moduleName": "ga-wdi-boston.ember-auth/templates/documents.hbs" } });
+define("capstone_front_end/templates/documents", ["exports"], function (exports) {
+  exports["default"] = Ember.HTMLBars.template({ "id": "fUFVzklH", "block": "{\"statements\":[[\"append\",[\"unknown\",[\"outlet\"]],false],[\"text\",\"\\n\"],[\"open-element\",\"h2\",[]],[\"flush-element\"],[\"text\",\"Documents\"],[\"close-element\"],[\"text\",\"\\n\\n\"],[\"open-element\",\"ul\",[]],[\"flush-element\"],[\"text\",\"\\n\"],[\"block\",[\"each\"],[[\"get\",[\"model\"]]],null,0],[\"close-element\"],[\"text\",\"\\n\"]],\"locals\":[],\"named\":[],\"yields\":[],\"blocks\":[{\"statements\":[[\"text\",\"  \"],[\"open-element\",\"li\",[]],[\"flush-element\"],[\"append\",[\"unknown\",[\"document\",\"title\"]],false],[\"close-element\"],[\"text\",\"\\n  \"],[\"open-element\",\"li\",[]],[\"flush-element\"],[\"append\",[\"unknown\",[\"document\",\"text\"]],false],[\"close-element\"],[\"text\",\"\\n\"]],\"locals\":[\"document\"]}],\"hasPartials\":false}", "meta": { "moduleName": "capstone_front_end/templates/documents.hbs" } });
 });
-define("ga-wdi-boston.ember-auth/templates/edit-doc", ["exports"], function (exports) {
-  exports["default"] = Ember.HTMLBars.template({ "id": "Jv+T9R5g", "block": "{\"statements\":[[\"append\",[\"unknown\",[\"outlet\"]],false],[\"text\",\"\\n\"],[\"open-element\",\"div\",[]],[\"static-attr\",\"class\",\"new-doc-wrap\"],[\"flush-element\"],[\"text\",\"\\n  \"],[\"open-element\",\"h1\",[]],[\"static-attr\",\"class\",\"titleHeader\"],[\"flush-element\"],[\"text\",\"Edit title here\"],[\"close-element\"],[\"text\",\"\\n  \"],[\"open-element\",\"input\",[]],[\"static-attr\",\"class\",\"editedTitle\"],[\"static-attr\",\"type\",\"text\"],[\"flush-element\"],[\"close-element\"],[\"text\",\"\\n  \"],[\"open-element\",\"br\",[]],[\"flush-element\"],[\"close-element\"],[\"text\",\"\\n  \"],[\"open-element\",\"br\",[]],[\"flush-element\"],[\"close-element\"],[\"text\",\"\\n  \"],[\"open-element\",\"p\",[]],[\"flush-element\"],[\"text\",\"Doc: \"],[\"append\",[\"unknown\",[\"doc\",\"title\"]],false],[\"close-element\"],[\"text\",\"\\n  \"],[\"open-element\",\"div\",[]],[\"static-attr\",\"class\",\"textAreaBoundary\"],[\"flush-element\"],[\"text\",\"\\n  \"],[\"append\",[\"helper\",[\"textarea\"],[[\"get\",[\"action\"]],\"mouseUp\"],[[\"cols\",\"rows\",\"class\",\"id\",\"value\"],[\"80\",\"15\",\"jumbotron\",\"doc\",[\"helper\",[\"mut\"],[[\"helper\",[\"get\"],[[\"get\",[\"doc\"]],[\"get\",[\"text\"]]],null]],null]]]],false],[\"text\",\"\\n\"],[\"text\",\"  \"],[\"open-element\",\"br\",[]],[\"flush-element\"],[\"close-element\"],[\"text\",\"\\n\"],[\"close-element\"],[\"text\",\"\\n  \"],[\"open-element\",\"br\",[]],[\"flush-element\"],[\"close-element\"],[\"text\",\"\\n  \"],[\"open-element\",\"button\",[]],[\"static-attr\",\"type\",\"button\"],[\"static-attr\",\"data-dismiss\",\"alert\"],[\"static-attr\",\"aria-label\",\"Close\"],[\"static-attr\",\"class\",\"textButton\"],[\"static-attr\",\"style\",\"color: black;\"],[\"modifier\",[\"action\"],[[\"get\",[null]],\"saveDoc\"]],[\"flush-element\"],[\"text\",\"\\n    \"],[\"open-element\",\"span\",[]],[\"static-attr\",\"style\",\"font-size: 3em;\"],[\"flush-element\"],[\"open-element\",\"span\",[]],[\"static-attr\",\"class\",\"glyphicon glyphicon-pencil\"],[\"static-attr\",\"aria-hidden\",\"true\"],[\"flush-element\"],[\"close-element\"],[\"text\",\"\\n    Save Document\"],[\"close-element\"],[\"text\",\"\\n  \"],[\"close-element\"],[\"text\",\"\\n\\n  \"],[\"yield\",\"default\"],[\"text\",\"\\n\"],[\"close-element\"],[\"text\",\"\\n\"]],\"locals\":[],\"named\":[],\"yields\":[\"default\"],\"blocks\":[],\"hasPartials\":false}", "meta": { "moduleName": "ga-wdi-boston.ember-auth/templates/edit-doc.hbs" } });
+define("capstone_front_end/templates/edit-doc", ["exports"], function (exports) {
+  exports["default"] = Ember.HTMLBars.template({ "id": "Jv+T9R5g", "block": "{\"statements\":[[\"append\",[\"unknown\",[\"outlet\"]],false],[\"text\",\"\\n\"],[\"open-element\",\"div\",[]],[\"static-attr\",\"class\",\"new-doc-wrap\"],[\"flush-element\"],[\"text\",\"\\n  \"],[\"open-element\",\"h1\",[]],[\"static-attr\",\"class\",\"titleHeader\"],[\"flush-element\"],[\"text\",\"Edit title here\"],[\"close-element\"],[\"text\",\"\\n  \"],[\"open-element\",\"input\",[]],[\"static-attr\",\"class\",\"editedTitle\"],[\"static-attr\",\"type\",\"text\"],[\"flush-element\"],[\"close-element\"],[\"text\",\"\\n  \"],[\"open-element\",\"br\",[]],[\"flush-element\"],[\"close-element\"],[\"text\",\"\\n  \"],[\"open-element\",\"br\",[]],[\"flush-element\"],[\"close-element\"],[\"text\",\"\\n  \"],[\"open-element\",\"p\",[]],[\"flush-element\"],[\"text\",\"Doc: \"],[\"append\",[\"unknown\",[\"doc\",\"title\"]],false],[\"close-element\"],[\"text\",\"\\n  \"],[\"open-element\",\"div\",[]],[\"static-attr\",\"class\",\"textAreaBoundary\"],[\"flush-element\"],[\"text\",\"\\n  \"],[\"append\",[\"helper\",[\"textarea\"],[[\"get\",[\"action\"]],\"mouseUp\"],[[\"cols\",\"rows\",\"class\",\"id\",\"value\"],[\"80\",\"15\",\"jumbotron\",\"doc\",[\"helper\",[\"mut\"],[[\"helper\",[\"get\"],[[\"get\",[\"doc\"]],[\"get\",[\"text\"]]],null]],null]]]],false],[\"text\",\"\\n\"],[\"text\",\"  \"],[\"open-element\",\"br\",[]],[\"flush-element\"],[\"close-element\"],[\"text\",\"\\n\"],[\"close-element\"],[\"text\",\"\\n  \"],[\"open-element\",\"br\",[]],[\"flush-element\"],[\"close-element\"],[\"text\",\"\\n  \"],[\"open-element\",\"button\",[]],[\"static-attr\",\"type\",\"button\"],[\"static-attr\",\"data-dismiss\",\"alert\"],[\"static-attr\",\"aria-label\",\"Close\"],[\"static-attr\",\"class\",\"textButton\"],[\"static-attr\",\"style\",\"color: black;\"],[\"modifier\",[\"action\"],[[\"get\",[null]],\"saveDoc\"]],[\"flush-element\"],[\"text\",\"\\n    \"],[\"open-element\",\"span\",[]],[\"static-attr\",\"style\",\"font-size: 3em;\"],[\"flush-element\"],[\"open-element\",\"span\",[]],[\"static-attr\",\"class\",\"glyphicon glyphicon-pencil\"],[\"static-attr\",\"aria-hidden\",\"true\"],[\"flush-element\"],[\"close-element\"],[\"text\",\"\\n    Save Document\"],[\"close-element\"],[\"text\",\"\\n  \"],[\"close-element\"],[\"text\",\"\\n\\n  \"],[\"yield\",\"default\"],[\"text\",\"\\n\"],[\"close-element\"],[\"text\",\"\\n\"]],\"locals\":[],\"named\":[],\"yields\":[\"default\"],\"blocks\":[],\"hasPartials\":false}", "meta": { "moduleName": "capstone_front_end/templates/edit-doc.hbs" } });
 });
-define("ga-wdi-boston.ember-auth/templates/login", ["exports"], function (exports) {
-  exports["default"] = Ember.HTMLBars.template({ "id": "TbBjNZJn", "block": "{\"statements\":[[\"open-element\",\"h2\",[]],[\"flush-element\"],[\"text\",\"Log In\"],[\"close-element\"],[\"text\",\"\\n\\n\"],[\"append\",[\"helper\",[\"sign-in-form\"],null,[[\"submit\"],[\"signUp\"]]],false],[\"text\",\"\\n\"]],\"locals\":[],\"named\":[],\"yields\":[],\"blocks\":[],\"hasPartials\":false}", "meta": { "moduleName": "ga-wdi-boston.ember-auth/templates/login.hbs" } });
+define("capstone_front_end/templates/login", ["exports"], function (exports) {
+  exports["default"] = Ember.HTMLBars.template({ "id": "TbBjNZJn", "block": "{\"statements\":[[\"open-element\",\"h2\",[]],[\"flush-element\"],[\"text\",\"Log In\"],[\"close-element\"],[\"text\",\"\\n\\n\"],[\"append\",[\"helper\",[\"sign-in-form\"],null,[[\"submit\"],[\"signUp\"]]],false],[\"text\",\"\\n\"]],\"locals\":[],\"named\":[],\"yields\":[],\"blocks\":[],\"hasPartials\":false}", "meta": { "moduleName": "capstone_front_end/templates/login.hbs" } });
 });
-define("ga-wdi-boston.ember-auth/templates/my-documents", ["exports"], function (exports) {
-  exports["default"] = Ember.HTMLBars.template({ "id": "mEzo1Br6", "block": "{\"statements\":[[\"append\",[\"unknown\",[\"outlet\"]],false],[\"text\",\"\\n\"],[\"open-element\",\"h2\",[]],[\"flush-element\"],[\"text\",\"Your Documents\"],[\"close-element\"],[\"text\",\"\\n\"]],\"locals\":[],\"named\":[],\"yields\":[],\"blocks\":[],\"hasPartials\":false}", "meta": { "moduleName": "ga-wdi-boston.ember-auth/templates/my-documents.hbs" } });
+define("capstone_front_end/templates/my-documents", ["exports"], function (exports) {
+  exports["default"] = Ember.HTMLBars.template({ "id": "mEzo1Br6", "block": "{\"statements\":[[\"append\",[\"unknown\",[\"outlet\"]],false],[\"text\",\"\\n\"],[\"open-element\",\"h2\",[]],[\"flush-element\"],[\"text\",\"Your Documents\"],[\"close-element\"],[\"text\",\"\\n\"]],\"locals\":[],\"named\":[],\"yields\":[],\"blocks\":[],\"hasPartials\":false}", "meta": { "moduleName": "capstone_front_end/templates/my-documents.hbs" } });
 });
-define("ga-wdi-boston.ember-auth/templates/new-document", ["exports"], function (exports) {
-  exports["default"] = Ember.HTMLBars.template({ "id": "pAz+z5Y1", "block": "{\"statements\":[[\"open-element\",\"div\",[]],[\"static-attr\",\"class\",\"new-doc-wrap\"],[\"flush-element\"],[\"text\",\"\\n  \"],[\"open-element\",\"h1\",[]],[\"static-attr\",\"class\",\"titleHeader\"],[\"flush-element\"],[\"text\",\"Put your title here\"],[\"close-element\"],[\"text\",\"\\n  \"],[\"open-element\",\"input\",[]],[\"static-attr\",\"class\",\"title\"],[\"static-attr\",\"type\",\"text\"],[\"flush-element\"],[\"close-element\"],[\"text\",\"\\n  \"],[\"open-element\",\"br\",[]],[\"flush-element\"],[\"close-element\"],[\"text\",\"\\n  \"],[\"open-element\",\"br\",[]],[\"flush-element\"],[\"close-element\"],[\"text\",\"\\n  \"],[\"append\",[\"unknown\",[\"add-doc\"]],false],[\"text\",\"\\n\"],[\"close-element\"],[\"text\",\"\\n\\n\"],[\"append\",[\"unknown\",[\"outlet\"]],false],[\"text\",\"\\n\"]],\"locals\":[],\"named\":[],\"yields\":[],\"blocks\":[],\"hasPartials\":false}", "meta": { "moduleName": "ga-wdi-boston.ember-auth/templates/new-document.hbs" } });
+define("capstone_front_end/templates/new-document", ["exports"], function (exports) {
+  exports["default"] = Ember.HTMLBars.template({ "id": "pAz+z5Y1", "block": "{\"statements\":[[\"open-element\",\"div\",[]],[\"static-attr\",\"class\",\"new-doc-wrap\"],[\"flush-element\"],[\"text\",\"\\n  \"],[\"open-element\",\"h1\",[]],[\"static-attr\",\"class\",\"titleHeader\"],[\"flush-element\"],[\"text\",\"Put your title here\"],[\"close-element\"],[\"text\",\"\\n  \"],[\"open-element\",\"input\",[]],[\"static-attr\",\"class\",\"title\"],[\"static-attr\",\"type\",\"text\"],[\"flush-element\"],[\"close-element\"],[\"text\",\"\\n  \"],[\"open-element\",\"br\",[]],[\"flush-element\"],[\"close-element\"],[\"text\",\"\\n  \"],[\"open-element\",\"br\",[]],[\"flush-element\"],[\"close-element\"],[\"text\",\"\\n  \"],[\"append\",[\"unknown\",[\"add-doc\"]],false],[\"text\",\"\\n\"],[\"close-element\"],[\"text\",\"\\n\\n\"],[\"append\",[\"unknown\",[\"outlet\"]],false],[\"text\",\"\\n\"]],\"locals\":[],\"named\":[],\"yields\":[],\"blocks\":[],\"hasPartials\":false}", "meta": { "moduleName": "capstone_front_end/templates/new-document.hbs" } });
 });
-define("ga-wdi-boston.ember-auth/templates/sign-in", ["exports"], function (exports) {
-  exports["default"] = Ember.HTMLBars.template({ "id": "sgUC+XRL", "block": "{\"statements\":[[\"open-element\",\"h2\",[]],[\"flush-element\"],[\"text\",\"Sign In\"],[\"close-element\"],[\"text\",\"\\n\\n\"],[\"append\",[\"helper\",[\"sign-in-form\"],null,[[\"submit\",\"reset\",\"credentials\"],[\"signIn\",\"reset\",[\"get\",[\"model\"]]]]],false],[\"text\",\"\\n\"]],\"locals\":[],\"named\":[],\"yields\":[],\"blocks\":[],\"hasPartials\":false}", "meta": { "moduleName": "ga-wdi-boston.ember-auth/templates/sign-in.hbs" } });
+define("capstone_front_end/templates/sign-in", ["exports"], function (exports) {
+  exports["default"] = Ember.HTMLBars.template({ "id": "sgUC+XRL", "block": "{\"statements\":[[\"open-element\",\"h2\",[]],[\"flush-element\"],[\"text\",\"Sign In\"],[\"close-element\"],[\"text\",\"\\n\\n\"],[\"append\",[\"helper\",[\"sign-in-form\"],null,[[\"submit\",\"reset\",\"credentials\"],[\"signIn\",\"reset\",[\"get\",[\"model\"]]]]],false],[\"text\",\"\\n\"]],\"locals\":[],\"named\":[],\"yields\":[],\"blocks\":[],\"hasPartials\":false}", "meta": { "moduleName": "capstone_front_end/templates/sign-in.hbs" } });
 });
-define("ga-wdi-boston.ember-auth/templates/sign-up", ["exports"], function (exports) {
-  exports["default"] = Ember.HTMLBars.template({ "id": "GO1EEFOd", "block": "{\"statements\":[[\"open-element\",\"h2\",[]],[\"flush-element\"],[\"text\",\"Sign Up\"],[\"close-element\"],[\"text\",\"\\n\\n\"],[\"append\",[\"helper\",[\"sign-up-form\"],null,[[\"submit\"],[\"signUp\"]]],false],[\"text\",\"\\n\"]],\"locals\":[],\"named\":[],\"yields\":[],\"blocks\":[],\"hasPartials\":false}", "meta": { "moduleName": "ga-wdi-boston.ember-auth/templates/sign-up.hbs" } });
+define("capstone_front_end/templates/sign-up", ["exports"], function (exports) {
+  exports["default"] = Ember.HTMLBars.template({ "id": "GO1EEFOd", "block": "{\"statements\":[[\"open-element\",\"h2\",[]],[\"flush-element\"],[\"text\",\"Sign Up\"],[\"close-element\"],[\"text\",\"\\n\\n\"],[\"append\",[\"helper\",[\"sign-up-form\"],null,[[\"submit\"],[\"signUp\"]]],false],[\"text\",\"\\n\"]],\"locals\":[],\"named\":[],\"yields\":[],\"blocks\":[],\"hasPartials\":false}", "meta": { "moduleName": "capstone_front_end/templates/sign-up.hbs" } });
 });
-define("ga-wdi-boston.ember-auth/templates/test-docs", ["exports"], function (exports) {
-  exports["default"] = Ember.HTMLBars.template({ "id": "08DzrbbV", "block": "{\"statements\":[[\"open-element\",\"h2\",[]],[\"flush-element\"],[\"text\",\"Documents\"],[\"close-element\"],[\"text\",\"\\n\\n\"],[\"open-element\",\"ul\",[]],[\"flush-element\"],[\"text\",\"\\n\"],[\"block\",[\"each\"],[[\"get\",[\"model\"]]],null,0],[\"close-element\"],[\"text\",\"\\n\"]],\"locals\":[],\"named\":[],\"yields\":[],\"blocks\":[{\"statements\":[[\"text\",\"  \"],[\"open-element\",\"li\",[]],[\"flush-element\"],[\"append\",[\"unknown\",[\"user\",\"email\"]],false],[\"close-element\"],[\"text\",\"\\n\"]],\"locals\":[\"user\"]}],\"hasPartials\":false}", "meta": { "moduleName": "ga-wdi-boston.ember-auth/templates/test-docs.hbs" } });
+define("capstone_front_end/templates/test-docs", ["exports"], function (exports) {
+  exports["default"] = Ember.HTMLBars.template({ "id": "08DzrbbV", "block": "{\"statements\":[[\"open-element\",\"h2\",[]],[\"flush-element\"],[\"text\",\"Documents\"],[\"close-element\"],[\"text\",\"\\n\\n\"],[\"open-element\",\"ul\",[]],[\"flush-element\"],[\"text\",\"\\n\"],[\"block\",[\"each\"],[[\"get\",[\"model\"]]],null,0],[\"close-element\"],[\"text\",\"\\n\"]],\"locals\":[],\"named\":[],\"yields\":[],\"blocks\":[{\"statements\":[[\"text\",\"  \"],[\"open-element\",\"li\",[]],[\"flush-element\"],[\"append\",[\"unknown\",[\"user\",\"email\"]],false],[\"close-element\"],[\"text\",\"\\n\"]],\"locals\":[\"user\"]}],\"hasPartials\":false}", "meta": { "moduleName": "capstone_front_end/templates/test-docs.hbs" } });
 });
-define("ga-wdi-boston.ember-auth/templates/test-resource", ["exports"], function (exports) {
-  exports["default"] = Ember.HTMLBars.template({ "id": "/vmhlayc", "block": "{\"statements\":[[\"append\",[\"unknown\",[\"outlet\"]],false],[\"text\",\"\\n\"],[\"open-element\",\"button\",[]],[\"static-attr\",\"class\",\"btn btn-default\"],[\"modifier\",[\"action\"],[[\"get\",[null]],\"getTests\"]],[\"flush-element\"],[\"text\",\"\\nGet Tests\\n\"],[\"close-element\"],[\"text\",\"\\n\\n\"],[\"open-element\",\"span\",[]],[\"static-attr\",\"class\",\"tests\"],[\"flush-element\"],[\"close-element\"],[\"text\",\"\\n\"]],\"locals\":[],\"named\":[],\"yields\":[],\"blocks\":[],\"hasPartials\":false}", "meta": { "moduleName": "ga-wdi-boston.ember-auth/templates/test-resource.hbs" } });
+define("capstone_front_end/templates/test-resource", ["exports"], function (exports) {
+  exports["default"] = Ember.HTMLBars.template({ "id": "/vmhlayc", "block": "{\"statements\":[[\"append\",[\"unknown\",[\"outlet\"]],false],[\"text\",\"\\n\"],[\"open-element\",\"button\",[]],[\"static-attr\",\"class\",\"btn btn-default\"],[\"modifier\",[\"action\"],[[\"get\",[null]],\"getTests\"]],[\"flush-element\"],[\"text\",\"\\nGet Tests\\n\"],[\"close-element\"],[\"text\",\"\\n\\n\"],[\"open-element\",\"span\",[]],[\"static-attr\",\"class\",\"tests\"],[\"flush-element\"],[\"close-element\"],[\"text\",\"\\n\"]],\"locals\":[],\"named\":[],\"yields\":[],\"blocks\":[],\"hasPartials\":false}", "meta": { "moduleName": "capstone_front_end/templates/test-resource.hbs" } });
 });
-define("ga-wdi-boston.ember-auth/templates/users", ["exports"], function (exports) {
-  exports["default"] = Ember.HTMLBars.template({ "id": "azduSao3", "block": "{\"statements\":[[\"open-element\",\"h2\",[]],[\"flush-element\"],[\"text\",\"Users\"],[\"close-element\"],[\"text\",\"\\n\\n\"],[\"open-element\",\"ul\",[]],[\"flush-element\"],[\"text\",\"\\n\"],[\"block\",[\"each\"],[[\"get\",[\"model\"]]],null,0],[\"close-element\"],[\"text\",\"\\n\"]],\"locals\":[],\"named\":[],\"yields\":[],\"blocks\":[{\"statements\":[[\"text\",\"  \"],[\"open-element\",\"li\",[]],[\"flush-element\"],[\"append\",[\"unknown\",[\"user\",\"email\"]],false],[\"close-element\"],[\"text\",\"\\n\"]],\"locals\":[\"user\"]}],\"hasPartials\":false}", "meta": { "moduleName": "ga-wdi-boston.ember-auth/templates/users.hbs" } });
+define("capstone_front_end/templates/users", ["exports"], function (exports) {
+  exports["default"] = Ember.HTMLBars.template({ "id": "azduSao3", "block": "{\"statements\":[[\"open-element\",\"h2\",[]],[\"flush-element\"],[\"text\",\"Users\"],[\"close-element\"],[\"text\",\"\\n\\n\"],[\"open-element\",\"ul\",[]],[\"flush-element\"],[\"text\",\"\\n\"],[\"block\",[\"each\"],[[\"get\",[\"model\"]]],null,0],[\"close-element\"],[\"text\",\"\\n\"]],\"locals\":[],\"named\":[],\"yields\":[],\"blocks\":[{\"statements\":[[\"text\",\"  \"],[\"open-element\",\"li\",[]],[\"flush-element\"],[\"append\",[\"unknown\",[\"user\",\"email\"]],false],[\"close-element\"],[\"text\",\"\\n\"]],\"locals\":[\"user\"]}],\"hasPartials\":false}", "meta": { "moduleName": "capstone_front_end/templates/users.hbs" } });
 });
 
 
-define('ga-wdi-boston.ember-auth/config/environment', ['ember'], function(Ember) {
-  var prefix = 'ga-wdi-boston.ember-auth';
+define('capstone_front_end/config/environment', ['ember'], function(Ember) {
+  var prefix = 'capstone_front_end';
 try {
   var metaName = prefix + '/config/environment';
   var rawConfig = document.querySelector('meta[name="' + metaName + '"]').getAttribute('content');
@@ -1283,6 +1283,6 @@ catch(err) {
 });
 
 if (!runningTests) {
-  require("ga-wdi-boston.ember-auth/app")["default"].create({"name":"ga-wdi-boston.ember-auth","version":"0.0.0+6ba92d2e"});
+  require("capstone_front_end/app")["default"].create({"name":"capstone_front_end","version":"0.0.0+6ba92d2e"});
 }
-//# sourceMappingURL=ga-wdi-boston.ember-auth.map
+//# sourceMappingURL=capstone_front_end.map
