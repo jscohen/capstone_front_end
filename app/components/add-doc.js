@@ -10,14 +10,14 @@ export default Ember.Component.extend({
   actions: {
     saveDoc() {
       console.log($('textarea').val());
-      let input = $('textarea').val()
-      let title = $('.title').val()
-      this.get('docs').saveDoc(input, title)
+      let input = $('textarea').val();
+      let title = $('.title').val();
+      this.get('docs').saveDoc(input, title);
     },
     mouseUp() {
-      console.log('in mouse up')
+      console.log('in mouse up');
       window.mySelection = $('textarea').val().substring(this.selectionStart, this.selectionEnd);
       console.log(window.getSelection().toString());
     }
   }
-})
+});

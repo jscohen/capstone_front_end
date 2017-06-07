@@ -1,7 +1,7 @@
 import Ember from 'ember';
 import { storageFor } from 'ember-local-storage';
-import storage from '../storages/auth'
-import Docs from '../storages/docs'
+import storage from '../storages/auth';
+import Docs from '../storages/docs';
 
 export default Ember.Service.extend({
   ajax: Ember.inject.service(),
@@ -10,10 +10,10 @@ export default Ember.Service.extend({
   docs: storageFor('docs'),
 
   newDoc () {
-    console.log('inside service')
-    console.log(this.get('credentials.id'))
+    console.log('inside service');
+    console.log(this.get('credentials.id'));
 
-    let id = this.get('credentials.id')
+    let id = this.get('credentials.id');
     return this.get('ajax').post('/docs', {
       data: {
         doc: {
@@ -23,8 +23,8 @@ export default Ember.Service.extend({
       }
     }).then(console.log('created'))
     .then((result) => {
-      console.log(result)
-      this.get('docs').set('thisDocID', result.doc._id)
+      console.log(result);
+      this.get('docs').set('thisDocID', result.doc._id);
     })
     .then(() => {console.log(this.get('docs.thisDocID'))})
     .then(() => {
@@ -46,17 +46,6 @@ export default Ember.Service.extend({
       }
     })
   },
-
-  deleteDoc(id) {
-    return this.get('ajax').request('/docs/' + id, {
-      method: 'DELETE'
-      }).then(() => {
-        console.log('doc destroyed')
-      }).then(() => {
-        docsRoute.model()
-      })
-  },
-
   getDocs() {
     let id = this.get('credentials.id')
     return this.get('ajax').request('/docs', {
