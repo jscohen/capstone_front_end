@@ -26,6 +26,11 @@ export default Ember.Component.extend({
     },
     toggle() {
       console.log('inside docs component')
+    },
+    mouseUp() {
+      console.log('in mouse up')
+      window.mySelection = $('textarea').val().substring(this.selectionStart, this.selectionEnd);
+      console.log(window.getSelection().toString());
     }
   }
 });

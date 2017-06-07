@@ -24,6 +24,7 @@
   "devDependencies": {
     "active-model-adapter": "^2.1.1",
     "broccoli-asset-rev": "^2.5.0",
+    "broccoli-static-compiler": "^0.2.2",
     "ember-ajax": "^2.5.3",
     "ember-cli": "^2.10.0",
     "ember-cli-app-version": "^2.0.1",
@@ -40,6 +41,7 @@
     "ember-cli-sass": "^5.6.0",
     "ember-cli-sri": "^2.1.1",
     "ember-cli-test-loader": "^1.1.0",
+    "ember-cli-tinymce": "^0.1.6",
     "ember-cli-uglify": "^1.2.0",
     "ember-data": "^2.10.0",
     "ember-disable-proxy-controllers": "^1.0.1",

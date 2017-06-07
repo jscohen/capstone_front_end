@@ -25,6 +25,11 @@ export default Ember.Route.extend({
       console.log('inside docs route')
       console.log(id)
       $('#' + id).show()
+    },
+    mouseUp() {
+      console.log('in mouse up')
+      window.mySelection = $('textarea').val().substring(this.selectionStart, this.selectionEnd);
+      console.log(window.getSelection().toString());
     }
   }
 });
