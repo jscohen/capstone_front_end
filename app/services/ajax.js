@@ -2,7 +2,7 @@ import Ember from 'ember';
 import AjaxService from 'ember-ajax/services/ajax';
 import storage from '../storages/auth'
 
-import ENV from 'ga-wdi-boston.ember-template/config/environment';
+import ENV from 'ga-wdi-boston.ember-auth/config/environment';
 
 export default AjaxService.extend({
   host: ENV.apiHost,
