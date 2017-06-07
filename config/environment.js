@@ -7,7 +7,7 @@ module.exports = function (environment) {
     environment: environment,
     rootURL: '/',
     locationType: 'auto',
-    apiHost: 'https://young-savannah-37906.herokuapp.com/',
+    apiHost: 'https://young-savannah-37906.herokuapp.com',
     EmberENV: {
       FEATURES: {
         // Here you can enable experimental features on an ember canary build
@@ -52,7 +52,7 @@ module.exports = function (environment) {
   if (environment === 'production') {
     ENV.rootURL='/capstone_front_end'
     ENV.locationType = 'hash';
-    ENV.apiHost = 'https://young-savannah-37906.herokuapp.com/'
+    ENV.apiHost = 'https://young-savannah-37906.herokuapp.com'
   }
 
   return ENV;
