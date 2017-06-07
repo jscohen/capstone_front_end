@@ -2,8 +2,10 @@ import Ember from 'ember';
 
 export default Ember.Controller.extend({
   actions: {
-    toggle() {
+    toggle(id) {
       console.log('inside docs route')
+      console.log(id)
+      $('#' + id).show()
     }
   }
 });

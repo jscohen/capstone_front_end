@@ -22,9 +22,14 @@ export default Ember.Route.extend({
       console.log('still in docs route')
     },
     toggle(id) {
+<<<<<<< HEAD
       console.log(id);
       $('#' + id).show();
       console.log('test')
+=======
+      console.log(id)
+      $('#' + id).show()
+>>>>>>> addCSS
     },
     mouseUp() {
       console.log('in mouse up')
