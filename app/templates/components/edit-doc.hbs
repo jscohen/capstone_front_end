@@ -14,7 +14,12 @@
     Save Document</span>
   </button>
 
+  <form>
+    <select id="transDirection">
+      <option>English to Italian</option>
+      <option>Italian to English</option>
+    </select>
   <button {{action 'translate' newDoc}}>Translate</button>
-
+  </form>
   {{yield}}
 </div>
