@@ -71,7 +71,7 @@ export default Ember.Service.extend({
   },
 
   translate(id, text, fromLanguage, toLanguage) {
-    console.log('inside translate')
+    console.log('inside translate', id, text, fromLanguage, toLanguage)
     return this.get('ajax').patch('/translate/' + id, {
       data: {
         doc: {
@@ -82,10 +82,13 @@ export default Ember.Service.extend({
         }
       }
     })
+    .then(() => console.log('inside wrong place'))
     .catch(result => {
+      console.log('inside result')
       return this.get('ajax').request('/docs/' + id, {
         method: 'GET'
       }).then(result => {
+        console.log('inside final result')
         console.log(result.doc.text)
         $('.testTextArea').val(result.doc.text)
       })
