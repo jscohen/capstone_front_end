@@ -1330,6 +1330,6 @@ catch(err) {
 });
 
 if (!runningTests) {
-  require("capstone_front_end/app")["default"].create({"name":"capstone_front_end","version":"0.0.0+17928405"});
+  require("capstone_front_end/app")["default"].create({"name":"capstone_front_end","version":"0.0.0+fbe8b3bd"});
 }
 //# sourceMappingURL=capstone_front_end.map
