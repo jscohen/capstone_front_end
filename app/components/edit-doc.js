@@ -11,14 +11,6 @@ export default Ember.Component.extend({
   docs: Ember.inject.service(),
 
   actions: {
-    edit(doc) {
-      console.log(doc.title)
-    },
-    mouseUp() {
-      console.log('in mouse up')
-      window.mySelection = $('.testTextArea').val().substring(this.selectionStart, this.selectionEnd);
-      console.log(window.getSelection().toString());
-    },
     saveDoc(id) {
       let input = $('#' + id + '.textToTranslate').val()
       let title = $('#title.' + id).val()

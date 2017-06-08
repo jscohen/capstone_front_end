@@ -9,7 +9,6 @@ export default Ember.Component.extend({
 
   actions : {
     newDoc () {
-      console.log('inside component')
       this.sendAction('newDoc')
       this.get('docs').newDoc()
     }

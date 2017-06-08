@@ -48,7 +48,6 @@ define('capstone_front_end/components/add-doc', ['exports', 'ember', 'ember-loca
 
     actions: {
       newDoc: function newDoc() {
-        console.log($('#newText').val());
         var input = $('#newText').val();
         var title = $('.docTitle').val();
         this.get('docs').newDoc(input, title);
@@ -56,13 +55,11 @@ define('capstone_front_end/components/add-doc', ['exports', 'ember', 'ember-loca
       },
       saveDoc: function saveDoc() {
         var id = this.get('myDocs.thisDocID');
-        console.log($('.testTextArea').val());
         var input = $('.testTextArea').val();
         var title = $('.editedTitle').val();
         this.get('docs').saveDoc(input, title, id);
       },
       translate: function translate() {
-        console.log('inside event handler translate');
         var from = $('#fromLangInNew').find(":selected").text();
         var to = $('#toLangInNew').find(":selected").text();
         var fromLanguage = '';
@@ -102,17 +99,6 @@ define('capstone_front_end/components/change-password-form', ['exports', 'ember'
     }
   });
 });
-define('capstone_front_end/components/custom-textarea', ['exports', 'ember'], function (exports, _ember) {
-  exports['default'] = _ember['default'].TextArea.extend({
-    didRender: function didRender() {
-      $('textarea').mouseup(function () {
-        console.log('inside text area');
-        window.mySelection = $('textarea').val().substring(this.selectionStart, this.selectionEnd);
-        console.log(window.getSelection().toString());
-      });
-    }
-  });
-});
 define('capstone_front_end/components/delete-docs', ['exports', 'ember'], function (exports, _ember) {
   exports['default'] = _ember['default'].Component.extend({
     auth: _ember['default'].inject.service(),
@@ -123,8 +109,6 @@ define('capstone_front_end/components/delete-docs', ['exports', 'ember'], functi
 
     actions: {
       deleteDocs: function deleteDocs(id) {
-        console.log(id);
-        console.log('in delete component');
         // this.get('docs').deleteDoc(id)
         return this.sendAction('deleteItem');
       }
@@ -141,28 +125,16 @@ define('capstone_front_end/components/docs', ['exports', 'ember'], function (exp
 
     actions: {
       deleteDocs: function deleteDocs(id) {
-        console.log(id);
-        console.log('in new delete component');
         // this.get('docs').deleteDoc(id)
         return this.sendAction('deleteDocs');
       },
       edit: function edit(doc) {
-        console.log('inside edit component');
-        console.log(this.get('doc.title'));
-        console.log(this.get('doc.text'));
         var title = this.get('doc.title');
-        console.log(title);
         this.get('docs').set('currentDoc', doc);
-        console.log(this.get('docs.currentDoc'));
         return this.sendAction('edit', doc);
       },
       toggle: function toggle() {
-        console.log('inside docs component');
-      },
-      mouseUp: function mouseUp() {
-        console.log('in mouse up');
-        window.mySelection = $('textarea').val().substring(this.selectionStart, this.selectionEnd);
-        console.log(window.getSelection().toString());
+        $('.toggle').show();
       }
     }
   });
@@ -176,14 +148,6 @@ define('capstone_front_end/components/edit-doc', ['exports', 'ember', 'ember-loc
     docs: _ember['default'].inject.service(),
 
     actions: {
-      edit: function edit(doc) {
-        console.log(doc.title);
-      },
-      mouseUp: function mouseUp() {
-        console.log('in mouse up');
-        window.mySelection = $('.testTextArea').val().substring(this.selectionStart, this.selectionEnd);
-        console.log(window.getSelection().toString());
-      },
       saveDoc: function saveDoc(id) {
         var input = $('#' + id + '.textToTranslate').val();
         var title = $('#title.' + id).val();
@@ -247,7 +211,6 @@ define('capstone_front_end/components/my-application', ['exports', 'ember'], fun
         this.sendAction('signOut');
       },
       show: function show() {
-        console.log('inside show');
         $('#popover').popover('toggle');
       }
     }
@@ -264,16 +227,9 @@ define('capstone_front_end/components/my-docs', ['exports', 'ember'], function (
     actions: {
       deleteDocs: function deleteDocs() {
         console.log('in delete docs component');
-        // this.get('docs').getDocs()
       }
     }
   });
-});
-define('capstone_front_end/components/my-documents/docs', ['exports', 'ember'], function (exports, _ember) {
-  exports['default'] = _ember['default'].Component.extend({});
-});
-define('capstone_front_end/components/my-map', ['exports', 'ember'], function (exports, _ember) {
-  exports['default'] = _ember['default'].Component.extend({});
 });
 define('capstone_front_end/components/navbar-header', ['exports', 'ember'], function (exports, _ember) {
   exports['default'] = _ember['default'].Component.extend({
@@ -291,7 +247,6 @@ define('capstone_front_end/components/new-document', ['exports', 'ember'], funct
 
     actions: {
       newDoc: function newDoc() {
-        console.log('inside component');
         this.sendAction('newDoc');
         this.get('docs').newDoc();
       }
@@ -343,40 +298,6 @@ define('capstone_front_end/components/sign-up-form', ['exports', 'ember'], funct
     }
   });
 });
-define('capstone_front_end/components/text-editor', ['exports', 'ember'], function (exports, _ember) {
-  exports['default'] = _ember['default'].Component.extend({
-    classNames: ['text-editor'],
-
-    _options: {
-      skin_url: '/tinymce/skins/lightgray',
-      theme_url: '/tinymce/themes/modern/theme.min.js',
-      external_plugins: {
-        image: '/tinymce/plugins/image/plugin.min.js',
-        link: '/tinymce/plugins/link/plugin.min.js',
-        table: '/tinymce/plugins/table/plugin.min.js'
-      },
-      menubar: false,
-      toolbar1: 'bold italic underline | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | link table image'
-    },
-
-    didInsertElement: (function () {
-      var component = this;
-      var options = this.get('_options');
-
-      _ember['default'].merge(options, {
-        setup: function setup(editor) {
-          // bind change event
-          editor.on('change', function () {
-            component.set('value', editor.getContent());
-          });
-        }
-      });
-
-      this.$('textarea').tinymce(options);
-    }).on('didInsertElement')
-  });
-});
-// app/components/text-editor.js
 define('capstone_front_end/components/tinymce-editor', ['exports', 'ember-cli-tinymce/components/tinymce-editor'], function (exports, _emberCliTinymceComponentsTinymceEditor) {
   Object.defineProperty(exports, 'default', {
     enumerable: true,
@@ -392,7 +313,7 @@ define('capstone_front_end/controllers/docs', ['exports', 'ember'], function (ex
   exports['default'] = _ember['default'].Controller.extend({
     actions: {
       toggle: function toggle(id) {
-        console.log('inside docs route');
+        console.log('inside docs component');
         console.log(id);
         $('#' + id).show();
       }
@@ -743,16 +664,6 @@ define('capstone_front_end/models/doc', ['exports', 'ember-data'], function (exp
     _id: _emberData['default'].attr('string')
   });
 });
-define('capstone_front_end/models/document', ['exports', 'ember-data'], function (exports, _emberData) {
-  exports['default'] = _emberData['default'].Model.extend({
-    text: _emberData['default'].attr('string')
-  });
-});
-define('capstone_front_end/models/user', ['exports', 'ember-data'], function (exports, _emberData) {
-  exports['default'] = _emberData['default'].Model.extend({
-    email: _emberData['default'].attr('string')
-  });
-});
 define('capstone_front_end/resolver', ['exports', 'ember-resolver'], function (exports, _emberResolver) {
   exports['default'] = _emberResolver['default'];
 });
@@ -766,14 +677,9 @@ define('capstone_front_end/router', ['exports', 'ember', 'capstone_front_end/con
     this.route('sign-up');
     this.route('sign-in');
     this.route('change-password');
-    this.route('users');
     this.route('testResource');
     this.route('new-document');
-    this.route('my-documents');
-    this.route('test-docs');
-    this.route('documents');
     this.route('docs');
-    this.route('doc', { path: '/docs/:doc_id' });
     this.route('edit-doc');
   });
 
@@ -851,43 +757,16 @@ define('capstone_front_end/routes/change-password', ['exports', 'ember'], functi
     }
   });
 });
-define('capstone_front_end/routes/doc', ['exports', 'ember'], function (exports, _ember) {
-  exports['default'] = _ember['default'].Route.extend({});
-});
 define('capstone_front_end/routes/docs', ['exports', 'ember'], function (exports, _ember) {
   exports['default'] = _ember['default'].Route.extend({
     model: function model() {
-      console.log('inside model');
       return this.get('store').findAll('doc');
     },
     actions: {
-      didTransition: function didTransition() {
-        console.log("Router transition");
-      },
       deleteDocs: function deleteDocs(item) {
-        console.log('inside delete route');
-        console.log(item);
         item.destroyRecord();
         this.get('flashMessages').success('Document Deleted');
-      },
-      edit: function edit(title, text) {
-        console.log('inside edit route');
-        console.log(title);
-        console.log(text);
-        console.log('still in docs route');
-      },
-      mouseUp: function mouseUp() {
-        console.log('in mouse up');
-        window.mySelection = $('textarea').val().substring(this.selectionStart, this.selectionEnd);
-        console.log(window.getSelection().toString());
       }
-    }
-  });
-});
-define('capstone_front_end/routes/documents', ['exports', 'ember'], function (exports, _ember) {
-  exports['default'] = _ember['default'].Route.extend({
-    model: function model() {
-      return this.get('store').findAll('document');
     }
   });
 });
@@ -896,8 +775,6 @@ define('capstone_front_end/routes/edit-doc', ['exports', 'ember', 'ember-local-s
     docs: (0, _emberLocalStorage.storageFor)('docs'),
 
     activate: function activate(params) {
-      console.log('inside edit route');
-      console.log(this.get('docs.currentDoc.title'));
       var ourDoc = this.get('docs.currentDoc');
       var docTitle = this.get('docs.currentDoc.title');
       var docText = this.get('docs.currentDoc.text');
@@ -915,13 +792,6 @@ define('capstone_front_end/routes/login', ['exports', 'ember'], function (export
 
         this.get('session').authenticate(authenticator);
       }
-    }
-  });
-});
-define('capstone_front_end/routes/my-documents', ['exports', 'ember'], function (exports, _ember) {
-  exports['default'] = _ember['default'].Route.extend({
-    model: function model() {
-      return this.get('docs').findAll('myDocs');
     }
   });
 });
@@ -977,35 +847,6 @@ define('capstone_front_end/routes/sign-up', ['exports', 'ember'], function (expo
           _this.get('flashMessages').danger('There was a problem. Please try again.');
         });
       }
-    }
-  });
-});
-define('capstone_front_end/routes/test-docs', ['exports', 'ember'], function (exports, _ember) {
-  exports['default'] = _ember['default'].Route.extend({
-    model: function model() {
-      return this.get('docs').findAll('myDocs');
-    }
-  });
-});
-define('capstone_front_end/routes/test-resource', ['exports', 'ember'], function (exports, _ember) {
-  exports['default'] = _ember['default'].Route.extend({
-    auth: _ember['default'].inject.service(),
-    tester: _ember['default'].inject.service(),
-    actions: {
-      getTests: function getTests() {
-        console.log('testing');
-        this.get('tester').getTests().then(function (tests) {
-          return $('.tests').text(tests.tests[0].totalPrice);
-        });
-        //$('.tests').text(tests.totalPrice))
-      }
-    }
-  });
-});
-define('capstone_front_end/routes/users', ['exports', 'ember'], function (exports, _ember) {
-  exports['default'] = _ember['default'].Route.extend({
-    model: function model() {
-      return this.get('store').findAll('user');
     }
   });
 });
@@ -1104,9 +945,6 @@ define('capstone_front_end/services/docs', ['exports', 'ember', 'ember-local-sto
     newDoc: function newDoc(input, title) {
       var _this = this;
 
-      console.log('inside service');
-      console.log(this.get('credentials.id'));
-
       var id = this.get('credentials.id');
       return this.get('ajax').post('/docs', {
         data: {
@@ -1116,11 +954,8 @@ define('capstone_front_end/services/docs', ['exports', 'ember', 'ember-local-sto
             _owner: id
           }
         }
-      }).then(console.log('created')).then(function (result) {
-        console.log(result);
+      }).then(function (result) {
         _this.get('docs').set('thisDocID', result.doc._id);
-      }).then(function () {
-        console.log(_this.get('docs.thisDocID'));
       }).then(function () {
         $('#createSuccess').modal('show');
       }).then(function () {
@@ -1129,7 +964,6 @@ define('capstone_front_end/services/docs', ['exports', 'ember', 'ember-local-sto
     },
 
     saveDoc: function saveDoc(input, title, docID) {
-      console.log('inside service');
       var id = this.get('credentials.id');
       $('#saveSuccess').modal('show');
       return this.get('ajax').patch('/docs/' + docID, {
@@ -1143,16 +977,6 @@ define('capstone_front_end/services/docs', ['exports', 'ember', 'ember-local-sto
       });
     },
 
-    deleteDoc: function deleteDoc(id) {
-      return this.get('ajax').request('/docs/' + id, {
-        method: 'DELETE'
-      }).then(function () {
-        console.log('doc destroyed');
-      }).then(function () {
-        docsRoute.model();
-      });
-    },
-
     getDocs: function getDocs() {
       var _this2 = this;
 
@@ -1161,15 +985,12 @@ define('capstone_front_end/services/docs', ['exports', 'ember', 'ember-local-sto
         method: 'GET'
       }).then(function (result) {
         _this2.get('docs').set('myDocs', result);
-      }).then(function () {
-        console.log(_this2.get('docs.myDocs'));
       });
     },
 
     translate: function translate(id, text, fromLanguage, toLanguage) {
       var _this3 = this;
 
-      console.log('inside translate', id, text, fromLanguage, toLanguage);
       return this.get('ajax').patch('/translate/' + id, {
         data: {
           doc: {
@@ -1179,15 +1000,10 @@ define('capstone_front_end/services/docs', ['exports', 'ember', 'ember-local-sto
             toLanguage: toLanguage
           }
         }
-      }).then(function () {
-        return console.log('inside wrong place');
       })['catch'](function (result) {
-        console.log('inside result');
         return _this3.get('ajax').request('/docs/' + id, {
           method: 'GET'
         }).then(function (result) {
-          console.log('inside final result');
-          console.log(result.doc.text);
           $('#newText').val(result.doc.text);
           $('#' + id + '.textToTranslate').val(result.doc.text);
         })['catch'](function (error) {
@@ -1207,19 +1023,6 @@ define('capstone_front_end/services/flash-messages', ['exports', 'ember-cli-flas
 });
 define('capstone_front_end/services/session', ['exports', 'ember-simple-auth/services/session'], function (exports, _emberSimpleAuthServicesSession) {
   exports['default'] = _emberSimpleAuthServicesSession['default'];
-});
-define('capstone_front_end/services/tester', ['exports', 'ember', 'ember-local-storage'], function (exports, _ember, _emberLocalStorage) {
-  exports['default'] = _ember['default'].Service.extend({
-    ajax: _ember['default'].inject.service(),
-    credentials: (0, _emberLocalStorage.storageFor)('auth'),
-
-    getTests: function getTests() {
-      console.log('in tester');
-      return this.get('ajax').request('/tests', {
-        method: 'GET'
-      });
-    }
-  });
 });
 define('capstone_front_end/session-stores/application', ['exports', 'ember-simple-auth/session-stores/adaptive'], function (exports, _emberSimpleAuthSessionStoresAdaptive) {
   exports['default'] = _emberSimpleAuthSessionStoresAdaptive['default'].extend();
@@ -1252,9 +1055,6 @@ define("capstone_front_end/templates/components/add-doc", ["exports"], function 
 define("capstone_front_end/templates/components/change-password-form", ["exports"], function (exports) {
   exports["default"] = Ember.HTMLBars.template({ "id": "sGCLMrwY", "block": "{\"statements\":[[\"open-element\",\"div\",[]],[\"static-attr\",\"class\",\"form-group\"],[\"flush-element\"],[\"text\",\"\\n  \"],[\"open-element\",\"label\",[]],[\"static-attr\",\"for\",\"previous\"],[\"flush-element\"],[\"text\",\"Old Password\"],[\"close-element\"],[\"text\",\"\\n  \"],[\"append\",[\"helper\",[\"input\"],null,[[\"type\",\"class\",\"id\",\"placeholder\",\"value\"],[\"password\",\"form-control\",\"previous\",\"Old password\",[\"get\",[\"passwords\",\"previous\"]]]]],false],[\"text\",\"\\n\"],[\"close-element\"],[\"text\",\"\\n\\n\"],[\"open-element\",\"div\",[]],[\"static-attr\",\"class\",\"form-group\"],[\"flush-element\"],[\"text\",\"\\n  \"],[\"open-element\",\"label\",[]],[\"static-attr\",\"for\",\"next\"],[\"flush-element\"],[\"text\",\"New Password\"],[\"close-element\"],[\"text\",\"\\n  \"],[\"append\",[\"helper\",[\"input\"],null,[[\"type\",\"class\",\"id\",\"placeholder\",\"value\"],[\"password\",\"form-control\",\"next\",\"New password\",[\"get\",[\"passwords\",\"next\"]]]]],false],[\"text\",\"\\n\"],[\"close-element\"],[\"text\",\"\\n\\n\"],[\"open-element\",\"button\",[]],[\"static-attr\",\"type\",\"submit\"],[\"static-attr\",\"class\",\"btn btn-primary\"],[\"modifier\",[\"action\"],[[\"get\",[null]],\"submit\"]],[\"flush-element\"],[\"text\",\"\\n  Change Password\\n\"],[\"close-element\"],[\"text\",\"\\n\\n\"],[\"open-element\",\"button\",[]],[\"static-attr\",\"class\",\"btn btn-default\"],[\"modifier\",[\"action\"],[[\"get\",[null]],\"reset\"]],[\"flush-element\"],[\"text\",\"\\n  Cancel\\n\"],[\"close-element\"],[\"text\",\"\\n\"]],\"locals\":[],\"named\":[],\"yields\":[],\"blocks\":[],\"hasPartials\":false}", "meta": { "moduleName": "capstone_front_end/templates/components/change-password-form.hbs" } });
 });
-define("capstone_front_end/templates/components/custom-textarea", ["exports"], function (exports) {
-  exports["default"] = Ember.HTMLBars.template({ "id": "3Y/TucFC", "block": "{\"statements\":[[\"yield\",\"default\"],[\"text\",\"\\n\"]],\"locals\":[],\"named\":[],\"yields\":[\"default\"],\"blocks\":[],\"hasPartials\":false}", "meta": { "moduleName": "capstone_front_end/templates/components/custom-textarea.hbs" } });
-});
 define("capstone_front_end/templates/components/delete-docs", ["exports"], function (exports) {
   exports["default"] = Ember.HTMLBars.template({ "id": "p5lGDa3L", "block": "{\"statements\":[],\"locals\":[],\"named\":[],\"yields\":[],\"blocks\":[],\"hasPartials\":false}", "meta": { "moduleName": "capstone_front_end/templates/components/delete-docs.hbs" } });
 });
@@ -1272,12 +1072,6 @@ define("capstone_front_end/templates/components/my-application", ["exports"], fu
 });
 define("capstone_front_end/templates/components/my-docs", ["exports"], function (exports) {
   exports["default"] = Ember.HTMLBars.template({ "id": "AdLbA/1Q", "block": "{\"statements\":[[\"open-element\",\"br\",[]],[\"flush-element\"],[\"close-element\"],[\"text\",\"\\n\"],[\"open-element\",\"button\",[]],[\"static-attr\",\"type\",\"button\"],[\"static-attr\",\"class\",\"btn btn-default\"],[\"static-attr\",\"aria-label\",\"Left Align\"],[\"static-attr\",\"style\",\"color:black;\"],[\"flush-element\"],[\"text\",\"\\n  \"],[\"block\",[\"link-to\"],[\"docs\"],null,0],[\"text\",\"\\n\"],[\"close-element\"],[\"text\",\"\\n\"]],\"locals\":[],\"named\":[],\"yields\":[],\"blocks\":[{\"statements\":[[\"open-element\",\"span\",[]],[\"static-attr\",\"class\",\"NewDoc\"],[\"static-attr\",\"style\",\"font-size:3em;\"],[\"flush-element\"],[\"open-element\",\"span\",[]],[\"static-attr\",\"class\",\"glyphicon glyphicon-folder-open\"],[\"static-attr\",\"aria-hidden\",\"true\"],[\"flush-element\"],[\"text\",\"\\n\"],[\"close-element\"],[\"text\",\"    \"],[\"open-element\",\"span\",[]],[\"static-attr\",\"class\",\"textButton\"],[\"flush-element\"],[\"text\",\"Get Your Documents\"],[\"close-element\"],[\"close-element\"]],\"locals\":[]}],\"hasPartials\":false}", "meta": { "moduleName": "capstone_front_end/templates/components/my-docs.hbs" } });
-});
-define("capstone_front_end/templates/components/my-documents/docs", ["exports"], function (exports) {
-  exports["default"] = Ember.HTMLBars.template({ "id": "52lKwdeR", "block": "{\"statements\":[[\"yield\",\"default\"],[\"text\",\"\\n\"],[\"open-element\",\"ul\",[]],[\"flush-element\"],[\"text\",\"\\n\"],[\"block\",[\"each\"],[[\"get\",[\"document\",\"doc\"]]],null,0],[\"close-element\"],[\"text\",\"\\n\"]],\"locals\":[],\"named\":[],\"yields\":[\"default\"],\"blocks\":[{\"statements\":[[\"text\",\"  \"],[\"open-element\",\"li\",[]],[\"flush-element\"],[\"append\",[\"unknown\",[\"doc\",\"text\"]],false],[\"close-element\"],[\"text\",\"\\n\"]],\"locals\":[\"doc\"]}],\"hasPartials\":false}", "meta": { "moduleName": "capstone_front_end/templates/components/my-documents/docs.hbs" } });
-});
-define("capstone_front_end/templates/components/my-map", ["exports"], function (exports) {
-  exports["default"] = Ember.HTMLBars.template({ "id": "Vwqp81Y6", "block": "{\"statements\":[[\"yield\",\"default\"],[\"text\",\"\\n\"]],\"locals\":[],\"named\":[],\"yields\":[\"default\"],\"blocks\":[],\"hasPartials\":false}", "meta": { "moduleName": "capstone_front_end/templates/components/my-map.hbs" } });
 });
 define("capstone_front_end/templates/components/navbar-header", ["exports"], function (exports) {
   exports["default"] = Ember.HTMLBars.template({ "id": "9BNeZjs+", "block": "{\"statements\":[[\"append\",[\"unknown\",[\"hamburger-menu\"]],false],[\"text\",\"\\n\"],[\"block\",[\"link-to\"],[\"application\"],[[\"class\"],[\"navbar-brand\"]],0],[\"text\",\"\\n\"]],\"locals\":[],\"named\":[],\"yields\":[],\"blocks\":[{\"statements\":[[\"open-element\",\"span\",[]],[\"static-attr\",\"class\",\"glyphicon glyphicon-book\"],[\"static-attr\",\"aria-hidden\",\"true\"],[\"static-attr\",\"style\",\"font-size: 1.5em;\"],[\"flush-element\"],[\"close-element\"],[\"text\",\"Home\"]],\"locals\":[]}],\"hasPartials\":false}", "meta": { "moduleName": "capstone_front_end/templates/components/navbar-header.hbs" } });
@@ -1297,26 +1091,14 @@ define("capstone_front_end/templates/components/sign-in-form", ["exports"], func
 define("capstone_front_end/templates/components/sign-up-form", ["exports"], function (exports) {
   exports["default"] = Ember.HTMLBars.template({ "id": "eo4Eu81n", "block": "{\"statements\":[[\"append\",[\"helper\",[\"email-input\"],null,[[\"email\"],[[\"get\",[\"credentials\",\"email\"]]]]],false],[\"text\",\"\\n\"],[\"append\",[\"helper\",[\"password-input\"],null,[[\"password\"],[[\"get\",[\"credentials\",\"password\"]]]]],false],[\"text\",\"\\n\"],[\"append\",[\"helper\",[\"password-confirmation-input\"],null,[[\"password\"],[[\"get\",[\"credentials\",\"passwordConfirmation\"]]]]],false],[\"text\",\"\\n\\n\"],[\"open-element\",\"button\",[]],[\"static-attr\",\"type\",\"submit\"],[\"static-attr\",\"class\",\"btn btn-primary\"],[\"modifier\",[\"action\"],[[\"get\",[null]],\"submit\"]],[\"flush-element\"],[\"text\",\"\\n  Sign Up\\n\"],[\"close-element\"],[\"text\",\"\\n\\n\"],[\"open-element\",\"button\",[]],[\"static-attr\",\"class\",\"btn btn-default\"],[\"modifier\",[\"action\"],[[\"get\",[null]],\"reset\"]],[\"flush-element\"],[\"text\",\"\\n  Cancel\\n\"],[\"close-element\"],[\"text\",\"\\n\"]],\"locals\":[],\"named\":[],\"yields\":[],\"blocks\":[],\"hasPartials\":false}", "meta": { "moduleName": "capstone_front_end/templates/components/sign-up-form.hbs" } });
 });
-define("capstone_front_end/templates/components/text-editor", ["exports"], function (exports) {
-  exports["default"] = Ember.HTMLBars.template({ "id": "UC44Asp7", "block": "{\"statements\":[[\"yield\",\"default\"],[\"text\",\"\\n\\n\"],[\"append\",[\"helper\",[\"textarea\"],null,[[\"value\"],[\"test\"]]],false],[\"text\",\"\\n\"]],\"locals\":[],\"named\":[],\"yields\":[\"default\"],\"blocks\":[],\"hasPartials\":false}", "meta": { "moduleName": "capstone_front_end/templates/components/text-editor.hbs" } });
-});
-define("capstone_front_end/templates/doc", ["exports"], function (exports) {
-  exports["default"] = Ember.HTMLBars.template({ "id": "MmaM/xh4", "block": "{\"statements\":[[\"append\",[\"unknown\",[\"outlet\"]],false],[\"text\",\"\\n\"]],\"locals\":[],\"named\":[],\"yields\":[],\"blocks\":[],\"hasPartials\":false}", "meta": { "moduleName": "capstone_front_end/templates/doc.hbs" } });
-});
 define("capstone_front_end/templates/docs", ["exports"], function (exports) {
   exports["default"] = Ember.HTMLBars.template({ "id": "PO/xJOkg", "block": "{\"statements\":[[\"open-element\",\"h2\",[]],[\"static-attr\",\"class\",\"titleHeader\"],[\"flush-element\"],[\"text\",\"Your Documents\"],[\"close-element\"],[\"text\",\"\\n\\n\"],[\"block\",[\"each\"],[[\"get\",[\"model\"]]],null,0]],\"locals\":[],\"named\":[],\"yields\":[],\"blocks\":[{\"statements\":[[\"open-element\",\"h1\",[]],[\"static-attr\",\"class\",\"titleHeader\"],[\"flush-element\"],[\"append\",[\"unknown\",[\"doc\",\"title\"]],false],[\"close-element\"],[\"text\",\"\\n\"],[\"open-element\",\"br\",[]],[\"flush-element\"],[\"close-element\"],[\"text\",\"\\n\\n\"],[\"open-element\",\"button\",[]],[\"static-attr\",\"type\",\"button\"],[\"static-attr\",\"class\",\"btn btn-default\"],[\"static-attr\",\"aria-label\",\"Left Align\"],[\"static-attr\",\"style\",\"color:black;\"],[\"modifier\",[\"action\"],[[\"get\",[null]],\"toggle\",[\"get\",[\"doc\",\"_id\"]]]],[\"flush-element\"],[\"text\",\"\\n  \"],[\"open-element\",\"span\",[]],[\"static-attr\",\"class\",\"NewDoc\"],[\"static-attr\",\"style\",\"font-size:2em;\"],[\"flush-element\"],[\"text\",\"\\n    \"],[\"open-element\",\"span\",[]],[\"static-attr\",\"class\",\"glyphicon glyphicon-pencil\"],[\"static-attr\",\"aria-hidden\",\"true\"],[\"flush-element\"],[\"text\",\"\\n\"],[\"close-element\"],[\"text\",\"\\n\"],[\"open-element\",\"span\",[]],[\"static-attr\",\"class\",\"textButton\"],[\"flush-element\"],[\"text\",\"Edit this doc\\n\"],[\"close-element\"],[\"text\",\"\\n\"],[\"close-element\"],[\"text\",\"\\n\"],[\"close-element\"],[\"text\",\"\\n\\n\"],[\"open-element\",\"div\",[]],[\"dynamic-attr\",\"id\",[\"unknown\",[\"doc\",\"_id\"]],null],[\"static-attr\",\"class\",\"toggle\"],[\"flush-element\"],[\"text\",\"\\n\"],[\"append\",[\"helper\",[\"edit-doc\"],null,[[\"newDoc\"],[[\"get\",[\"doc\"]]]]],false],[\"text\",\"\\n\"],[\"close-element\"],[\"text\",\"\\n\\n\"],[\"open-element\",\"br\",[]],[\"flush-element\"],[\"close-element\"],[\"text\",\"\\n  \"],[\"open-element\",\"button\",[]],[\"static-attr\",\"type\",\"button\"],[\"static-attr\",\"class\",\"btn btn-default\"],[\"static-attr\",\"aria-label\",\"Left Align\"],[\"static-attr\",\"style\",\"color:black;\"],[\"modifier\",[\"action\"],[[\"get\",[null]],\"deleteDocs\",[\"get\",[\"doc\"]]]],[\"flush-element\"],[\"text\",\"\\n    \"],[\"open-element\",\"span\",[]],[\"static-attr\",\"class\",\"NewDoc\"],[\"static-attr\",\"style\",\"font-size:2em;\"],[\"flush-element\"],[\"text\",\"\\n      \"],[\"open-element\",\"span\",[]],[\"static-attr\",\"class\",\"glyphicon glyphicon-remove\"],[\"static-attr\",\"aria-hidden\",\"true\"],[\"flush-element\"],[\"text\",\"\\n  \"],[\"close-element\"],[\"text\",\"\\n\\n    \"],[\"open-element\",\"span\",[]],[\"static-attr\",\"class\",\"textButton\"],[\"flush-element\"],[\"text\",\"Delete this document\\n  \"],[\"close-element\"],[\"text\",\"\\n  \"],[\"close-element\"],[\"text\",\"\\n\"],[\"close-element\"],[\"text\",\"\\n\"]],\"locals\":[\"doc\"]}],\"hasPartials\":false}", "meta": { "moduleName": "capstone_front_end/templates/docs.hbs" } });
-});
-define("capstone_front_end/templates/documents", ["exports"], function (exports) {
-  exports["default"] = Ember.HTMLBars.template({ "id": "hb0yOVuQ", "block": "{\"statements\":[[\"append\",[\"unknown\",[\"outlet\"]],false],[\"text\",\"\\n\"],[\"open-element\",\"h2\",[]],[\"flush-element\"],[\"text\",\"Documents\"],[\"close-element\"],[\"text\",\"\\n\\n\"],[\"open-element\",\"ul\",[]],[\"flush-element\"],[\"text\",\"\\n\"],[\"block\",[\"each\"],[[\"get\",[\"model\"]]],null,0],[\"close-element\"],[\"text\",\"\\n\"]],\"locals\":[],\"named\":[],\"yields\":[],\"blocks\":[{\"statements\":[[\"text\",\"  \"],[\"open-element\",\"li\",[]],[\"flush-element\"],[\"append\",[\"unknown\",[\"document\",\"title\"]],false],[\"close-element\"],[\"text\",\"\\n  \"],[\"open-element\",\"li\",[]],[\"flush-element\"],[\"append\",[\"unknown\",[\"document\",\"text\"]],false],[\"close-element\"],[\"text\",\"\\n\"]],\"locals\":[\"document\"]}],\"hasPartials\":false}", "meta": { "moduleName": "capstone_front_end/templates/documents.hbs" } });
 });
 define("capstone_front_end/templates/edit-doc", ["exports"], function (exports) {
   exports["default"] = Ember.HTMLBars.template({ "id": "f8njR2fi", "block": "{\"statements\":[[\"append\",[\"unknown\",[\"outlet\"]],false],[\"text\",\"\\n\"],[\"open-element\",\"div\",[]],[\"static-attr\",\"class\",\"new-doc-wrap\"],[\"flush-element\"],[\"text\",\"\\n  \"],[\"open-element\",\"h1\",[]],[\"static-attr\",\"class\",\"titleHeader\"],[\"flush-element\"],[\"text\",\"Edit title here\"],[\"close-element\"],[\"text\",\"\\n  \"],[\"open-element\",\"input\",[]],[\"static-attr\",\"class\",\"editedTitle\"],[\"static-attr\",\"type\",\"text\"],[\"flush-element\"],[\"close-element\"],[\"text\",\"\\n  \"],[\"open-element\",\"br\",[]],[\"flush-element\"],[\"close-element\"],[\"text\",\"\\n  \"],[\"open-element\",\"br\",[]],[\"flush-element\"],[\"close-element\"],[\"text\",\"\\n  \"],[\"open-element\",\"p\",[]],[\"flush-element\"],[\"text\",\"Doc: \"],[\"append\",[\"unknown\",[\"doc\",\"title\"]],false],[\"close-element\"],[\"text\",\"\\n  \"],[\"open-element\",\"div\",[]],[\"static-attr\",\"class\",\"textAreaBoundary\"],[\"flush-element\"],[\"text\",\"\\n  \"],[\"append\",[\"helper\",[\"edit-doc\"],null,[[\"newDoc\"],[[\"get\",[\"doc\"]]]]],false],[\"text\",\"\\n  \"],[\"open-element\",\"br\",[]],[\"flush-element\"],[\"close-element\"],[\"text\",\"\\n\"],[\"close-element\"],[\"text\",\"\\n  \"],[\"open-element\",\"br\",[]],[\"flush-element\"],[\"close-element\"],[\"text\",\"\\n  \"],[\"open-element\",\"button\",[]],[\"static-attr\",\"type\",\"button\"],[\"static-attr\",\"data-dismiss\",\"alert\"],[\"static-attr\",\"aria-label\",\"Close\"],[\"static-attr\",\"class\",\"textButton\"],[\"static-attr\",\"style\",\"color: black;\"],[\"modifier\",[\"action\"],[[\"get\",[null]],\"saveDoc\"]],[\"flush-element\"],[\"text\",\"\\n    \"],[\"open-element\",\"span\",[]],[\"static-attr\",\"style\",\"font-size: 3em;\"],[\"flush-element\"],[\"open-element\",\"span\",[]],[\"static-attr\",\"class\",\"glyphicon glyphicon-pencil\"],[\"static-attr\",\"aria-hidden\",\"true\"],[\"flush-element\"],[\"close-element\"],[\"text\",\"\\n    Save Document\"],[\"close-element\"],[\"text\",\"\\n  \"],[\"close-element\"],[\"text\",\"\\n\\n  \"],[\"yield\",\"default\"],[\"text\",\"\\n\"],[\"close-element\"],[\"text\",\"\\n\"]],\"locals\":[],\"named\":[],\"yields\":[\"default\"],\"blocks\":[],\"hasPartials\":false}", "meta": { "moduleName": "capstone_front_end/templates/edit-doc.hbs" } });
 });
 define("capstone_front_end/templates/login", ["exports"], function (exports) {
   exports["default"] = Ember.HTMLBars.template({ "id": "0t8yIWBV", "block": "{\"statements\":[[\"open-element\",\"h2\",[]],[\"flush-element\"],[\"text\",\"Log In\"],[\"close-element\"],[\"text\",\"\\n\\n\"],[\"append\",[\"helper\",[\"sign-in-form\"],null,[[\"submit\"],[\"signUp\"]]],false],[\"text\",\"\\n\"]],\"locals\":[],\"named\":[],\"yields\":[],\"blocks\":[],\"hasPartials\":false}", "meta": { "moduleName": "capstone_front_end/templates/login.hbs" } });
-});
-define("capstone_front_end/templates/my-documents", ["exports"], function (exports) {
-  exports["default"] = Ember.HTMLBars.template({ "id": "Ga+JsKu2", "block": "{\"statements\":[[\"append\",[\"unknown\",[\"outlet\"]],false],[\"text\",\"\\n\"],[\"open-element\",\"h2\",[]],[\"flush-element\"],[\"text\",\"Your Documents\"],[\"close-element\"],[\"text\",\"\\n\"]],\"locals\":[],\"named\":[],\"yields\":[],\"blocks\":[],\"hasPartials\":false}", "meta": { "moduleName": "capstone_front_end/templates/my-documents.hbs" } });
 });
 define("capstone_front_end/templates/new-document", ["exports"], function (exports) {
   exports["default"] = Ember.HTMLBars.template({ "id": "rb3kNe+6", "block": "{\"statements\":[[\"open-element\",\"div\",[]],[\"static-attr\",\"class\",\"new-doc-wrap\"],[\"flush-element\"],[\"text\",\"\\n  \"],[\"open-element\",\"h1\",[]],[\"static-attr\",\"class\",\"titleHeader\"],[\"flush-element\"],[\"text\",\"Put your title here\"],[\"close-element\"],[\"text\",\"\\n  \"],[\"open-element\",\"input\",[]],[\"static-attr\",\"class\",\"docTitle\"],[\"static-attr\",\"type\",\"text\"],[\"flush-element\"],[\"close-element\"],[\"text\",\"\\n  \"],[\"open-element\",\"br\",[]],[\"flush-element\"],[\"close-element\"],[\"text\",\"\\n  \"],[\"open-element\",\"br\",[]],[\"flush-element\"],[\"close-element\"],[\"text\",\"\\n  \"],[\"append\",[\"unknown\",[\"add-doc\"]],false],[\"text\",\"\\n\"],[\"close-element\"],[\"text\",\"\\n\\n\"],[\"append\",[\"unknown\",[\"outlet\"]],false],[\"text\",\"\\n\"]],\"locals\":[],\"named\":[],\"yields\":[],\"blocks\":[],\"hasPartials\":false}", "meta": { "moduleName": "capstone_front_end/templates/new-document.hbs" } });
@@ -1326,15 +1108,6 @@ define("capstone_front_end/templates/sign-in", ["exports"], function (exports) {
 });
 define("capstone_front_end/templates/sign-up", ["exports"], function (exports) {
   exports["default"] = Ember.HTMLBars.template({ "id": "0XV6pI1L", "block": "{\"statements\":[[\"open-element\",\"h2\",[]],[\"flush-element\"],[\"text\",\"Sign Up\"],[\"close-element\"],[\"text\",\"\\n\\n\"],[\"append\",[\"helper\",[\"sign-up-form\"],null,[[\"submit\"],[\"signUp\"]]],false],[\"text\",\"\\n\"]],\"locals\":[],\"named\":[],\"yields\":[],\"blocks\":[],\"hasPartials\":false}", "meta": { "moduleName": "capstone_front_end/templates/sign-up.hbs" } });
-});
-define("capstone_front_end/templates/test-docs", ["exports"], function (exports) {
-  exports["default"] = Ember.HTMLBars.template({ "id": "hLiZK0eP", "block": "{\"statements\":[[\"open-element\",\"h2\",[]],[\"flush-element\"],[\"text\",\"Documents\"],[\"close-element\"],[\"text\",\"\\n\\n\"],[\"open-element\",\"ul\",[]],[\"flush-element\"],[\"text\",\"\\n\"],[\"block\",[\"each\"],[[\"get\",[\"model\"]]],null,0],[\"close-element\"],[\"text\",\"\\n\"]],\"locals\":[],\"named\":[],\"yields\":[],\"blocks\":[{\"statements\":[[\"text\",\"  \"],[\"open-element\",\"li\",[]],[\"flush-element\"],[\"append\",[\"unknown\",[\"user\",\"email\"]],false],[\"close-element\"],[\"text\",\"\\n\"]],\"locals\":[\"user\"]}],\"hasPartials\":false}", "meta": { "moduleName": "capstone_front_end/templates/test-docs.hbs" } });
-});
-define("capstone_front_end/templates/test-resource", ["exports"], function (exports) {
-  exports["default"] = Ember.HTMLBars.template({ "id": "EQjDTzB3", "block": "{\"statements\":[[\"append\",[\"unknown\",[\"outlet\"]],false],[\"text\",\"\\n\"],[\"open-element\",\"button\",[]],[\"static-attr\",\"class\",\"btn btn-default\"],[\"modifier\",[\"action\"],[[\"get\",[null]],\"getTests\"]],[\"flush-element\"],[\"text\",\"\\nGet Tests\\n\"],[\"close-element\"],[\"text\",\"\\n\\n\"],[\"open-element\",\"span\",[]],[\"static-attr\",\"class\",\"tests\"],[\"flush-element\"],[\"close-element\"],[\"text\",\"\\n\"]],\"locals\":[],\"named\":[],\"yields\":[],\"blocks\":[],\"hasPartials\":false}", "meta": { "moduleName": "capstone_front_end/templates/test-resource.hbs" } });
-});
-define("capstone_front_end/templates/users", ["exports"], function (exports) {
-  exports["default"] = Ember.HTMLBars.template({ "id": "Ygto0eCa", "block": "{\"statements\":[[\"open-element\",\"h2\",[]],[\"flush-element\"],[\"text\",\"Users\"],[\"close-element\"],[\"text\",\"\\n\\n\"],[\"open-element\",\"ul\",[]],[\"flush-element\"],[\"text\",\"\\n\"],[\"block\",[\"each\"],[[\"get\",[\"model\"]]],null,0],[\"close-element\"],[\"text\",\"\\n\"]],\"locals\":[],\"named\":[],\"yields\":[],\"blocks\":[{\"statements\":[[\"text\",\"  \"],[\"open-element\",\"li\",[]],[\"flush-element\"],[\"append\",[\"unknown\",[\"user\",\"email\"]],false],[\"close-element\"],[\"text\",\"\\n\"]],\"locals\":[\"user\"]}],\"hasPartials\":false}", "meta": { "moduleName": "capstone_front_end/templates/users.hbs" } });
 });
 
 

@@ -24,7 +24,7 @@ define('capstone_front_end/tests/components/add-doc.jshint.lint-test', [], funct
   QUnit.module('JSHint | components/add-doc.js');
   QUnit.test('should pass jshint', function (assert) {
     assert.expect(1);
-    assert.ok(false, 'components/add-doc.js should pass jshint.\ncomponents/add-doc.js: line 3, col 39, Missing semicolon.\ncomponents/add-doc.js: line 4, col 36, Missing semicolon.\ncomponents/add-doc.js: line 17, col 38, Missing semicolon.\ncomponents/add-doc.js: line 18, col 39, Missing semicolon.\ncomponents/add-doc.js: line 19, col 44, Missing semicolon.\ncomponents/add-doc.js: line 20, col 26, Missing semicolon.\ncomponents/add-doc.js: line 23, col 48, Missing semicolon.\ncomponents/add-doc.js: line 25, col 45, Missing semicolon.\ncomponents/add-doc.js: line 26, col 44, Missing semicolon.\ncomponents/add-doc.js: line 27, col 51, Missing semicolon.\ncomponents/add-doc.js: line 30, col 52, Missing semicolon.\ncomponents/add-doc.js: line 31, col 64, Missing semicolon.\ncomponents/add-doc.js: line 32, col 60, Missing semicolon.\ncomponents/add-doc.js: line 33, col 28, Missing semicolon.\ncomponents/add-doc.js: line 34, col 25, Missing semicolon.\ncomponents/add-doc.js: line 35, col 37, Missing semicolon.\ncomponents/add-doc.js: line 36, col 46, Missing semicolon.\ncomponents/add-doc.js: line 38, col 28, Missing semicolon.\ncomponents/add-doc.js: line 40, col 58, Missing semicolon.\ncomponents/add-doc.js: line 43, col 26, Missing semicolon.\ncomponents/add-doc.js: line 45, col 54, Missing semicolon.\ncomponents/add-doc.js: line 47, col 69, Missing semicolon.\ncomponents/add-doc.js: line 50, col 3, Missing semicolon.\ncomponents/add-doc.js: line 16, col 19, \'$\' is not defined.\ncomponents/add-doc.js: line 17, col 19, \'$\' is not defined.\ncomponents/add-doc.js: line 18, col 19, \'$\' is not defined.\ncomponents/add-doc.js: line 20, col 7, \'$\' is not defined.\ncomponents/add-doc.js: line 24, col 21, \'$\' is not defined.\ncomponents/add-doc.js: line 25, col 21, \'$\' is not defined.\ncomponents/add-doc.js: line 26, col 21, \'$\' is not defined.\ncomponents/add-doc.js: line 31, col 20, \'$\' is not defined.\ncomponents/add-doc.js: line 32, col 18, \'$\' is not defined.\ncomponents/add-doc.js: line 35, col 18, \'$\' is not defined.\ncomponents/add-doc.js: line 3, col 8, \'storage\' is defined but never used.\ncomponents/add-doc.js: line 4, col 8, \'Docs\' is defined but never used.\n\n35 errors');
+    assert.ok(false, 'components/add-doc.js should pass jshint.\ncomponents/add-doc.js: line 3, col 39, Missing semicolon.\ncomponents/add-doc.js: line 4, col 36, Missing semicolon.\ncomponents/add-doc.js: line 16, col 38, Missing semicolon.\ncomponents/add-doc.js: line 17, col 39, Missing semicolon.\ncomponents/add-doc.js: line 18, col 44, Missing semicolon.\ncomponents/add-doc.js: line 19, col 26, Missing semicolon.\ncomponents/add-doc.js: line 22, col 48, Missing semicolon.\ncomponents/add-doc.js: line 23, col 45, Missing semicolon.\ncomponents/add-doc.js: line 24, col 44, Missing semicolon.\ncomponents/add-doc.js: line 25, col 51, Missing semicolon.\ncomponents/add-doc.js: line 28, col 64, Missing semicolon.\ncomponents/add-doc.js: line 29, col 60, Missing semicolon.\ncomponents/add-doc.js: line 30, col 28, Missing semicolon.\ncomponents/add-doc.js: line 31, col 25, Missing semicolon.\ncomponents/add-doc.js: line 32, col 37, Missing semicolon.\ncomponents/add-doc.js: line 33, col 46, Missing semicolon.\ncomponents/add-doc.js: line 35, col 28, Missing semicolon.\ncomponents/add-doc.js: line 37, col 58, Missing semicolon.\ncomponents/add-doc.js: line 40, col 26, Missing semicolon.\ncomponents/add-doc.js: line 42, col 54, Missing semicolon.\ncomponents/add-doc.js: line 44, col 69, Missing semicolon.\ncomponents/add-doc.js: line 47, col 3, Missing semicolon.\ncomponents/add-doc.js: line 16, col 19, \'$\' is not defined.\ncomponents/add-doc.js: line 17, col 19, \'$\' is not defined.\ncomponents/add-doc.js: line 19, col 7, \'$\' is not defined.\ncomponents/add-doc.js: line 23, col 21, \'$\' is not defined.\ncomponents/add-doc.js: line 24, col 21, \'$\' is not defined.\ncomponents/add-doc.js: line 28, col 20, \'$\' is not defined.\ncomponents/add-doc.js: line 29, col 18, \'$\' is not defined.\ncomponents/add-doc.js: line 32, col 18, \'$\' is not defined.\ncomponents/add-doc.js: line 3, col 8, \'storage\' is defined but never used.\ncomponents/add-doc.js: line 4, col 8, \'Docs\' is defined but never used.\n\n32 errors');
   });
 });
 define('capstone_front_end/tests/components/change-password-form.jshint.lint-test', [], function () {
@@ -36,22 +36,13 @@ define('capstone_front_end/tests/components/change-password-form.jshint.lint-tes
     assert.ok(true, 'components/change-password-form.js should pass jshint.');
   });
 });
-define('capstone_front_end/tests/components/custom-textarea.jshint.lint-test', [], function () {
-  'use strict';
-
-  QUnit.module('JSHint | components/custom-textarea.js');
-  QUnit.test('should pass jshint', function (assert) {
-    assert.expect(1);
-    assert.ok(false, 'components/custom-textarea.js should pass jshint.\ncomponents/custom-textarea.js: line 6, col 38, Missing semicolon.\ncomponents/custom-textarea.js: line 9, col 7, Missing semicolon.\ncomponents/custom-textarea.js: line 5, col 5, \'$\' is not defined.\ncomponents/custom-textarea.js: line 7, col 28, \'$\' is not defined.\n\n4 errors');
-  });
-});
 define('capstone_front_end/tests/components/delete-docs.jshint.lint-test', [], function () {
   'use strict';
 
   QUnit.module('JSHint | components/delete-docs.js');
   QUnit.test('should pass jshint', function (assert) {
     assert.expect(1);
-    assert.ok(false, 'components/delete-docs.js should pass jshint.\ncomponents/delete-docs.js: line 12, col 22, Missing semicolon.\ncomponents/delete-docs.js: line 13, col 41, Missing semicolon.\ncomponents/delete-docs.js: line 15, col 43, Missing semicolon.\n\n3 errors');
+    assert.ok(false, 'components/delete-docs.js should pass jshint.\ncomponents/delete-docs.js: line 13, col 43, Missing semicolon.\ncomponents/delete-docs.js: line 11, col 16, \'id\' is defined but never used.\n\n2 errors');
   });
 });
 define('capstone_front_end/tests/components/docs.jshint.lint-test', [], function () {
@@ -60,7 +51,7 @@ define('capstone_front_end/tests/components/docs.jshint.lint-test', [], function
   QUnit.module('JSHint | components/docs.js');
   QUnit.test('should pass jshint', function (assert) {
     assert.expect(1);
-    assert.ok(false, 'components/docs.js should pass jshint.\ncomponents/docs.js: line 12, col 22, Missing semicolon.\ncomponents/docs.js: line 13, col 45, Missing semicolon.\ncomponents/docs.js: line 15, col 43, Missing semicolon.\ncomponents/docs.js: line 18, col 43, Missing semicolon.\ncomponents/docs.js: line 19, col 41, Missing semicolon.\ncomponents/docs.js: line 20, col 40, Missing semicolon.\ncomponents/docs.js: line 21, col 42, Missing semicolon.\ncomponents/docs.js: line 22, col 25, Missing semicolon.\ncomponents/docs.js: line 23, col 46, Missing semicolon.\ncomponents/docs.js: line 24, col 47, Missing semicolon.\ncomponents/docs.js: line 25, col 42, Missing semicolon.\ncomponents/docs.js: line 28, col 43, Missing semicolon.\ncomponents/docs.js: line 31, col 33, Missing semicolon.\ncomponents/docs.js: line 32, col 28, \'$\' is not defined.\n\n14 errors');
+    assert.ok(false, 'components/docs.js should pass jshint.\ncomponents/docs.js: line 13, col 43, Missing semicolon.\ncomponents/docs.js: line 11, col 16, \'id\' is defined but never used.\ncomponents/docs.js: line 16, col 42, Missing semicolon.\ncomponents/docs.js: line 17, col 46, Missing semicolon.\ncomponents/docs.js: line 18, col 42, Missing semicolon.\ncomponents/docs.js: line 16, col 13, \'title\' is defined but never used.\ncomponents/docs.js: line 21, col 26, Missing semicolon.\ncomponents/docs.js: line 21, col 7, \'$\' is not defined.\n\n8 errors');
   });
 });
 define('capstone_front_end/tests/components/edit-doc.jshint.lint-test', [], function () {
@@ -69,7 +60,7 @@ define('capstone_front_end/tests/components/edit-doc.jshint.lint-test', [], func
   QUnit.module('JSHint | components/edit-doc.js');
   QUnit.test('should pass jshint', function (assert) {
     assert.expect(1);
-    assert.ok(false, 'components/edit-doc.js should pass jshint.\ncomponents/edit-doc.js: line 3, col 39, Missing semicolon.\ncomponents/edit-doc.js: line 4, col 36, Missing semicolon.\ncomponents/edit-doc.js: line 15, col 29, Missing semicolon.\ncomponents/edit-doc.js: line 18, col 33, Missing semicolon.\ncomponents/edit-doc.js: line 23, col 57, Missing semicolon.\ncomponents/edit-doc.js: line 24, col 42, Missing semicolon.\ncomponents/edit-doc.js: line 25, col 49, Missing semicolon.\ncomponents/edit-doc.js: line 28, col 70, Missing semicolon.\ncomponents/edit-doc.js: line 29, col 66, Missing semicolon.\ncomponents/edit-doc.js: line 30, col 28, Missing semicolon.\ncomponents/edit-doc.js: line 31, col 25, Missing semicolon.\ncomponents/edit-doc.js: line 32, col 60, Missing semicolon.\ncomponents/edit-doc.js: line 33, col 22, Missing semicolon.\ncomponents/edit-doc.js: line 35, col 28, Missing semicolon.\ncomponents/edit-doc.js: line 37, col 58, Missing semicolon.\ncomponents/edit-doc.js: line 40, col 26, Missing semicolon.\ncomponents/edit-doc.js: line 42, col 54, Missing semicolon.\ncomponents/edit-doc.js: line 44, col 69, Missing semicolon.\ncomponents/edit-doc.js: line 19, col 28, \'$\' is not defined.\ncomponents/edit-doc.js: line 23, col 19, \'$\' is not defined.\ncomponents/edit-doc.js: line 24, col 19, \'$\' is not defined.\ncomponents/edit-doc.js: line 28, col 20, \'$\' is not defined.\ncomponents/edit-doc.js: line 29, col 18, \'$\' is not defined.\ncomponents/edit-doc.js: line 32, col 18, \'$\' is not defined.\ncomponents/edit-doc.js: line 2, col 10, \'storageFor\' is defined but never used.\ncomponents/edit-doc.js: line 3, col 8, \'storage\' is defined but never used.\ncomponents/edit-doc.js: line 4, col 8, \'Docs\' is defined but never used.\n\n27 errors');
+    assert.ok(false, 'components/edit-doc.js should pass jshint.\ncomponents/edit-doc.js: line 3, col 39, Missing semicolon.\ncomponents/edit-doc.js: line 4, col 36, Missing semicolon.\ncomponents/edit-doc.js: line 15, col 57, Missing semicolon.\ncomponents/edit-doc.js: line 16, col 42, Missing semicolon.\ncomponents/edit-doc.js: line 17, col 49, Missing semicolon.\ncomponents/edit-doc.js: line 20, col 70, Missing semicolon.\ncomponents/edit-doc.js: line 21, col 66, Missing semicolon.\ncomponents/edit-doc.js: line 22, col 28, Missing semicolon.\ncomponents/edit-doc.js: line 23, col 25, Missing semicolon.\ncomponents/edit-doc.js: line 24, col 60, Missing semicolon.\ncomponents/edit-doc.js: line 25, col 22, Missing semicolon.\ncomponents/edit-doc.js: line 27, col 28, Missing semicolon.\ncomponents/edit-doc.js: line 29, col 58, Missing semicolon.\ncomponents/edit-doc.js: line 32, col 26, Missing semicolon.\ncomponents/edit-doc.js: line 34, col 54, Missing semicolon.\ncomponents/edit-doc.js: line 36, col 69, Missing semicolon.\ncomponents/edit-doc.js: line 15, col 19, \'$\' is not defined.\ncomponents/edit-doc.js: line 16, col 19, \'$\' is not defined.\ncomponents/edit-doc.js: line 20, col 20, \'$\' is not defined.\ncomponents/edit-doc.js: line 21, col 18, \'$\' is not defined.\ncomponents/edit-doc.js: line 24, col 18, \'$\' is not defined.\ncomponents/edit-doc.js: line 2, col 10, \'storageFor\' is defined but never used.\ncomponents/edit-doc.js: line 3, col 8, \'storage\' is defined but never used.\ncomponents/edit-doc.js: line 4, col 8, \'Docs\' is defined but never used.\n\n24 errors');
   });
 });
 define('capstone_front_end/tests/components/email-input.jshint.lint-test', [], function () {
@@ -96,7 +87,7 @@ define('capstone_front_end/tests/components/my-application.jshint.lint-test', []
   QUnit.module('JSHint | components/my-application.js');
   QUnit.test('should pass jshint', function (assert) {
     assert.expect(1);
-    assert.ok(false, 'components/my-application.js should pass jshint.\ncomponents/my-application.js: line 14, col 33, Missing semicolon.\ncomponents/my-application.js: line 15, col 38, Missing semicolon.\ncomponents/my-application.js: line 15, col 7, \'$\' is not defined.\n\n3 errors');
+    assert.ok(false, 'components/my-application.js should pass jshint.\ncomponents/my-application.js: line 14, col 38, Missing semicolon.\ncomponents/my-application.js: line 14, col 7, \'$\' is not defined.\n\n2 errors');
   });
 });
 define('capstone_front_end/tests/components/my-docs.jshint.lint-test', [], function () {
@@ -106,24 +97,6 @@ define('capstone_front_end/tests/components/my-docs.jshint.lint-test', [], funct
   QUnit.test('should pass jshint', function (assert) {
     assert.expect(1);
     assert.ok(false, 'components/my-docs.js should pass jshint.\ncomponents/my-docs.js: line 12, col 46, Missing semicolon.\n\n1 error');
-  });
-});
-define('capstone_front_end/tests/components/my-documents/docs.jshint.lint-test', [], function () {
-  'use strict';
-
-  QUnit.module('JSHint | components/my-documents/docs.js');
-  QUnit.test('should pass jshint', function (assert) {
-    assert.expect(1);
-    assert.ok(true, 'components/my-documents/docs.js should pass jshint.');
-  });
-});
-define('capstone_front_end/tests/components/my-map.jshint.lint-test', [], function () {
-  'use strict';
-
-  QUnit.module('JSHint | components/my-map.js');
-  QUnit.test('should pass jshint', function (assert) {
-    assert.expect(1);
-    assert.ok(true, 'components/my-map.js should pass jshint.');
   });
 });
 define('capstone_front_end/tests/components/navbar-header.jshint.lint-test', [], function () {
@@ -141,7 +114,7 @@ define('capstone_front_end/tests/components/new-document.jshint.lint-test', [], 
   QUnit.module('JSHint | components/new-document.js');
   QUnit.test('should pass jshint', function (assert) {
     assert.expect(1);
-    assert.ok(false, 'components/new-document.js should pass jshint.\ncomponents/new-document.js: line 12, col 38, Missing semicolon.\ncomponents/new-document.js: line 13, col 32, Missing semicolon.\ncomponents/new-document.js: line 14, col 32, Missing semicolon.\n\n3 errors');
+    assert.ok(false, 'components/new-document.js should pass jshint.\ncomponents/new-document.js: line 12, col 32, Missing semicolon.\ncomponents/new-document.js: line 13, col 32, Missing semicolon.\n\n2 errors');
   });
 });
 define('capstone_front_end/tests/components/password-confirmation-input.jshint.lint-test', [], function () {
@@ -180,22 +153,13 @@ define('capstone_front_end/tests/components/sign-up-form.jshint.lint-test', [], 
     assert.ok(true, 'components/sign-up-form.js should pass jshint.');
   });
 });
-define('capstone_front_end/tests/components/text-editor.jshint.lint-test', [], function () {
-  'use strict';
-
-  QUnit.module('JSHint | components/text-editor.js');
-  QUnit.test('should pass jshint', function (assert) {
-    assert.expect(1);
-    assert.ok(false, 'components/text-editor.js should pass jshint.\ncomponents/text-editor.js: line 21, col 5, `var` declarations are forbidden. Use `let` or `const` instead.\ncomponents/text-editor.js: line 22, col 5, `var` declarations are forbidden. Use `let` or `const` instead.\ncomponents/text-editor.js: line 22, col 39, Missing semicolon.\n\n3 errors');
-  });
-});
 define('capstone_front_end/tests/controllers/docs.jshint.lint-test', [], function () {
   'use strict';
 
   QUnit.module('JSHint | controllers/docs.js');
   QUnit.test('should pass jshint', function (assert) {
     assert.expect(1);
-    assert.ok(false, 'controllers/docs.js should pass jshint.\ncontrollers/docs.js: line 6, col 39, Missing semicolon.\ncontrollers/docs.js: line 7, col 22, Missing semicolon.\ncontrollers/docs.js: line 8, col 25, Missing semicolon.\ncontrollers/docs.js: line 8, col 7, \'$\' is not defined.\n\n4 errors');
+    assert.ok(false, 'controllers/docs.js should pass jshint.\ncontrollers/docs.js: line 6, col 43, Missing semicolon.\ncontrollers/docs.js: line 7, col 22, Missing semicolon.\ncontrollers/docs.js: line 8, col 25, Missing semicolon.\ncontrollers/docs.js: line 8, col 7, \'$\' is not defined.\n\n4 errors');
   });
 });
 define('capstone_front_end/tests/helpers/destroy-app', ['exports', 'ember'], function (exports, _ember) {
@@ -428,44 +392,6 @@ define('capstone_front_end/tests/integration/components/change-password-form-tes
     assert.ok(true, 'integration/components/change-password-form-test.js should pass jshint.');
   });
 });
-define('capstone_front_end/tests/integration/components/custom-textarea-test', ['exports', 'ember-qunit'], function (exports, _emberQunit) {
-
-  (0, _emberQunit.moduleForComponent)('custom-textarea', 'Integration | Component | custom textarea', {
-    integration: true
-  });
-
-  (0, _emberQunit.test)('it renders', function (assert) {
-
-    // Set any properties with this.set('myProperty', 'value');
-    // Handle any actions with this.on('myAction', function(val) { ... });
-
-    this.render(Ember.HTMLBars.template({
-      'id': 'iq1ivNIC',
-      'block': '{"statements":[["append",["unknown",["custom-textarea"]],false]],"locals":[],"named":[],"yields":[],"blocks":[],"hasPartials":false}',
-      'meta': {}
-    }));
-
-    assert.equal(this.$().text().trim(), '');
-
-    // Template block usage:
-    this.render(Ember.HTMLBars.template({
-      'id': 'xHxrw18r',
-      'block': '{"statements":[["text","\\n"],["block",["custom-textarea"],null,null,0],["text","  "]],"locals":[],"named":[],"yields":[],"blocks":[{"statements":[["text","      template block text\\n"]],"locals":[]}],"hasPartials":false}',
-      'meta': {}
-    }));
-
-    assert.equal(this.$().text().trim(), 'template block text');
-  });
-});
-define('capstone_front_end/tests/integration/components/custom-textarea-test.jshint.lint-test', [], function () {
-  'use strict';
-
-  QUnit.module('JSHint | integration/components/custom-textarea-test.js');
-  QUnit.test('should pass jshint', function (assert) {
-    assert.expect(1);
-    assert.ok(true, 'integration/components/custom-textarea-test.js should pass jshint.');
-  });
-});
 define('capstone_front_end/tests/integration/components/delete-docs-test', ['exports', 'ember-qunit'], function (exports, _emberQunit) {
 
   (0, _emberQunit.moduleForComponent)('delete-docs', 'Integration | Component | delete docs', {
@@ -691,82 +617,6 @@ define('capstone_front_end/tests/integration/components/my-docs-test.jshint.lint
     assert.ok(true, 'integration/components/my-docs-test.js should pass jshint.');
   });
 });
-define('capstone_front_end/tests/integration/components/my-documents/docs-test', ['exports', 'ember-qunit'], function (exports, _emberQunit) {
-
-  (0, _emberQunit.moduleForComponent)('my-documents/docs', 'Integration | Component | my documents/docs', {
-    integration: true
-  });
-
-  (0, _emberQunit.test)('it renders', function (assert) {
-
-    // Set any properties with this.set('myProperty', 'value');
-    // Handle any actions with this.on('myAction', function(val) { ... });
-
-    this.render(Ember.HTMLBars.template({
-      'id': 'VU6ZyAaN',
-      'block': '{"statements":[["append",["unknown",["my-documents/docs"]],false]],"locals":[],"named":[],"yields":[],"blocks":[],"hasPartials":false}',
-      'meta': {}
-    }));
-
-    assert.equal(this.$().text().trim(), '');
-
-    // Template block usage:
-    this.render(Ember.HTMLBars.template({
-      'id': 'WyBoA5zG',
-      'block': '{"statements":[["text","\\n"],["block",["my-documents/docs"],null,null,0],["text","  "]],"locals":[],"named":[],"yields":[],"blocks":[{"statements":[["text","      template block text\\n"]],"locals":[]}],"hasPartials":false}',
-      'meta': {}
-    }));
-
-    assert.equal(this.$().text().trim(), 'template block text');
-  });
-});
-define('capstone_front_end/tests/integration/components/my-documents/docs-test.jshint.lint-test', [], function () {
-  'use strict';
-
-  QUnit.module('JSHint | integration/components/my-documents/docs-test.js');
-  QUnit.test('should pass jshint', function (assert) {
-    assert.expect(1);
-    assert.ok(true, 'integration/components/my-documents/docs-test.js should pass jshint.');
-  });
-});
-define('capstone_front_end/tests/integration/components/my-map-test', ['exports', 'ember-qunit'], function (exports, _emberQunit) {
-
-  (0, _emberQunit.moduleForComponent)('my-map', 'Integration | Component | my map', {
-    integration: true
-  });
-
-  (0, _emberQunit.test)('it renders', function (assert) {
-
-    // Set any properties with this.set('myProperty', 'value');
-    // Handle any actions with this.on('myAction', function(val) { ... });
-
-    this.render(Ember.HTMLBars.template({
-      'id': 'BQkC0RLr',
-      'block': '{"statements":[["append",["unknown",["my-map"]],false]],"locals":[],"named":[],"yields":[],"blocks":[],"hasPartials":false}',
-      'meta': {}
-    }));
-
-    assert.equal(this.$().text().trim(), '');
-
-    // Template block usage:
-    this.render(Ember.HTMLBars.template({
-      'id': '8fxydkHG',
-      'block': '{"statements":[["text","\\n"],["block",["my-map"],null,null,0],["text","  "]],"locals":[],"named":[],"yields":[],"blocks":[{"statements":[["text","      template block text\\n"]],"locals":[]}],"hasPartials":false}',
-      'meta': {}
-    }));
-
-    assert.equal(this.$().text().trim(), 'template block text');
-  });
-});
-define('capstone_front_end/tests/integration/components/my-map-test.jshint.lint-test', [], function () {
-  'use strict';
-
-  QUnit.module('JSHint | integration/components/my-map-test.js');
-  QUnit.test('should pass jshint', function (assert) {
-    assert.expect(1);
-    assert.ok(true, 'integration/components/my-map-test.js should pass jshint.');
-  });
-});
 define('capstone_front_end/tests/integration/components/navbar-header-test', ['exports', 'ember-qunit'], function (exports, _emberQunit) {
 
   (0, _emberQunit.moduleForComponent)('navbar-header', 'Integration | Component | navbar header', {
@@ -990,44 +840,6 @@ define('capstone_front_end/tests/integration/components/sign-up-form-test.jshint
     assert.ok(true, 'integration/components/sign-up-form-test.js should pass jshint.');
   });
 });
-define('capstone_front_end/tests/integration/components/text-editor-test', ['exports', 'ember-qunit'], function (exports, _emberQunit) {
-
-  (0, _emberQunit.moduleForComponent)('text-editor', 'Integration | Component | text editor', {
-    integration: true
-  });
-
-  (0, _emberQunit.test)('it renders', function (assert) {
-
-    // Set any properties with this.set('myProperty', 'value');
-    // Handle any actions with this.on('myAction', function(val) { ... });
-
-    this.render(Ember.HTMLBars.template({
-      'id': 'LGKaXsz8',
-      'block': '{"statements":[["append",["unknown",["text-editor"]],false]],"locals":[],"named":[],"yields":[],"blocks":[],"hasPartials":false}',
-      'meta': {}
-    }));
-
-    assert.equal(this.$().text().trim(), '');
-
-    // Template block usage:
-    this.render(Ember.HTMLBars.template({
-      'id': 'WctoVego',
-      'block': '{"statements":[["text","\\n"],["block",["text-editor"],null,null,0],["text","  "]],"locals":[],"named":[],"yields":[],"blocks":[{"statements":[["text","      template block text\\n"]],"locals":[]}],"hasPartials":false}',
-      'meta': {}
-    }));
-
-    assert.equal(this.$().text().trim(), 'template block text');
-  });
-});
-define('capstone_front_end/tests/integration/components/text-editor-test.jshint.lint-test', [], function () {
-  'use strict';
-
-  QUnit.module('JSHint | integration/components/text-editor-test.js');
-  QUnit.test('should pass jshint', function (assert) {
-    assert.expect(1);
-    assert.ok(true, 'integration/components/text-editor-test.js should pass jshint.');
-  });
-});
 define('capstone_front_end/tests/models/doc.jshint.lint-test', [], function () {
   'use strict';
 
@@ -1035,24 +847,6 @@ define('capstone_front_end/tests/models/doc.jshint.lint-test', [], function () {
   QUnit.test('should pass jshint', function (assert) {
     assert.expect(1);
     assert.ok(true, 'models/doc.js should pass jshint.');
-  });
-});
-define('capstone_front_end/tests/models/document.jshint.lint-test', [], function () {
-  'use strict';
-
-  QUnit.module('JSHint | models/document.js');
-  QUnit.test('should pass jshint', function (assert) {
-    assert.expect(1);
-    assert.ok(true, 'models/document.js should pass jshint.');
-  });
-});
-define('capstone_front_end/tests/models/user.jshint.lint-test', [], function () {
-  'use strict';
-
-  QUnit.module('JSHint | models/user.js');
-  QUnit.test('should pass jshint', function (assert) {
-    assert.expect(1);
-    assert.ok(true, 'models/user.js should pass jshint.');
   });
 });
 define('capstone_front_end/tests/resolver.jshint.lint-test', [], function () {
@@ -1091,31 +885,13 @@ define('capstone_front_end/tests/routes/change-password.jshint.lint-test', [], f
     assert.ok(true, 'routes/change-password.js should pass jshint.');
   });
 });
-define('capstone_front_end/tests/routes/doc.jshint.lint-test', [], function () {
-  'use strict';
-
-  QUnit.module('JSHint | routes/doc.js');
-  QUnit.test('should pass jshint', function (assert) {
-    assert.expect(1);
-    assert.ok(true, 'routes/doc.js should pass jshint.');
-  });
-});
 define('capstone_front_end/tests/routes/docs.jshint.lint-test', [], function () {
   'use strict';
 
   QUnit.module('JSHint | routes/docs.js');
   QUnit.test('should pass jshint', function (assert) {
     assert.expect(1);
-    assert.ok(false, 'routes/docs.js should pass jshint.\nroutes/docs.js: line 5, col 32, Missing semicolon.\nroutes/docs.js: line 13, col 41, Missing semicolon.\nroutes/docs.js: line 14, col 24, Missing semicolon.\nroutes/docs.js: line 16, col 60, Missing semicolon.\nroutes/docs.js: line 19, col 39, Missing semicolon.\nroutes/docs.js: line 20, col 25, Missing semicolon.\nroutes/docs.js: line 21, col 24, Missing semicolon.\nroutes/docs.js: line 22, col 41, Missing semicolon.\nroutes/docs.js: line 25, col 33, Missing semicolon.\nroutes/docs.js: line 26, col 28, \'$\' is not defined.\n\n10 errors');
-  });
-});
-define('capstone_front_end/tests/routes/documents.jshint.lint-test', [], function () {
-  'use strict';
-
-  QUnit.module('JSHint | routes/documents.js');
-  QUnit.test('should pass jshint', function (assert) {
-    assert.expect(1);
-    assert.ok(true, 'routes/documents.js should pass jshint.');
+    assert.ok(false, 'routes/docs.js should pass jshint.\nroutes/docs.js: line 10, col 60, Missing semicolon.\n\n1 error');
   });
 });
 define('capstone_front_end/tests/routes/edit-doc.jshint.lint-test', [], function () {
@@ -1124,7 +900,7 @@ define('capstone_front_end/tests/routes/edit-doc.jshint.lint-test', [], function
   QUnit.module('JSHint | routes/edit-doc.js');
   QUnit.test('should pass jshint', function (assert) {
     assert.expect(1);
-    assert.ok(false, 'routes/edit-doc.js should pass jshint.\nroutes/edit-doc.js: line 3, col 39, Missing semicolon.\nroutes/edit-doc.js: line 4, col 36, Missing semicolon.\nroutes/edit-doc.js: line 10, col 37, Missing semicolon.\nroutes/edit-doc.js: line 11, col 51, Missing semicolon.\nroutes/edit-doc.js: line 12, col 47, Missing semicolon.\nroutes/edit-doc.js: line 13, col 55, Missing semicolon.\nroutes/edit-doc.js: line 14, col 53, Missing semicolon.\nroutes/edit-doc.js: line 12, col 11, \'ourDoc\' is defined but never used.\nroutes/edit-doc.js: line 13, col 11, \'docTitle\' is defined but never used.\nroutes/edit-doc.js: line 14, col 11, \'docText\' is defined but never used.\nroutes/edit-doc.js: line 9, col 22, \'params\' is defined but never used.\nroutes/edit-doc.js: line 3, col 8, \'storage\' is defined but never used.\nroutes/edit-doc.js: line 4, col 8, \'Docs\' is defined but never used.\n\n13 errors');
+    assert.ok(false, 'routes/edit-doc.js should pass jshint.\nroutes/edit-doc.js: line 3, col 39, Missing semicolon.\nroutes/edit-doc.js: line 4, col 36, Missing semicolon.\nroutes/edit-doc.js: line 10, col 47, Missing semicolon.\nroutes/edit-doc.js: line 11, col 55, Missing semicolon.\nroutes/edit-doc.js: line 12, col 53, Missing semicolon.\nroutes/edit-doc.js: line 10, col 11, \'ourDoc\' is defined but never used.\nroutes/edit-doc.js: line 11, col 11, \'docTitle\' is defined but never used.\nroutes/edit-doc.js: line 12, col 11, \'docText\' is defined but never used.\nroutes/edit-doc.js: line 9, col 22, \'params\' is defined but never used.\nroutes/edit-doc.js: line 3, col 8, \'storage\' is defined but never used.\nroutes/edit-doc.js: line 4, col 8, \'Docs\' is defined but never used.\n\n11 errors');
   });
 });
 define('capstone_front_end/tests/routes/login.jshint.lint-test', [], function () {
@@ -1134,15 +910,6 @@ define('capstone_front_end/tests/routes/login.jshint.lint-test', [], function ()
   QUnit.test('should pass jshint', function (assert) {
     assert.expect(1);
     assert.ok(false, 'routes/login.js should pass jshint.\nroutes/login.js: line 8, col 65, Missing semicolon.\nroutes/login.js: line 11, col 54, Missing semicolon.\nroutes/login.js: line 8, col 13, \'credentials\' is defined but never used.\nroutes/login.js: line 9, col 7, \'authenticator\' is not defined.\nroutes/login.js: line 11, col 40, \'authenticator\' is not defined.\n\n5 errors');
-  });
-});
-define('capstone_front_end/tests/routes/my-documents.jshint.lint-test', [], function () {
-  'use strict';
-
-  QUnit.module('JSHint | routes/my-documents.js');
-  QUnit.test('should pass jshint', function (assert) {
-    assert.expect(1);
-    assert.ok(true, 'routes/my-documents.js should pass jshint.');
   });
 });
 define('capstone_front_end/tests/routes/new-document.jshint.lint-test', [], function () {
@@ -1170,33 +937,6 @@ define('capstone_front_end/tests/routes/sign-up.jshint.lint-test', [], function 
   QUnit.test('should pass jshint', function (assert) {
     assert.expect(1);
     assert.ok(true, 'routes/sign-up.js should pass jshint.');
-  });
-});
-define('capstone_front_end/tests/routes/test-docs.jshint.lint-test', [], function () {
-  'use strict';
-
-  QUnit.module('JSHint | routes/test-docs.js');
-  QUnit.test('should pass jshint', function (assert) {
-    assert.expect(1);
-    assert.ok(true, 'routes/test-docs.js should pass jshint.');
-  });
-});
-define('capstone_front_end/tests/routes/test-resource.jshint.lint-test', [], function () {
-  'use strict';
-
-  QUnit.module('JSHint | routes/test-resource.js');
-  QUnit.test('should pass jshint', function (assert) {
-    assert.expect(1);
-    assert.ok(false, 'routes/test-resource.js should pass jshint.\nroutes/test-resource.js: line 8, col 29, Missing semicolon.\nroutes/test-resource.js: line 9, col 97, Missing semicolon.\nroutes/test-resource.js: line 9, col 53, \'$\' is not defined.\n\n3 errors');
-  });
-});
-define('capstone_front_end/tests/routes/users.jshint.lint-test', [], function () {
-  'use strict';
-
-  QUnit.module('JSHint | routes/users.js');
-  QUnit.test('should pass jshint', function (assert) {
-    assert.expect(1);
-    assert.ok(true, 'routes/users.js should pass jshint.');
   });
 });
 define('capstone_front_end/tests/serializers/application.jshint.lint-test', [], function () {
@@ -1241,16 +981,7 @@ define('capstone_front_end/tests/services/docs.jshint.lint-test', [], function (
   QUnit.module('JSHint | services/docs.js');
   QUnit.test('should pass jshint', function (assert) {
     assert.expect(1);
-    assert.ok(false, 'services/docs.js should pass jshint.\nservices/docs.js: line 3, col 39, Missing semicolon.\nservices/docs.js: line 4, col 36, Missing semicolon.\nservices/docs.js: line 13, col 34, Missing semicolon.\nservices/docs.js: line 14, col 44, Missing semicolon.\nservices/docs.js: line 16, col 40, Missing semicolon.\nservices/docs.js: line 27, col 26, Missing semicolon.\nservices/docs.js: line 28, col 56, Missing semicolon.\nservices/docs.js: line 30, col 57, Missing semicolon.\nservices/docs.js: line 32, col 40, Missing semicolon.\nservices/docs.js: line 35, col 24, Missing semicolon.\nservices/docs.js: line 36, col 7, Missing semicolon.\nservices/docs.js: line 40, col 34, Missing semicolon.\nservices/docs.js: line 41, col 42, Missing semicolon.\nservices/docs.js: line 42, col 36, Missing semicolon.\nservices/docs.js: line 51, col 7, Missing semicolon.\nservices/docs.js: line 58, col 37, Missing semicolon.\nservices/docs.js: line 60, col 26, Missing semicolon.\nservices/docs.js: line 61, col 9, Missing semicolon.\nservices/docs.js: line 65, col 40, Missing semicolon.\nservices/docs.js: line 73, col 43, Missing semicolon.\nservices/docs.js: line 74, col 7, Missing semicolon.\nservices/docs.js: line 65, col 9, \'id\' is defined but never used.\nservices/docs.js: line 78, col 72, Missing semicolon.\nservices/docs.js: line 91, col 35, Missing semicolon.\nservices/docs.js: line 95, col 43, Missing semicolon.\nservices/docs.js: line 96, col 37, Missing semicolon.\nservices/docs.js: line 97, col 43, Missing semicolon.\nservices/docs.js: line 98, col 62, Missing semicolon.\nservices/docs.js: line 100, col 42, Missing semicolon.\nservices/docs.js: line 90, col 12, \'result\' is defined but never used.\nservices/docs.js: line 101, col 7, Missing semicolon.\nservices/docs.js: line 32, col 7, \'$\' is not defined.\nservices/docs.js: line 35, col 7, \'$\' is not defined.\nservices/docs.js: line 42, col 5, \'$\' is not defined.\nservices/docs.js: line 97, col 9, \'$\' is not defined.\nservices/docs.js: line 98, col 9, \'$\' is not defined.\nservices/docs.js: line 60, col 9, \'docsRoute\' is not defined.\nservices/docs.js: line 3, col 8, \'storage\' is defined but never used.\nservices/docs.js: line 4, col 8, \'Docs\' is defined but never used.\n\n39 errors');
-  });
-});
-define('capstone_front_end/tests/services/tester.jshint.lint-test', [], function () {
-  'use strict';
-
-  QUnit.module('JSHint | services/tester.js');
-  QUnit.test('should pass jshint', function (assert) {
-    assert.expect(1);
-    assert.ok(false, 'services/tester.js should pass jshint.\nservices/tester.js: line 9, col 29, Missing semicolon.\nservices/tester.js: line 12, col 7, Missing semicolon.\n\n2 errors');
+    assert.ok(false, 'services/docs.js should pass jshint.\nservices/docs.js: line 3, col 39, Missing semicolon.\nservices/docs.js: line 4, col 36, Missing semicolon.\nservices/docs.js: line 13, col 40, Missing semicolon.\nservices/docs.js: line 24, col 56, Missing semicolon.\nservices/docs.js: line 27, col 40, Missing semicolon.\nservices/docs.js: line 30, col 24, Missing semicolon.\nservices/docs.js: line 31, col 7, Missing semicolon.\nservices/docs.js: line 35, col 42, Missing semicolon.\nservices/docs.js: line 36, col 36, Missing semicolon.\nservices/docs.js: line 45, col 7, Missing semicolon.\nservices/docs.js: line 49, col 40, Missing semicolon.\nservices/docs.js: line 55, col 7, Missing semicolon.\nservices/docs.js: line 49, col 9, \'id\' is defined but never used.\nservices/docs.js: line 73, col 43, Missing semicolon.\nservices/docs.js: line 74, col 62, Missing semicolon.\nservices/docs.js: line 76, col 42, Missing semicolon.\nservices/docs.js: line 69, col 12, \'result\' is defined but never used.\nservices/docs.js: line 77, col 7, Missing semicolon.\nservices/docs.js: line 27, col 7, \'$\' is not defined.\nservices/docs.js: line 30, col 7, \'$\' is not defined.\nservices/docs.js: line 36, col 5, \'$\' is not defined.\nservices/docs.js: line 73, col 9, \'$\' is not defined.\nservices/docs.js: line 74, col 9, \'$\' is not defined.\nservices/docs.js: line 3, col 8, \'storage\' is defined but never used.\nservices/docs.js: line 4, col 8, \'Docs\' is defined but never used.\n\n25 errors');
   });
 });
 define('capstone_front_end/tests/storages/auth.jshint.lint-test', [], function () {
@@ -1448,51 +1179,6 @@ define('capstone_front_end/tests/unit/models/doc-test.jshint.lint-test', [], fun
     assert.ok(true, 'unit/models/doc-test.js should pass jshint.');
   });
 });
-define('capstone_front_end/tests/unit/models/document-test', ['exports', 'ember-qunit'], function (exports, _emberQunit) {
-
-  (0, _emberQunit.moduleForModel)('document', 'Unit | Model | document', {
-    // Specify the other units that are required for this test.
-    needs: []
-  });
-
-  (0, _emberQunit.test)('it exists', function (assert) {
-    var model = this.subject();
-    // let store = this.store();
-    assert.ok(!!model);
-  });
-});
-define('capstone_front_end/tests/unit/models/document-test.jshint.lint-test', [], function () {
-  'use strict';
-
-  QUnit.module('JSHint | unit/models/document-test.js');
-  QUnit.test('should pass jshint', function (assert) {
-    assert.expect(1);
-    assert.ok(true, 'unit/models/document-test.js should pass jshint.');
-  });
-});
-define('capstone_front_end/tests/unit/models/user-test', ['exports', 'ember-qunit'], function (exports, _emberQunit) {
-
-  (0, _emberQunit.moduleForModel)('user', 'Unit | Model | user', {
-    // Specify the other units that are required for this test.
-    needs: []
-  });
-
-  (0, _emberQunit.test)('it exists', function (assert) {
-    var model = this.subject();
-
-    // let store = this.store();
-    assert.ok(!!model);
-  });
-});
-define('capstone_front_end/tests/unit/models/user-test.jshint.lint-test', [], function () {
-  'use strict';
-
-  QUnit.module('JSHint | unit/models/user-test.js');
-  QUnit.test('should pass jshint', function (assert) {
-    assert.expect(1);
-    assert.ok(true, 'unit/models/user-test.js should pass jshint.');
-  });
-});
 define('capstone_front_end/tests/unit/routes/application-test', ['exports', 'ember-qunit'], function (exports, _emberQunit) {
 
   (0, _emberQunit.moduleFor)('route:application', 'Unit | Route | application', {
@@ -1535,27 +1221,6 @@ define('capstone_front_end/tests/unit/routes/change-password-test.jshint.lint-te
     assert.ok(true, 'unit/routes/change-password-test.js should pass jshint.');
   });
 });
-define('capstone_front_end/tests/unit/routes/doc-test', ['exports', 'ember-qunit'], function (exports, _emberQunit) {
-
-  (0, _emberQunit.moduleFor)('route:doc', 'Unit | Route | doc', {
-    // Specify the other units that are required for this test.
-    // needs: ['controller:foo']
-  });
-
-  (0, _emberQunit.test)('it exists', function (assert) {
-    var route = this.subject();
-    assert.ok(route);
-  });
-});
-define('capstone_front_end/tests/unit/routes/doc-test.jshint.lint-test', [], function () {
-  'use strict';
-
-  QUnit.module('JSHint | unit/routes/doc-test.js');
-  QUnit.test('should pass jshint', function (assert) {
-    assert.expect(1);
-    assert.ok(true, 'unit/routes/doc-test.js should pass jshint.');
-  });
-});
 define('capstone_front_end/tests/unit/routes/docs-test', ['exports', 'ember-qunit'], function (exports, _emberQunit) {
 
   (0, _emberQunit.moduleFor)('route:docs', 'Unit | Route | docs', {
@@ -1577,27 +1242,6 @@ define('capstone_front_end/tests/unit/routes/docs-test.jshint.lint-test', [], fu
     assert.ok(true, 'unit/routes/docs-test.js should pass jshint.');
   });
 });
-define('capstone_front_end/tests/unit/routes/documents-test', ['exports', 'ember-qunit'], function (exports, _emberQunit) {
-
-  (0, _emberQunit.moduleFor)('route:documents', 'Unit | Route | documents', {
-    // Specify the other units that are required for this test.
-    // needs: ['controller:foo']
-  });
-
-  (0, _emberQunit.test)('it exists', function (assert) {
-    var route = this.subject();
-    assert.ok(route);
-  });
-});
-define('capstone_front_end/tests/unit/routes/documents-test.jshint.lint-test', [], function () {
-  'use strict';
-
-  QUnit.module('JSHint | unit/routes/documents-test.js');
-  QUnit.test('should pass jshint', function (assert) {
-    assert.expect(1);
-    assert.ok(true, 'unit/routes/documents-test.js should pass jshint.');
-  });
-});
 define('capstone_front_end/tests/unit/routes/edit-doc-test', ['exports', 'ember-qunit'], function (exports, _emberQunit) {
 
   (0, _emberQunit.moduleFor)('route:edit-doc', 'Unit | Route | edit doc', {
@@ -1617,27 +1261,6 @@ define('capstone_front_end/tests/unit/routes/edit-doc-test.jshint.lint-test', []
   QUnit.test('should pass jshint', function (assert) {
     assert.expect(1);
     assert.ok(true, 'unit/routes/edit-doc-test.js should pass jshint.');
-  });
-});
-define('capstone_front_end/tests/unit/routes/my-documents-test', ['exports', 'ember-qunit'], function (exports, _emberQunit) {
-
-  (0, _emberQunit.moduleFor)('route:my-documents', 'Unit | Route | my documents', {
-    // Specify the other units that are required for this test.
-    // needs: ['controller:foo']
-  });
-
-  (0, _emberQunit.test)('it exists', function (assert) {
-    var route = this.subject();
-    assert.ok(route);
-  });
-});
-define('capstone_front_end/tests/unit/routes/my-documents-test.jshint.lint-test', [], function () {
-  'use strict';
-
-  QUnit.module('JSHint | unit/routes/my-documents-test.js');
-  QUnit.test('should pass jshint', function (assert) {
-    assert.expect(1);
-    assert.ok(true, 'unit/routes/my-documents-test.js should pass jshint.');
   });
 });
 define('capstone_front_end/tests/unit/routes/new-document-test', ['exports', 'ember-qunit'], function (exports, _emberQunit) {
@@ -1701,69 +1324,6 @@ define('capstone_front_end/tests/unit/routes/sign-up-test.jshint.lint-test', [],
   QUnit.test('should pass jshint', function (assert) {
     assert.expect(1);
     assert.ok(true, 'unit/routes/sign-up-test.js should pass jshint.');
-  });
-});
-define('capstone_front_end/tests/unit/routes/test-docs-test', ['exports', 'ember-qunit'], function (exports, _emberQunit) {
-
-  (0, _emberQunit.moduleFor)('route:test-docs', 'Unit | Route | test docs', {
-    // Specify the other units that are required for this test.
-    // needs: ['controller:foo']
-  });
-
-  (0, _emberQunit.test)('it exists', function (assert) {
-    var route = this.subject();
-    assert.ok(route);
-  });
-});
-define('capstone_front_end/tests/unit/routes/test-docs-test.jshint.lint-test', [], function () {
-  'use strict';
-
-  QUnit.module('JSHint | unit/routes/test-docs-test.js');
-  QUnit.test('should pass jshint', function (assert) {
-    assert.expect(1);
-    assert.ok(true, 'unit/routes/test-docs-test.js should pass jshint.');
-  });
-});
-define('capstone_front_end/tests/unit/routes/test-resource-test', ['exports', 'ember-qunit'], function (exports, _emberQunit) {
-
-  (0, _emberQunit.moduleFor)('route:test-resource', 'Unit | Route | test resource', {
-    // Specify the other units that are required for this test.
-    // needs: ['controller:foo']
-  });
-
-  (0, _emberQunit.test)('it exists', function (assert) {
-    var route = this.subject();
-    assert.ok(route);
-  });
-});
-define('capstone_front_end/tests/unit/routes/test-resource-test.jshint.lint-test', [], function () {
-  'use strict';
-
-  QUnit.module('JSHint | unit/routes/test-resource-test.js');
-  QUnit.test('should pass jshint', function (assert) {
-    assert.expect(1);
-    assert.ok(true, 'unit/routes/test-resource-test.js should pass jshint.');
-  });
-});
-define('capstone_front_end/tests/unit/routes/users-test', ['exports', 'ember-qunit'], function (exports, _emberQunit) {
-
-  (0, _emberQunit.moduleFor)('route:users', 'Unit | Route | users', {
-    // Specify the other units that are required for this test.
-    // needs: ['controller:foo']
-  });
-
-  (0, _emberQunit.test)('it exists', function (assert) {
-    var route = this.subject();
-    assert.ok(route);
-  });
-});
-define('capstone_front_end/tests/unit/routes/users-test.jshint.lint-test', [], function () {
-  'use strict';
-
-  QUnit.module('JSHint | unit/routes/users-test.js');
-  QUnit.test('should pass jshint', function (assert) {
-    assert.expect(1);
-    assert.ok(true, 'unit/routes/users-test.js should pass jshint.');
   });
 });
 define('capstone_front_end/tests/unit/serializers/application-test', ['exports', 'ember-qunit'], function (exports, _emberQunit) {

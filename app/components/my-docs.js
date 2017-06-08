@@ -10,7 +10,6 @@ export default Ember.Component.extend({
   actions: {
     deleteDocs() {
       console.log('in delete docs component')
-      // this.get('docs').getDocs()
     },
   }
 });

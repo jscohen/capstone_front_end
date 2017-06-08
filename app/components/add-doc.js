@@ -13,7 +13,6 @@ export default Ember.Component.extend({
 
   actions: {
     newDoc() {
-      console.log($('#newText').val());
       let input = $('#newText').val()
       let title = $('.docTitle').val()
       this.get('docs').newDoc(input, title)
@@ -21,13 +20,11 @@ export default Ember.Component.extend({
     },
     saveDoc() {
         const id = this.get('myDocs.thisDocID')
-        console.log($('.testTextArea').val());
         let input = $('.testTextArea').val()
         let title = $('.editedTitle').val()
         this.get('docs').saveDoc(input, title, id)
     },
     translate() {
-      console.log('inside event handler translate')
       const from = $('#fromLangInNew').find(":selected").text()
       const to = $('#toLangInNew').find(":selected").text()
       let fromLanguage = ''
