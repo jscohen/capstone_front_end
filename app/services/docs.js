@@ -31,13 +31,16 @@ export default Ember.Service.extend({
     .then(() => {
       $('#createSuccess').modal('show')
     })
+    .then(() => {
+      $('.save').show()
+    })
   },
 
-  saveDoc (input, title) {
+  saveDoc (input, title, docID) {
     console.log('inside service')
-    let id = this.get('credentials.id')
+    const id = this.get('credentials.id')
     $('#saveSuccess').modal('show')
-    return this.get('ajax').patch(`/docs/${this.get('docs.thisDocID')}`, {
+    return this.get('ajax').patch('/docs/' + docID, {
       data: {
         doc: {
           text: input,
@@ -91,7 +94,8 @@ export default Ember.Service.extend({
       }).then(result => {
         console.log('inside final result')
         console.log(result.doc.text)
-        $('.testTextArea').val(result.doc.text)
+        $('#newText').val(result.doc.text)
+        $('#' + id + '.textToTranslate').val(result.doc.text)
       })
       .catch(error => console.log(error))
     })

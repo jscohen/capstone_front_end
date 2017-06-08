@@ -1,11 +1,37 @@
 <div class="textAreaBoundary">
-{{textarea action 'mouseUp' id="newDoc" rows="15" cols="80" class="jumbotron"}}
+{{textarea action 'mouseUp' id="newDoc" rows="15" cols="80" class="jumbotron" id="newText"}}
 <br />
 </div>
 <br />
+
+<div class="newDoc">
+<button {{action 'newDoc'}} type="button" data-dismiss="alert" aria-label="Close" class="textButton" style="color: black;">
+  <span style="font-size: 3em;"><span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
+  Create Document</span>
+</button>
+</div>
+
+<div class="save">
 <button {{action 'saveDoc'}} type="button" data-dismiss="alert" aria-label="Close" class="textButton" style="color: black;">
   <span style="font-size: 3em;"><span class="glyphicon glyphicon-pencil" aria-hidden="true"></span>
   Save Document</span>
 </button>
+
+<form>
+  <select id="fromLangInNew">
+    <option>English</option>
+    <option>French</option>
+    <option>Spanish</option>
+    <option>Italian</option>
+  </select>
+  <select id="toLangInNew">
+    <option>English</option>
+    <option>French</option>
+    <option>Spanish</option>
+    <option>Italian</option>
+  </select>
+<button {{action 'translate'}}>Translate</button>
+</form>
+</div>
 
 {{yield}}

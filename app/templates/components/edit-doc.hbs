@@ -4,24 +4,24 @@
   {{input class="editedTitle" type="text" value=newDoc.title}}
   <br />
   <div class="textAreaBoundary">
-  {{textarea action 'mouseUp' cols='80' rows='15' class='jumbotron testTextArea' id=newDoc._id value=newDoc.text}}
+  {{textarea action 'mouseUp' cols='80' rows='15' class='jumbotron textToTranslate' id=newDoc._id value=newDoc.text}}
   {{!-- <textarea {{action 'mouseUp'}} id="doc" rows="20" cols="80" class="jumbotron"></textarea> --}}
   <br />
 </div>
   <br />
-  <button {{action 'saveDoc'}} type="button" data-dismiss="alert" aria-label="Close" class="textButton" style="color: black;">
+  <button {{action 'saveDoc' newDoc._id}} type="button" data-dismiss="alert" aria-label="Close" class="textButton" style="color: black;">
     <span style="font-size: 3em;"><span class="glyphicon glyphicon-pencil" aria-hidden="true"></span>
     Save Document</span>
   </button>
 
-  <form>
-    <select id="fromLang">
+  <form >
+    <select id={{newDoc._id}} class="from">
       <option>English</option>
       <option>French</option>
       <option>Spanish</option>
       <option>Italian</option>
     </select>
-    <select id="toLang">
+    <select id={{newDoc._id}} class="to">
       <option>English</option>
       <option>French</option>
       <option>Spanish</option>
