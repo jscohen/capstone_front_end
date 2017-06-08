@@ -6330,5 +6330,8 @@ textarea {
   .cover-container {
     width: 700px; } }
 
+.save {
+  display: none; }
+
 #translateNewDoc {
   display: none; }
