@@ -6329,3 +6329,6 @@ textarea {
   .mastfoot,
   .cover-container {
     width: 700px; } }
+
+#translateNewDoc {
+  display: none; }
