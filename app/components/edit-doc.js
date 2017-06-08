@@ -26,10 +26,17 @@ export default Ember.Component.extend({
       this.get('docs').saveDoc(input, title)
     },
     translate(doc) {
+      const selected = $('#transDirection').find(":selected").text()
+      const languages = selected.split(' to ')
       let text = $('.testTextArea').val()
       let id = doc.id
-      let language = 'it'
-      this.get('docs').translate(id, text, language)
+      const lang1 = languages[0].substring(0, 2)
+      const lang2 = languages[1].substring(0, 2)
+      const fromLanguage = lang1.toLowerCase()
+      const toLanguage = lang2.toLowerCase()
+      console.log(languages)
+      console.log(fromLanguage)
+      this.get('docs').translate(id, text, fromLanguage, toLanguage)
     }
   }
 });

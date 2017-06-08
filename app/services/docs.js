@@ -70,14 +70,15 @@ export default Ember.Service.extend({
     })
   },
 
-  translate(id, text, language) {
+  translate(id, text, fromLanguage, toLanguage) {
     console.log('inside translate')
     return this.get('ajax').patch('/translate/' + id, {
       data: {
         doc: {
           id: id,
           text: text,
-          language: language
+          fromLanguage: fromLanguage,
+          toLanguage: toLanguage
         }
       }
     })
