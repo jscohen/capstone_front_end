@@ -12,7 +12,7 @@ export default Ember.Component.extend({
       console.log($('#newDoc').val());
       let input = $('#newDoc').val()
       let title = $('.docTitle').val()
-      this.get('docs').saveDoc(input, title)
+      this.get('docs').newDoc(input, title)
     },
     mouseUp() {
       console.log('in mouse up')

@@ -9,7 +9,7 @@ export default Ember.Service.extend({
   isAuthenticated: Ember.computed.bool('credentials.token'),
   docs: storageFor('docs'),
 
-  newDoc () {
+  newDoc (input, title) {
     console.log('inside service')
     console.log(this.get('credentials.id'))
 
@@ -17,7 +17,8 @@ export default Ember.Service.extend({
     return this.get('ajax').post('/docs', {
       data: {
         doc: {
-          text: '',
+          text: input,
+          title: title,
           _owner: id
         }
       }
