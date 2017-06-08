@@ -50,8 +50,9 @@
 </div>
 </div>
 
-
+{{#if isAuthenticated}}
   {{new-document}}
   {{my-docs}}
   {{outlet}}
+{{/if}}
 </div>
