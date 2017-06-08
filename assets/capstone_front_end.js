@@ -167,16 +167,22 @@ define('capstone_front_end/components/edit-doc', ['exports', 'ember', 'ember-loc
         this.get('docs').saveDoc(input, title);
       },
       translate: function translate(doc) {
-        var selected = $('#transDirection').find(":selected").text();
-        var languages = selected.split(' to ');
+        var from = $('#fromLang').find(":selected").text();
+        var to = $('#toLang').find(":selected").text();
+        var fromLanguage = '';
+        var toLanguage = '';
         var text = $('.testTextArea').val();
         var id = doc.id;
-        var lang1 = languages[0].substring(0, 2);
-        var lang2 = languages[1].substring(0, 2);
-        var fromLanguage = lang1.toLowerCase();
-        var toLanguage = lang2.toLowerCase();
-        console.log(languages);
-        console.log(fromLanguage);
+        if (from === 'Spanish') {
+          fromLanguage = 'es';
+        } else {
+          fromLanguage = from.toLowerCase().substring(0, 2);
+        }
+        if (to === 'Spanish') {
+          toLanguage = 'es';
+        } else {
+          toLanguage = to.toLowerCase().substring(0, 2);
+        }
         this.get('docs').translate(id, text, fromLanguage, toLanguage);
       }
     }
@@ -1136,7 +1142,7 @@ define('capstone_front_end/services/docs', ['exports', 'ember', 'ember-local-sto
     translate: function translate(id, text, fromLanguage, toLanguage) {
       var _this3 = this;
 
-      console.log('inside translate');
+      console.log('inside translate', id, text, fromLanguage, toLanguage);
       return this.get('ajax').patch('/translate/' + id, {
         data: {
           doc: {
@@ -1146,10 +1152,14 @@ define('capstone_front_end/services/docs', ['exports', 'ember', 'ember-local-sto
             toLanguage: toLanguage
           }
         }
+      }).then(function () {
+        return console.log('inside wrong place');
       })['catch'](function (result) {
+        console.log('inside result');
         return _this3.get('ajax').request('/docs/' + id, {
           method: 'GET'
         }).then(function (result) {
+          console.log('inside final result');
           console.log(result.doc.text);
           $('.testTextArea').val(result.doc.text);
         })['catch'](function (error) {
@@ -1221,7 +1231,7 @@ define("capstone_front_end/templates/components/delete-docs", ["exports"], funct
   exports["default"] = Ember.HTMLBars.template({ "id": "p5lGDa3L", "block": "{\"statements\":[],\"locals\":[],\"named\":[],\"yields\":[],\"blocks\":[],\"hasPartials\":false}", "meta": { "moduleName": "capstone_front_end/templates/components/delete-docs.hbs" } });
 });
 define("capstone_front_end/templates/components/edit-doc", ["exports"], function (exports) {
-  exports["default"] = Ember.HTMLBars.template({ "id": "yqbp18Sw", "block": "{\"statements\":[[\"append\",[\"unknown\",[\"outlet\"]],false],[\"text\",\"\\n\"],[\"open-element\",\"div\",[]],[\"static-attr\",\"class\",\"edit-doc-wrap\"],[\"flush-element\"],[\"text\",\"\\n  \"],[\"open-element\",\"h1\",[]],[\"static-attr\",\"class\",\"titleHeader\"],[\"flush-element\"],[\"text\",\"Edit title here\"],[\"close-element\"],[\"text\",\"\\n  \"],[\"append\",[\"helper\",[\"input\"],null,[[\"class\",\"type\",\"value\"],[\"editedTitle\",\"text\",[\"get\",[\"newDoc\",\"title\"]]]]],false],[\"text\",\"\\n  \"],[\"open-element\",\"br\",[]],[\"flush-element\"],[\"close-element\"],[\"text\",\"\\n  \"],[\"open-element\",\"div\",[]],[\"static-attr\",\"class\",\"textAreaBoundary\"],[\"flush-element\"],[\"text\",\"\\n  \"],[\"append\",[\"helper\",[\"textarea\"],[[\"get\",[\"action\"]],\"mouseUp\"],[[\"cols\",\"rows\",\"class\",\"id\",\"value\"],[\"80\",\"15\",\"jumbotron testTextArea\",[\"get\",[\"newDoc\",\"_id\"]],[\"get\",[\"newDoc\",\"text\"]]]]],false],[\"text\",\"\\n\"],[\"text\",\"  \"],[\"open-element\",\"br\",[]],[\"flush-element\"],[\"close-element\"],[\"text\",\"\\n\"],[\"close-element\"],[\"text\",\"\\n  \"],[\"open-element\",\"br\",[]],[\"flush-element\"],[\"close-element\"],[\"text\",\"\\n  \"],[\"open-element\",\"button\",[]],[\"static-attr\",\"type\",\"button\"],[\"static-attr\",\"data-dismiss\",\"alert\"],[\"static-attr\",\"aria-label\",\"Close\"],[\"static-attr\",\"class\",\"textButton\"],[\"static-attr\",\"style\",\"color: black;\"],[\"modifier\",[\"action\"],[[\"get\",[null]],\"saveDoc\"]],[\"flush-element\"],[\"text\",\"\\n    \"],[\"open-element\",\"span\",[]],[\"static-attr\",\"style\",\"font-size: 3em;\"],[\"flush-element\"],[\"open-element\",\"span\",[]],[\"static-attr\",\"class\",\"glyphicon glyphicon-pencil\"],[\"static-attr\",\"aria-hidden\",\"true\"],[\"flush-element\"],[\"close-element\"],[\"text\",\"\\n    Save Document\"],[\"close-element\"],[\"text\",\"\\n  \"],[\"close-element\"],[\"text\",\"\\n\\n  \"],[\"open-element\",\"form\",[]],[\"flush-element\"],[\"text\",\"\\n    \"],[\"open-element\",\"select\",[]],[\"static-attr\",\"id\",\"transDirection\"],[\"flush-element\"],[\"text\",\"\\n      \"],[\"open-element\",\"option\",[]],[\"flush-element\"],[\"text\",\"English to Italian\"],[\"close-element\"],[\"text\",\"\\n      \"],[\"open-element\",\"option\",[]],[\"flush-element\"],[\"text\",\"Italian to English\"],[\"close-element\"],[\"text\",\"\\n    \"],[\"close-element\"],[\"text\",\"\\n  \"],[\"open-element\",\"button\",[]],[\"modifier\",[\"action\"],[[\"get\",[null]],\"translate\",[\"get\",[\"newDoc\"]]]],[\"flush-element\"],[\"text\",\"Translate\"],[\"close-element\"],[\"text\",\"\\n  \"],[\"close-element\"],[\"text\",\"\\n  \"],[\"yield\",\"default\"],[\"text\",\"\\n\"],[\"close-element\"],[\"text\",\"\\n\"]],\"locals\":[],\"named\":[],\"yields\":[\"default\"],\"blocks\":[],\"hasPartials\":false}", "meta": { "moduleName": "capstone_front_end/templates/components/edit-doc.hbs" } });
+  exports["default"] = Ember.HTMLBars.template({ "id": "QKs4Vc0G", "block": "{\"statements\":[[\"append\",[\"unknown\",[\"outlet\"]],false],[\"text\",\"\\n\"],[\"open-element\",\"div\",[]],[\"static-attr\",\"class\",\"edit-doc-wrap\"],[\"flush-element\"],[\"text\",\"\\n  \"],[\"open-element\",\"h1\",[]],[\"static-attr\",\"class\",\"titleHeader\"],[\"flush-element\"],[\"text\",\"Edit title here\"],[\"close-element\"],[\"text\",\"\\n  \"],[\"append\",[\"helper\",[\"input\"],null,[[\"class\",\"type\",\"value\"],[\"editedTitle\",\"text\",[\"get\",[\"newDoc\",\"title\"]]]]],false],[\"text\",\"\\n  \"],[\"open-element\",\"br\",[]],[\"flush-element\"],[\"close-element\"],[\"text\",\"\\n  \"],[\"open-element\",\"div\",[]],[\"static-attr\",\"class\",\"textAreaBoundary\"],[\"flush-element\"],[\"text\",\"\\n  \"],[\"append\",[\"helper\",[\"textarea\"],[[\"get\",[\"action\"]],\"mouseUp\"],[[\"cols\",\"rows\",\"class\",\"id\",\"value\"],[\"80\",\"15\",\"jumbotron testTextArea\",[\"get\",[\"newDoc\",\"_id\"]],[\"get\",[\"newDoc\",\"text\"]]]]],false],[\"text\",\"\\n\"],[\"text\",\"  \"],[\"open-element\",\"br\",[]],[\"flush-element\"],[\"close-element\"],[\"text\",\"\\n\"],[\"close-element\"],[\"text\",\"\\n  \"],[\"open-element\",\"br\",[]],[\"flush-element\"],[\"close-element\"],[\"text\",\"\\n  \"],[\"open-element\",\"button\",[]],[\"static-attr\",\"type\",\"button\"],[\"static-attr\",\"data-dismiss\",\"alert\"],[\"static-attr\",\"aria-label\",\"Close\"],[\"static-attr\",\"class\",\"textButton\"],[\"static-attr\",\"style\",\"color: black;\"],[\"modifier\",[\"action\"],[[\"get\",[null]],\"saveDoc\"]],[\"flush-element\"],[\"text\",\"\\n    \"],[\"open-element\",\"span\",[]],[\"static-attr\",\"style\",\"font-size: 3em;\"],[\"flush-element\"],[\"open-element\",\"span\",[]],[\"static-attr\",\"class\",\"glyphicon glyphicon-pencil\"],[\"static-attr\",\"aria-hidden\",\"true\"],[\"flush-element\"],[\"close-element\"],[\"text\",\"\\n    Save Document\"],[\"close-element\"],[\"text\",\"\\n  \"],[\"close-element\"],[\"text\",\"\\n\\n  \"],[\"open-element\",\"form\",[]],[\"flush-element\"],[\"text\",\"\\n    \"],[\"open-element\",\"select\",[]],[\"static-attr\",\"id\",\"fromLang\"],[\"flush-element\"],[\"text\",\"\\n      \"],[\"open-element\",\"option\",[]],[\"flush-element\"],[\"text\",\"English\"],[\"close-element\"],[\"text\",\"\\n      \"],[\"open-element\",\"option\",[]],[\"flush-element\"],[\"text\",\"French\"],[\"close-element\"],[\"text\",\"\\n      \"],[\"open-element\",\"option\",[]],[\"flush-element\"],[\"text\",\"Spanish\"],[\"close-element\"],[\"text\",\"\\n      \"],[\"open-element\",\"option\",[]],[\"flush-element\"],[\"text\",\"Italian\"],[\"close-element\"],[\"text\",\"\\n    \"],[\"close-element\"],[\"text\",\"\\n    \"],[\"open-element\",\"select\",[]],[\"static-attr\",\"id\",\"toLang\"],[\"flush-element\"],[\"text\",\"\\n      \"],[\"open-element\",\"option\",[]],[\"flush-element\"],[\"text\",\"English\"],[\"close-element\"],[\"text\",\"\\n      \"],[\"open-element\",\"option\",[]],[\"flush-element\"],[\"text\",\"French\"],[\"close-element\"],[\"text\",\"\\n      \"],[\"open-element\",\"option\",[]],[\"flush-element\"],[\"text\",\"Spanish\"],[\"close-element\"],[\"text\",\"\\n      \"],[\"open-element\",\"option\",[]],[\"flush-element\"],[\"text\",\"Italian\"],[\"close-element\"],[\"text\",\"\\n    \"],[\"close-element\"],[\"text\",\"\\n  \"],[\"open-element\",\"button\",[]],[\"modifier\",[\"action\"],[[\"get\",[null]],\"translate\",[\"get\",[\"newDoc\"]]]],[\"flush-element\"],[\"text\",\"Translate\"],[\"close-element\"],[\"text\",\"\\n  \"],[\"close-element\"],[\"text\",\"\\n  \"],[\"yield\",\"default\"],[\"text\",\"\\n\"],[\"close-element\"],[\"text\",\"\\n\"]],\"locals\":[],\"named\":[],\"yields\":[\"default\"],\"blocks\":[],\"hasPartials\":false}", "meta": { "moduleName": "capstone_front_end/templates/components/edit-doc.hbs" } });
 });
 define("capstone_front_end/templates/components/email-input", ["exports"], function (exports) {
   exports["default"] = Ember.HTMLBars.template({ "id": "98Xjr719", "block": "{\"statements\":[[\"open-element\",\"label\",[]],[\"static-attr\",\"for\",\"identification\"],[\"flush-element\"],[\"text\",\"Email\"],[\"close-element\"],[\"text\",\"\\n\"],[\"append\",[\"helper\",[\"input\"],null,[[\"type\",\"id\",\"placeholder\",\"value\"],[\"email\",\"identification\",\"Email\",[\"get\",[\"email\"]]]]],false],[\"text\",\"\\n\"]],\"locals\":[],\"named\":[],\"yields\":[],\"blocks\":[],\"hasPartials\":false}", "meta": { "moduleName": "capstone_front_end/templates/components/email-input.hbs" } });
@@ -1320,6 +1330,6 @@ catch(err) {
 });
 
 if (!runningTests) {
-  require("capstone_front_end/app")["default"].create({"name":"capstone_front_end","version":"0.0.0+17928405"});
+  require("capstone_front_end/app")["default"].create({"name":"capstone_front_end","version":"0.0.0+fbe8b3bd"});
 }
 //# sourceMappingURL=capstone_front_end.map
