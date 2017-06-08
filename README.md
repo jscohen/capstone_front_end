@@ -17,8 +17,8 @@
 YourDocs is a functioning word processor and text translator.
 
 ## Wireframes
-[![Wireframe for Front Page](http://i.imgur.com/WjeDppb.jpg)]
-[![Wireframe for Get Docs](http://i.imgur.com/Lw5Orr9.jpg)]
+Front Page Wireframe [![Wireframe for Front Page](http://i.imgur.com/WjeDppb.jpg)]
+Docs page wireframe [![Wireframe for Get Docs](http://i.imgur.com/Lw5Orr9.jpg)]
 
 ## Technologies
 
