@@ -20,9 +20,8 @@ export default Ember.Component.extend({
       console.log(window.getSelection().toString());
     },
     saveDoc(id) {
-      console.log($('.testTextArea').val());
-      let input = $('.testTextArea').val()
-      let title = $('.editedTitle').val()
+      let input = $('#' + id + '.textToTranslate').val()
+      let title = $('#title.' + id).val()
       this.get('docs').saveDoc(input, title, id)
     },
     translate(doc) {

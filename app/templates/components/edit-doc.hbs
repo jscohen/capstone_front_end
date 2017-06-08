@@ -1,7 +1,7 @@
 {{outlet}}
 <div class="edit-doc-wrap">
   <h1 class="titleHeader">Edit title here</h1>
-  {{input class="editedTitle" type="text" value=newDoc.title}}
+  {{input class="newDoc._id" type="text" value=newDoc.title}}
   <br />
   <div class="textAreaBoundary">
   {{textarea action 'mouseUp' cols='80' rows='15' class='jumbotron textToTranslate' id=newDoc._id value=newDoc.text}}
