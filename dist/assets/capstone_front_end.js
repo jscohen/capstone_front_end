@@ -50,7 +50,7 @@ define('capstone_front_end/components/add-doc', ['exports', 'ember'], function (
         console.log($('#newDoc').val());
         var input = $('#newDoc').val();
         var title = $('.docTitle').val();
-        this.get('docs').saveDoc(input, title);
+        this.get('docs').newDoc(input, title);
       },
       mouseUp: function mouseUp() {
         console.log('in mouse up');
@@ -834,6 +834,7 @@ define('capstone_front_end/routes/doc', ['exports', 'ember'], function (exports,
 define('capstone_front_end/routes/docs', ['exports', 'ember'], function (exports, _ember) {
   exports['default'] = _ember['default'].Route.extend({
     model: function model() {
+      console.log('inside model');
       return this.get('store').findAll('doc');
     },
     actions: {
@@ -1077,7 +1078,7 @@ define('capstone_front_end/services/docs', ['exports', 'ember', 'ember-local-sto
     isAuthenticated: _ember['default'].computed.bool('credentials.token'),
     docs: (0, _emberLocalStorage.storageFor)('docs'),
 
-    newDoc: function newDoc() {
+    newDoc: function newDoc(input, title) {
       var _this = this;
 
       console.log('inside service');
@@ -1087,7 +1088,8 @@ define('capstone_front_end/services/docs', ['exports', 'ember', 'ember-local-sto
       return this.get('ajax').post('/docs', {
         data: {
           doc: {
-            text: '',
+            text: input,
+            title: title,
             _owner: id
           }
         }
@@ -1255,7 +1257,7 @@ define("capstone_front_end/templates/components/navbar-header", ["exports"], fun
   exports["default"] = Ember.HTMLBars.template({ "id": "9BNeZjs+", "block": "{\"statements\":[[\"append\",[\"unknown\",[\"hamburger-menu\"]],false],[\"text\",\"\\n\"],[\"block\",[\"link-to\"],[\"application\"],[[\"class\"],[\"navbar-brand\"]],0],[\"text\",\"\\n\"]],\"locals\":[],\"named\":[],\"yields\":[],\"blocks\":[{\"statements\":[[\"open-element\",\"span\",[]],[\"static-attr\",\"class\",\"glyphicon glyphicon-book\"],[\"static-attr\",\"aria-hidden\",\"true\"],[\"static-attr\",\"style\",\"font-size: 1.5em;\"],[\"flush-element\"],[\"close-element\"],[\"text\",\"Home\"]],\"locals\":[]}],\"hasPartials\":false}", "meta": { "moduleName": "capstone_front_end/templates/components/navbar-header.hbs" } });
 });
 define("capstone_front_end/templates/components/new-document", ["exports"], function (exports) {
-  exports["default"] = Ember.HTMLBars.template({ "id": "/SfWEdr8", "block": "{\"statements\":[[\"yield\",\"default\"],[\"text\",\"\\n\"],[\"open-element\",\"p\",[]],[\"static-attr\",\"class\",\"NewDoc\"],[\"flush-element\"],[\"close-element\"],[\"text\",\"\\n\"],[\"open-element\",\"button\",[]],[\"static-attr\",\"type\",\"button\"],[\"static-attr\",\"class\",\"btn btn-default\"],[\"static-attr\",\"aria-label\",\"Left Align\"],[\"static-attr\",\"style\",\"color:black;\"],[\"modifier\",[\"action\"],[[\"get\",[null]],\"newDoc\"]],[\"flush-element\"],[\"text\",\"\\n  \"],[\"block\",[\"link-to\"],[\"new-document\"],null,0],[\"text\",\"\\n\"],[\"close-element\"],[\"text\",\"\\n\"]],\"locals\":[],\"named\":[],\"yields\":[\"default\"],\"blocks\":[{\"statements\":[[\"open-element\",\"span\",[]],[\"static-attr\",\"class\",\"NewDoc\"],[\"static-attr\",\"style\",\"font-size:3em;\"],[\"flush-element\"],[\"open-element\",\"span\",[]],[\"static-attr\",\"class\",\"glyphicon glyphicon-plus\"],[\"static-attr\",\"aria-hidden\",\"true\"],[\"flush-element\"],[\"text\",\"\\n\"],[\"close-element\"],[\"text\",\"    \"],[\"open-element\",\"span\",[]],[\"static-attr\",\"class\",\"textButton\"],[\"flush-element\"],[\"text\",\"New Document\"],[\"close-element\"],[\"close-element\"]],\"locals\":[]}],\"hasPartials\":false}", "meta": { "moduleName": "capstone_front_end/templates/components/new-document.hbs" } });
+  exports["default"] = Ember.HTMLBars.template({ "id": "vsO12j6r", "block": "{\"statements\":[[\"yield\",\"default\"],[\"text\",\"\\n\"],[\"open-element\",\"p\",[]],[\"static-attr\",\"class\",\"NewDoc\"],[\"flush-element\"],[\"close-element\"],[\"text\",\"\\n\"],[\"open-element\",\"button\",[]],[\"static-attr\",\"type\",\"button\"],[\"static-attr\",\"class\",\"btn btn-default\"],[\"static-attr\",\"aria-label\",\"Left Align\"],[\"static-attr\",\"style\",\"color:black;\"],[\"flush-element\"],[\"text\",\"\\n  \"],[\"block\",[\"link-to\"],[\"new-document\"],null,0],[\"text\",\"\\n\"],[\"close-element\"],[\"text\",\"\\n\"]],\"locals\":[],\"named\":[],\"yields\":[\"default\"],\"blocks\":[{\"statements\":[[\"open-element\",\"span\",[]],[\"static-attr\",\"class\",\"NewDoc\"],[\"static-attr\",\"style\",\"font-size:3em;\"],[\"flush-element\"],[\"open-element\",\"span\",[]],[\"static-attr\",\"class\",\"glyphicon glyphicon-plus\"],[\"static-attr\",\"aria-hidden\",\"true\"],[\"flush-element\"],[\"text\",\"\\n\"],[\"close-element\"],[\"text\",\"    \"],[\"open-element\",\"span\",[]],[\"static-attr\",\"class\",\"textButton\"],[\"flush-element\"],[\"text\",\"New Document\"],[\"close-element\"],[\"close-element\"]],\"locals\":[]}],\"hasPartials\":false}", "meta": { "moduleName": "capstone_front_end/templates/components/new-document.hbs" } });
 });
 define("capstone_front_end/templates/components/password-confirmation-input", ["exports"], function (exports) {
   exports["default"] = Ember.HTMLBars.template({ "id": "7vxeF+8A", "block": "{\"statements\":[[\"open-element\",\"label\",[]],[\"static-attr\",\"for\",\"password-confirmation\"],[\"flush-element\"],[\"text\",\"Password Confirmation\"],[\"close-element\"],[\"text\",\"\\n\"],[\"append\",[\"helper\",[\"input\"],null,[[\"type\",\"id\",\"placeholder\",\"value\"],[\"password\",\"password-confirmation\",\"Password Confirmation\",[\"get\",[\"password\"]]]]],false],[\"text\",\"\\n\"]],\"locals\":[],\"named\":[],\"yields\":[],\"blocks\":[],\"hasPartials\":false}", "meta": { "moduleName": "capstone_front_end/templates/components/password-confirmation-input.hbs" } });
