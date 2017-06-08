@@ -17,8 +17,12 @@
 YourDocs is a functioning word processor and text translator.
 
 ## Wireframes
-Front Page Wireframe [Wireframe for Front Page](http://i.imgur.com/WjeDppb.jpg)
-Docs page wireframe [Wireframe for Get Docs](http://i.imgur.com/Lw5Orr9.jpg)
+
+Front Page Wireframe
+[Wireframe for Front Page](http://i.imgur.com/WjeDppb.jpg)
+
+Docs page wireframe
+[Wireframe for Get Docs](http://i.imgur.com/Lw5Orr9.jpg)
 
 ## Technologies
 
@@ -28,7 +32,7 @@ Using ember, the application is broken down into three main components: authenti
 
 On the docs route, the doc resource is called via Ember's get system, which greatly simplifies API calls.  Using a handlebars template, each document is listed and the components in HTML are given the document ID to distinguish one from the other.  The edit and translation features have their own Ember components.  In sum, I relied primarily on components for my app's functionality rather than routes or controllers.  In addition, I made some of my API calls (translate, POST and PATCH) from the docs service using the authentication service as an example.  The data for each request is passed via an action to the component, which calls functions in the docs service to make the API calls.  In general, this app follows Ember conventions of actions going down and data going up, although it is inconsistent.
 
-[Yandex API Documentation] (https://tech.yandex.com/translate/doc/dg/concepts/About-docpage/)
+[Yandex API Documentation](https://tech.yandex.com/translate/doc/dg/concepts/About-docpage/)
 
 The major functionality aside from the doc resources' RESTful routes is the translation feature.  The translation is a patch request at a custom route /translate/:doc_id.  From that route, expressJS sends an API call to yandex with the API key, text, current language, and translation language and returns a JSON value.  That value is cleaned and put into the text field of the doc using the Mongoose update function.  On the front end, that value is dynamically added to the Ember textarea.
 
