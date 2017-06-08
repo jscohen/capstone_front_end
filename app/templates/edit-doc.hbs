@@ -6,8 +6,7 @@
   <br />
   <p>Doc: {{doc.title}}</p>
   <div class="textAreaBoundary">
-  {{textarea action 'mouseUp' cols='80' rows='15' class='jumbotron' id='doc' value=(mut (get doc text))}}
-  {{!-- <textarea {{action 'mouseUp'}} id="doc" rows="20" cols="80" class="jumbotron"></textarea> --}}
+  {{edit-doc newDoc=doc}}
   <br />
 </div>
   <br />

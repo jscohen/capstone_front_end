@@ -68,5 +68,27 @@ export default Ember.Service.extend({
     .then(() => {
       console.log(this.get('docs.myDocs'))
     })
-  }
+  },
+
+  translate(id, text, language) {
+    console.log('inside translate')
+    return this.get('ajax').patch('/translate/' + id, {
+      data: {
+        doc: {
+          id: id,
+          text: text,
+          language: language
+        }
+      }
+    })
+    .catch(result => {
+      return this.get('ajax').request('/docs/' + id, {
+        method: 'GET'
+      }).then(result => {
+        console.log(result.doc.text)
+        $('.testTextArea').val(result.doc.text)
+      })
+      .catch(error => console.log(error))
+    })
+}
 });

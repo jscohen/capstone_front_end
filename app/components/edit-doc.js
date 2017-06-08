@@ -16,14 +16,20 @@ export default Ember.Component.extend({
     },
     mouseUp() {
       console.log('in mouse up')
-      window.mySelection = $('textarea').val().substring(this.selectionStart, this.selectionEnd);
+      window.mySelection = $('.testTextArea').val().substring(this.selectionStart, this.selectionEnd);
       console.log(window.getSelection().toString());
     },
     saveDoc() {
-      console.log($('textarea').val());
-      let input = $('textarea').val()
-      let title = $('.title').val()
+      console.log($('.testTextArea').val());
+      let input = $('.testTextArea').val()
+      let title = $('.editedTitle').val()
       this.get('docs').saveDoc(input, title)
+    },
+    translate(doc) {
+      let text = $('.testTextArea').val()
+      let id = doc.id
+      let language = 'it'
+      this.get('docs').translate(id, text, language)
     }
   }
 });
