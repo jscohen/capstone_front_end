@@ -918,7 +918,7 @@ define('capstone_front_end/tests/routes/new-document.jshint.lint-test', [], func
   QUnit.module('JSHint | routes/new-document.js');
   QUnit.test('should pass jshint', function (assert) {
     assert.expect(1);
-    assert.ok(false, 'routes/new-document.js should pass jshint.\nroutes/new-document.js: line 6, col 60, Missing semicolon.\n\n1 error');
+    assert.ok(false, 'routes/new-document.js should pass jshint.\nroutes/new-document.js: line 9, col 60, Missing semicolon.\n\n1 error');
   });
 });
 define('capstone_front_end/tests/routes/sign-in.jshint.lint-test', [], function () {
