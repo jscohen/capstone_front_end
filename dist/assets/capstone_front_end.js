@@ -789,6 +789,9 @@ define('capstone_front_end/routes/login', ['exports', 'ember'], function (export
 });
 define('capstone_front_end/routes/new-document', ['exports', 'ember'], function (exports, _ember) {
   exports['default'] = _ember['default'].Route.extend({
+    model: function model() {
+      return this.get('store').findAll('doc');
+    },
     actions: {
       newDoc: function newDoc() {
         this.get('flashMessages').success('Document Created');
@@ -1123,6 +1126,6 @@ catch(err) {
 });
 
 if (!runningTests) {
-  require("capstone_front_end/app")["default"].create({"name":"capstone_front_end","version":"0.0.0+19dcea86"});
+  require("capstone_front_end/app")["default"].create({"name":"capstone_front_end","version":"0.0.0+bbefde48"});
 }
 //# sourceMappingURL=capstone_front_end.map
